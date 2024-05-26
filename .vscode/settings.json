@@ -1,0 +1,24 @@
+{
+    "files.exclude": {
+        "**/.husky": false,
+        "**/node_modules": false,
+        "commitlint.config.js": false,
+        "docs/.dendron.port": false,
+        "docs/.dendron.ws": false,
+        "docs/.gitignore": false,
+        "docs/dendron.code-workspace": false,
+        "docs/dendron.yml": false,
+        "docs/notes/.dendron.cache.json": false,
+        "docs/notes/.vscode": false,
+        "docs/notes/assets": false,
+        "docs/notes/root.schema.yml": false,
+        "package-lock.json": false
+    },
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#2d98da",
+        "statusBar.foreground": "#e7e7e7",
+        "statusBarItem.hoverBackground": "#58ade2",
+        "statusBarItem.remoteBackground": "#2d98da",
+        "statusBarItem.remoteForeground": "#e7e7e7"
+    }
+}
