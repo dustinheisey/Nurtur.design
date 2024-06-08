@@ -16,7 +16,9 @@
         ".github": true,
         ".vscode": true,
         ".gitignore": true,
-        "CHANGELOG.md": true
+        "CHANGELOG.md": true,
+        "index.css": true,
+        "index.js": true
     },
     "workbench.colorCustomizations": {
         "statusBar.background": "#536248",
