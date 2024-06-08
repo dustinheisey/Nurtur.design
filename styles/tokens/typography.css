@@ -1,0 +1,23 @@
+/* Typography */
+:root {
+  --font-family-headline: "Charter", "Bitstream Charter", "Sitka Text",
+    "Cambria", "serif";
+  --font-family-body: "Inter", "Roboto", "Helvetica Neue", "Arial Nova",
+    "Nimbus Sans", "Arial", "sans-serif";
+  --font-size-xs: clamp(0.7rem, calc(0.81rem + -0.13vw), 0.78rem);
+  --font-size-s: clamp(0.94rem, calc(0.94rem + 0vw), 0.94rem);
+  --font-size-m: clamp(1.13rem, calc(1.08rem + 0.22vw), 1.25rem);
+  --font-size-l: clamp(1.35rem, calc(1.24rem + 0.55vw), 1.67rem);
+  --font-size-xl: clamp(1.62rem, calc(1.41rem + 1.05vw), 2.22rem);
+  --font-size-2xl: clamp(1.94rem, calc(1.59rem + 1.77vw), 2.96rem);
+  --font-size-3xl: clamp(2.33rem, calc(1.77rem + 2.81vw), 3.95rem);
+  --font-size-4xl: clamp(2.8rem, calc(1.94rem + 4.28vw), 5.26rem);
+  --font-size-body: var(--font-size-m);
+  --line-height-headline: 1.2;
+  --line-height-body: 1.5;
+  --letter-spacing-headline: 0em;
+  --letter-spacing-body: 0em;
+  --letter-spacing-overline: 0.025em;
+  --font-weight-headline: 700;
+  --font-weight-body: 400;
+}

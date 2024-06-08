@@ -1,0 +1,20 @@
+{% from "../component.njk" import component %}
+<div class="region stack {{props.class}}">
+    {% if props.headline %}
+    <section class="prose center text-center">
+        {% if props.overline %}
+            <p class="overline">{{props.overline}}</p>
+        {% endif %}
+        <h2 class="region-headline">{{props.headline}}</h2>
+        {% if props.body %}
+            <p>{{props.body}}</p>
+        {% endif %}
+    </section>
+    {% endif %}
+    <div class="sparkline {% if props.variant === 'inline' %}sparkline-inline{% elif props.variant === 'inline-staggered' %}sparkline-inline-staggered{% elif props.variant === 'block-staggered' %}sparkline-block-staggered{% endif %}">
+        {% for item in props.items %}
+            <div class="line" aria-hidden="true"></div>
+            {{ component(item) }}
+        {% endfor %}
+    </div>
+</div>

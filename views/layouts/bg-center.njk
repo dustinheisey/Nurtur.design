@@ -1,0 +1,16 @@
+<div class="bg-img theme-primary" style='--img: url("/img/{{props.img.src}}-400w.jpeg")'>
+    <div class="cover {{props.classes}} cover-nav">
+        <div class="principle inset region prose stack align-center text-center gap-xs">
+            {% if props.badge %}
+            <a href="/" class="badge badge-primary">{{props.badge}}</a>
+            {% endif %}
+            <h1>{{props.headline}}</h1>
+            <p>
+                {{props.body}}
+            </p>
+            {% if props.btn %}
+            <a href="{{props.btn.href}}" class="btn {% if props.btn.variant %}{{props.btn.href}}{% endif %}">{{props.btn.label}}</a>
+            {% endif %}
+        </div>
+    </div>
+</div>

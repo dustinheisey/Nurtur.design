@@ -1,0 +1,18 @@
+.strip {
+  display: block;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Firefox */
+}
+
+.strip::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Edge */
+}
+
+.reel > .card {
+  width: 20rem;
+  scroll-snap-align: start;
+}

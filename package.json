@@ -1,11 +1,22 @@
 {
+    "name": "@dh253/nds",
+    "version": "0.1.0-alpha",
+    "description": "Neuroinclusive, Accessible, Sustainable Design System",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/dustinheisey/nurtur-design-system.git"
+    },
+    "scripts": {
+        "i": "rm -rf node_modules && npm install",
+        "release": "release-please"
+    },
+    "author": {
+        "name": "Dustin Heisey"
+    },
     "devDependencies": {
         "@commitlint/cli": "^19.3.0",
         "@commitlint/config-conventional": "^19.2.2",
         "husky": "^9.0.11",
-        "release-please": "^16.10.2"
+        "release-please": "^16.12.0"
     },
-    "scripts": {
-        "release": "release-please"
-    }
 }

@@ -1,0 +1,33 @@
+
+<section class="{{class}} theme-{{props.theme or 'background'}} {% if props.full %}full{% endif %} stack gap-xl">
+    {% if props.headline %}
+        <div class="prose">
+            {% if props.overline %}
+                <p class="overline">{{props.overline}}</p>
+            {% endif %}
+            <h2 class="region-headline">{{props.headline}}</h2>
+            {% if props.body %}
+                <p>{{props.body}}</p>
+            {% endif %}
+        </div>
+    {% endif %}
+    {% if props.variant === 'grid' %}
+        <ul class="grid grid-2 gap-s">
+            {% for item in props.items %}
+                <li class="inline align-start gap-xs">
+                    {% icon item.icon or props.icon, "icon-secondary" %}
+                    {{item.text or item}}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <ul class="stack gap-xs">
+            {% for item in props.items %}
+            <li class="inline align-start gap-xs">
+                {% icon item.icon or props.icon, "icon-secondary" %}
+                {{item.text or item}}
+            </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</section>

@@ -1,0 +1,11 @@
+{%- macro header(props) -%}
+{% include "./layouts/header.njk" %}
+{%- endmacro -%}
+
+{%- macro footer(props) -%}
+{% include "./layouts/footer.njk" %}
+{%- endmacro -%}
+
+{%- macro layout(props, navigation, config) -%}
+{% include "./layouts/" + props.layout + ".njk" %}
+{%- endmacro -%}

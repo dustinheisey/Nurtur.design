@@ -1,0 +1,62 @@
+audio,
+img,
+video,
+picture {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+picture {
+  border-radius: var(--radius-m);
+}
+
+img {
+  border-radius: var(--radius-m);
+  max-inline-size: 100%;
+  block-size: auto;
+  box-shadow: var(--elevation-3);
+
+  /* position: relative; */
+}
+
+img.rounded {
+  border-radius: var(--radius-l);
+}
+
+.img-container {
+  display: grid;
+  block-size: 100%;
+  grid-template-columns: var(--space-m) 1fr var(--space-m);
+  grid-template-rows: var(--space-m) 1fr var(--space-m);
+}
+
+.img-container > * {
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.img-container .img-bg {
+  grid-column: 2/-1;
+  grid-row: 1/3;
+  border-radius: var(--radius-m);
+  background-color: var(--primary);
+}
+
+.img-container img {
+  grid-column: 1/3;
+  grid-row: 2/-1;
+}
+
+img.full {
+  inline-size: 100%;
+}
+
+.logo {
+  block-size: 2rem;
+  inline-size: auto;
+}
+
+.logo-l {
+  block-size: 4rem;
+}

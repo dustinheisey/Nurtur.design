@@ -1,0 +1,32 @@
+<div class="{{class}} prose">
+    {% if props.img %}
+        <div class="frame">
+            {% if props.img.variant === 'avatar' %}
+                <img src="https://i.pravatar.cc/300" alt="avatar">
+            {% else %}
+                {% set src = './public/img/' + props.img.src%}
+                {% img src, props.img.alt %}
+            {% endif %}
+        </div>
+    {% endif %}
+    {% if props.variant === 'stack' %}
+        <div class="stack align-center">
+            {% icon props.icon, "icon icon-l" %}
+            <h3 class="title-headline">{{props.headline}}</h3>
+        </div>
+    {% else %}
+    <h3 class="{% if props.url %}section-headline{% else %}title-headline{% endif %}">
+        {% if props.icon %}
+        {% icon props.icon, "icon" %}
+        {% endif %}
+        {% if props.url %}
+            <a href="{{props.url}}" class="link-navigation">{{props.headline}}</a>
+        {% else  %}
+            {{props.headline}}   
+        {% endif %}
+    </h3>
+    {% endif %}
+    <p>
+        {{props.body}}
+    </p>
+</div>
