@@ -1,35 +1,62 @@
 {
-    "name": "@dh253/nds",
-    "version": "0.1.0-alpha",
-    "description": "Neuroinclusive, Accessible, Sustainable Design System",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/dustinheisey/nurtur-design-system.git"
-    },
-    "scripts": {
-        "i": "rm -rf node_modules && npm install",
-        "release": "release-please",
-        "concat-css": "concat -o index.css styles/**/*.css",
-        "minify-css": "cleancss -o dist/index.min.css index.css",
-        "build-css": "npm run concat-css && npm run minify-css",
-        "watch-css": "watch -p 'styles/**/*.css' -c 'npm run build-css'",
-        "concat-js": "concat -o index.js scripts/*.js",
-        "minify-js": "terser index.js -o dist/index.min.js",
-        "build-js": "npm run concat-js && npm run minify-js",
-        "watch-js": "watch -p 'scripts/*.js' -c 'npm run build-js'"
-    },
-    "author": {
-        "name": "Dustin Heisey"
-    },
-    "devDependencies": {
-        "@commitlint/cli": "^19.3.0",
-        "@commitlint/config-conventional": "^19.2.2",
-        "clean-css": "^5.3.3",
-        "clean-css-cli": "^5.6.3",
-        "concat-cli": "^4.0.0",
-        "husky": "^9.0.11",
-        "release-please": "^16.12.0",
-        "terser": "^5.31.1",
-        "watch-cli": "^0.2.3"
-    }
+  "name": "@dh253/nds",
+  "version": "0.1.0-alpha",
+  "description": "Neuroinclusive, Accessible, Sustainable Design System",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dustinheisey/nurtur-design-system.git"
+  },
+  "scripts": {
+    "i": "rm -rf node_modules && npm install",
+    "release": "release-please",
+    "lint:prettier": "prettier . --check",
+    "format:prettier": "prettier . --write",
+    "lint:js": "eslint 'src/**/*.{js,jsx}'",
+    "format:js": "eslint 'src/**/*.{js,jsx}' --fix",
+    "lint:css": "stylelint 'src/**/*.css'",
+    "format:css": "stylelint 'src/**/*.css' --fix",
+    "postcss": "postcss 'src/**/*.css' --dir dist",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "prepare": "husky",
+    "test": "npm run lint:js && npm run lint:css && npm run lint:prettier && alex src/**/*.md"
+  },
+  "author": {
+    "name": "Dustin Heisey"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^1.5.0",
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@eslint/js": "^9.4.0",
+    "@html-eslint/eslint-plugin": "^0.24.1",
+    "@html-eslint/parser": "^0.24.1",
+    "@storybook/addon-docs": "^8.1.7",
+    "@storybook/addon-essentials": "^8.1.7",
+    "@storybook/addon-interactions": "^8.1.7",
+    "@storybook/addon-links": "^8.1.7",
+    "@storybook/blocks": "^8.1.7",
+    "@storybook/test": "^8.1.7",
+    "@storybook/web-components": "^8.1.7",
+    "@storybook/web-components-vite": "^8.1.7",
+    "alex": "^11.0.1",
+    "eslint": "^9.4.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-lit": "^1.14.0",
+    "eslint-plugin-storybook": "^0.8.0",
+    "eslint-plugin-wc": "^2.1.0",
+    "globals": "^15.4.0",
+    "husky": "^9.0.11",
+    "lit": "^3.1.4",
+    "postcss": "^8.4.38",
+    "release-please": "^16.12.0",
+    "storybook": "^8.1.7",
+    "stylelint": "^16.6.1",
+    "stylelint-config-standard": "^36.0.0",
+    "stylelint-order": "^6.0.4"
+  },
+  "dependencies": {
+    "healthier": "^7.0.0"
+  }
 }

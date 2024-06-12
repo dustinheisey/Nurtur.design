@@ -18,12 +18,12 @@ details > summary::before {
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  content: "+";
+  content: '+';
   font-size: var(--font-size-l);
 }
 
 details[open] > summary::before {
-  content: "-";
+  content: '-';
   font-size: var(--font-size-xl);
 }
 
@@ -174,10 +174,10 @@ nav.breadcrumb ol {
   border-right: 0.1em solid var(--color-primary);
   height: 0.8em;
   margin-inline-end: var(--space-xs);
-  content: "";
+  content: '';
 }
 
-nav.breadcrumb [aria-current="page"] {
+nav.breadcrumb [aria-current='page'] {
   color: var(--color-primary);
   font-weight: 600;
   text-decoration: none;
@@ -374,18 +374,18 @@ article:has(:hover, :focus) {
     transition: transform 0.25s var(--ease-out-5);
   }
 
-  [data-theme="dark"] .sun-and-moon > .sun {
+  [data-theme='dark'] .sun-and-moon > .sun {
     transform: scale(1.75);
     transition-timing-function: var(--ease-3);
     transition-duration: 0.25s;
   }
 
-  [data-theme="dark"] .sun-and-moon > .sun-beams {
+  [data-theme='dark'] .sun-and-moon > .sun-beams {
     transform: rotateZ(-25deg);
     transition-duration: 0.15s;
   }
 
-  [data-theme="dark"] .sun-and-moon > .moon > circle {
+  [data-theme='dark'] .sun-and-moon > .moon > circle {
     transition-delay: 0.25s;
     transition-duration: 0.5s;
   }
@@ -421,15 +421,15 @@ article:has(:hover, :focus) {
   transform: translateX(7px);
 }
 
-[data-theme="dark"] .sun-and-moon > .moon circle {
+[data-theme='dark'] .sun-and-moon > .moon circle {
   transform: translateX(-7px);
 }
 
-[data-theme="dark"] .sun-and-moon > .sun {
+[data-theme='dark'] .sun-and-moon > .sun {
   transform: scale(1.75);
 }
 
-[data-theme="dark"] .sun-and-moon > .sun-beams {
+[data-theme='dark'] .sun-and-moon > .sun-beams {
   opacity: 0;
 }
 
@@ -445,22 +445,22 @@ article:has(:hover, :focus) {
   stroke: var(--icon-fill);
 }
 
-[data-theme="dark"] .dark-mode-toggle > .sun-and-moon > .sun {
+[data-theme='dark'] .dark-mode-toggle > .sun-and-moon > .sun {
   fill: var(--icon-fill);
 }
 
-[data-theme="dark"]
+[data-theme='dark']
   .dark-mode-toggle:is(:hover, :focus-visible)
   > .sun-and-moon
   > .sun {
   fill: var(--icon-fill);
 }
 
-[data-theme="dark"] .dark-mode-toggle > .sun-and-moon > .sun-beams {
+[data-theme='dark'] .dark-mode-toggle > .sun-and-moon > .sun-beams {
   stroke: var(--icon-fill);
 }
 
-[data-theme="dark"]
+[data-theme='dark']
   .dark-mode-toggle:is(:hover, :focus-visible)
   > .sun-and-moon
   > .sun-beams {
@@ -965,7 +965,7 @@ main {
 }
 
 .status::before {
-  content: "";
+  content: '';
   display: inline-block;
   width: 8px;
   height: 8px;
@@ -980,7 +980,7 @@ figure {
 
 blockquote {
   border: none;
-  quotes: "\201C" "\201D" "\2018" "\2019";
+  quotes: '\201C' '\201D' '\2018' '\2019';
   position: relative;
   margin: 0;
   font-family: var(--font-family-headline);
@@ -1181,7 +1181,7 @@ small > * {
 }
 
 .checkbox::before {
-  content: "";
+  content: '';
   width: 0.65em;
   height: 0.65em;
   clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
@@ -1202,7 +1202,7 @@ small > * {
 }
 
 /* Card */
-.input-card input[type="checkbox"] {
+.input-card input[type='checkbox'] {
   clip: rect(0 0 0 0);
   clip-path: inset(100%);
   height: 1px;
@@ -1231,7 +1231,7 @@ small > * {
   padding: var(--space-2xs);
 }
 
-.input-card input[type="checkbox"]:is(:hover, :focus) + span {
+.input-card input[type='checkbox']:is(:hover, :focus) + span {
   border-color: var(--color-primary);
   box-shadow: var(--shadow-xs);
   box-shadow:
@@ -1239,7 +1239,7 @@ small > * {
     0 0 0 4px var(--color-primary-container);
 }
 
-.input-card input[type="checkbox"]:checked + span {
+.input-card input[type='checkbox']:checked + span {
   background-color: var(--color-primary);
   color: var(--color-on-primary);
 }
@@ -1338,7 +1338,7 @@ math {
 }
 
 code {
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Courier New', Courier, monospace;
   font-size: var(--font-size-s);
 }
 
@@ -1766,7 +1766,7 @@ label {
 }
 
 .required::after {
-  content: "*";
+  content: '*';
   font-size: var(--font-size-body);
   color: var(--color-label-accent-override, var(--color-secondary));
 }
@@ -1867,11 +1867,11 @@ p {
   place-items: center;
 }
 
-label:focus-within > input[type="radio"] {
+label:focus-within > input[type='radio'] {
   color: var(--color-primary);
 }
 
-input[type="radio"] {
+input[type='radio'] {
   appearance: none;
   background-color: var(--color-background);
   margin: 0;
@@ -1884,8 +1884,8 @@ input[type="radio"] {
   place-content: center;
 }
 
-input[type="radio"]::before {
-  content: "";
+input[type='radio']::before {
+  content: '';
   inline-size: 0.45em;
   block-size: 0.45em;
   border-radius: 50%;
@@ -1895,19 +1895,19 @@ input[type="radio"]::before {
   background-color: CanvasText;
 }
 
-input[type="radio"]:checked::before {
+input[type='radio']:checked::before {
   transform: scale(1);
 }
 
-input[type="radio"]:focus,
-input[type="radio"]:checked {
+input[type='radio']:focus,
+input[type='radio']:checked {
   outline: none;
   background-color: var(--color-primary);
   border: none;
 }
 
 /* Card */
-.input-card input[type="radio"] {
+.input-card input[type='radio'] {
   clip: rect(0 0 0 0);
   clip-path: inset(100%);
   height: 1px;
@@ -1937,7 +1937,7 @@ input[type="radio"]:checked {
   padding: var(--space-2xs);
 }
 
-.input-card input[type="radio"]:is(:hover, :focus) + span {
+.input-card input[type='radio']:is(:hover, :focus) + span {
   border-color: var(--color-primary);
   box-shadow: var(--shadow-xs);
   box-shadow:
@@ -1945,7 +1945,7 @@ input[type="radio"]:checked {
     0 0 0 4px var(--color-primary-container);
 }
 
-.input-card input[type="radio"]:checked + span {
+.input-card input[type='radio']:checked + span {
   background-color: var(--color-primary);
   color: var(--color-on-primary);
 }
@@ -1955,11 +1955,11 @@ input[type="radio"]:checked {
   height: 3rem;
 }
 
-input[type="range"]:focus {
+input[type='range']:focus {
   outline: none;
 }
 
-input[type="range"]::-webkit-slider-thumb {
+input[type='range']::-webkit-slider-thumb {
   appearance: none;
   width: 20px;
   height: 20px;
@@ -1969,15 +1969,15 @@ input[type="range"]::-webkit-slider-thumb {
   transition: background 0.15s ease-in-out;
 }
 
-input[type="range"]:hover::-webkit-slider-thumb {
+input[type='range']:hover::-webkit-slider-thumb {
   background: var(--color-primary);
 }
 
-input[type="range"]:active::-webkit-slider-thumb {
+input[type='range']:active::-webkit-slider-thumb {
   background: var(--color-primary);
 }
 
-input[type="range"]::-moz-range-thumb {
+input[type='range']::-moz-range-thumb {
   width: 20px;
   height: 20px;
   border: 0;
@@ -1987,15 +1987,15 @@ input[type="range"]::-moz-range-thumb {
   transition: background 0.15s ease-in-out;
 }
 
-input[type="range"]::-moz-range-thumb:hover {
+input[type='range']::-moz-range-thumb:hover {
   background: var(--color-primary);
 }
 
-input[type="range"]:active::-moz-range-thumb {
+input[type='range']:active::-moz-range-thumb {
   background: var(--color-primary);
 }
 
-input[type="range"]:focus::-webkit-slider-thumb {
+input[type='range']:focus::-webkit-slider-thumb {
   box-shadow:
     0 0 0 3px var(--color-background),
     0 0 0 6px var(--color-primary);
@@ -2016,7 +2016,7 @@ output {
   min-inline-size: 9ch;
 }
 
-input[type="range"] {
+input[type='range'] {
   cursor: pointer;
   appearance: none;
   border-radius: 3px;
@@ -2055,7 +2055,7 @@ select::-ms-expand {
 
 .select {
   display: grid;
-  grid-template-areas: "select";
+  grid-template-areas: 'select';
   align-items: center;
   position: relative;
   min-width: 15ch;
@@ -2079,7 +2079,7 @@ select::-ms-expand {
 }
 
 .select::after {
-  content: "";
+  content: '';
   justify-self: end;
   width: 0.8em;
   height: 0.5em;
@@ -2371,7 +2371,7 @@ drop-down {
 }
 
 drop-down > a::after {
-  content: "";
+  content: '';
   display: inline-block;
   width: 0;
   height: 0;
@@ -2414,7 +2414,7 @@ drop-down:is(:hover, :focus-within) ul {
 }
 
 drop-down::before {
-  content: "; Has a sub menu: ";
+  content: '; Has a sub menu: ';
   clip: rect(1px, 1px, 1px, 1px);
   clip-path: inset(50%);
   height: 1px;
@@ -2743,7 +2743,7 @@ ol.list-marker {
 }
 
 .mosaic {
-  --mosaic: "one one two" "one one three" "four five six";
+  --mosaic: 'one one two' 'one one three' 'four five six';
 
   grid-template-columns: repeat(12, 1fr);
   grid-template-areas: var(--mosaic);
@@ -3069,7 +3069,7 @@ ol.list-marker {
 
 .sparkline .line::before {
   top: 0;
-  content: "";
+  content: '';
   display: block;
   width: 0.35rem;
   height: 0.35rem;
@@ -3564,7 +3564,7 @@ tool-tip {
 
   /* prepend some prose for screen readers only */
   tool-tip::before {
-    content: "; Has tooltip: ";
+    content: '; Has tooltip: ';
     clip: rect(1px, 1px, 1px, 1px);
     clip-path: inset(50%);
     height: 1px;
@@ -3577,7 +3577,7 @@ tool-tip {
 
   /* tooltip shape is a pseudo element so we can cast a shadow */
   tool-tip::after {
-    content: "";
+    content: '';
     background: var(--_bg);
     position: absolute;
     z-index: -1;
@@ -3587,11 +3587,11 @@ tool-tip {
 
   /* top tooltip styles */
   tool-tip:is(
-      [tip-position="top"],
-      [tip-position="block-start"],
+      [tip-position='top'],
+      [tip-position='block-start'],
       :not([tip-position]),
-      [tip-position="bottom"],
-      [tip-position="block-end"]
+      [tip-position='bottom'],
+      [tip-position='block-end']
     ) {
     text-align: center;
   }
@@ -3611,8 +3611,8 @@ tool-tip {
   }
 
   tool-tip:is(
-      [tip-position="top"],
-      [tip-position="block-start"],
+      [tip-position='top'],
+      [tip-position='block-start'],
       :not([tip-position])
     ) {
     inset-inline-start: 50%;
@@ -3622,8 +3622,8 @@ tool-tip {
   }
 
   tool-tip:is(
-      [tip-position="top"],
-      [tip-position="block-start"],
+      [tip-position='top'],
+      [tip-position='block-start'],
       :not([tip-position])
     )::after {
     --_tip: var(--_bottom-tip);
@@ -3632,55 +3632,55 @@ tool-tip {
     border-block-end: var(--_triangle-size) solid transparent;
   }
 
-  tool-tip:is([tip-position="right"], [tip-position="inline-end"]) {
+  tool-tip:is([tip-position='right'], [tip-position='inline-end']) {
     inset-inline-start: calc(100% + var(--_p-inline) + var(--_triangle-size));
     inset-block-end: 50%;
 
     --_y: 50%;
   }
 
-  tool-tip:is([tip-position="right"], [tip-position="inline-end"])::after {
+  tool-tip:is([tip-position='right'], [tip-position='inline-end'])::after {
     --_tip: var(--_left-tip);
 
     inset-inline-start: calc(var(--_triangle-size) * -1);
     border-inline-start: var(--_triangle-size) solid transparent;
   }
 
-  tool-tip:is([tip-position="right"], [tip-position="inline-end"]):dir(
+  tool-tip:is([tip-position='right'], [tip-position='inline-end']):dir(
       rtl
     )::after {
     --_tip: var(--_right-tip);
   }
 
-  tool-tip:is([tip-position="bottom"], [tip-position="block-end"]) {
+  tool-tip:is([tip-position='bottom'], [tip-position='block-end']) {
     inset-inline-start: 50%;
     inset-block-start: calc(100% + var(--_p-block) + var(--_triangle-size));
 
     --_x: calc(50% * var(--isRTL));
   }
 
-  tool-tip:is([tip-position="bottom"], [tip-position="block-end"])::after {
+  tool-tip:is([tip-position='bottom'], [tip-position='block-end'])::after {
     --_tip: var(--_top-tip);
 
     inset-block-start: calc(var(--_triangle-size) * -1);
     border-block-start: var(--_triangle-size) solid transparent;
   }
 
-  tool-tip:is([tip-position="left"], [tip-position="inline-start"]) {
+  tool-tip:is([tip-position='left'], [tip-position='inline-start']) {
     inset-inline-end: calc(100% + var(--_p-inline) + var(--_triangle-size));
     inset-block-end: 50%;
 
     --_y: 50%;
   }
 
-  tool-tip:is([tip-position="left"], [tip-position="inline-start"])::after {
+  tool-tip:is([tip-position='left'], [tip-position='inline-start'])::after {
     --_tip: var(--_right-tip);
 
     inset-inline-end: calc(var(--_triangle-size) * -1);
     border-inline-end: var(--_triangle-size) solid transparent;
   }
 
-  tool-tip:is([tip-position="left"], [tip-position="inline-start"]):dir(
+  tool-tip:is([tip-position='left'], [tip-position='inline-start']):dir(
       rtl
     )::after {
     --_tip: var(--_left-tip);
@@ -3702,8 +3702,8 @@ tool-tip {
   @media (prefers-reduced-motion: no-preference) {
     :has(
         > tool-tip:is(
-            [tip-position="top"],
-            [tip-position="block-start"],
+            [tip-position='top'],
+            [tip-position='block-start'],
             :not([tip-position])
           )
       ):not(:hover, :focus-visible, :active)
@@ -3712,21 +3712,21 @@ tool-tip {
     }
 
     :has(
-        > tool-tip:is([tip-position="right"], [tip-position="inline-end"])
+        > tool-tip:is([tip-position='right'], [tip-position='inline-end'])
       ):not(:hover, :focus-visible, :active)
       tool-tip {
       --_x: -3px;
     }
 
     :has(
-        > tool-tip:is([tip-position="bottom"], [tip-position="block-end"])
+        > tool-tip:is([tip-position='bottom'], [tip-position='block-end'])
       ):not(:hover, :focus-visible, :active)
       tool-tip {
       --_y: -3px;
     }
 
     :has(
-        > tool-tip:is([tip-position="left"], [tip-position="inline-start"])
+        > tool-tip:is([tip-position='left'], [tip-position='inline-start'])
       ):not(:hover, :focus-visible, :active)
       tool-tip {
       --_x: 3px;
@@ -3841,7 +3841,7 @@ tool-tip {
   --color-scrim: var(--color-scrim-light);
 }
 
-html[data-theme="dark"],
+html[data-theme='dark'],
 html.mode-dark {
   --color-primary: var(--color-primary-dark);
   --color-on-primary: var(--color-on-primary-dark);
@@ -3909,7 +3909,7 @@ html.mode-dark {
     --color-scrim: var(--color-scrim-dark);
   }
 
-  html[data-theme="light"],
+  html[data-theme='light'],
   html.mode-light {
     --color-primary: var(--color-primary-light);
     --color-on-primary: var(--color-on-primary-light);
@@ -3995,10 +3995,10 @@ html.mode-dark {
 
 /* Typography */
 :root {
-  --font-family-headline: "Charter", "Bitstream Charter", "Sitka Text",
-    "Cambria", "serif";
-  --font-family-body: "Inter", "Roboto", "Helvetica Neue", "Arial Nova",
-    "Nimbus Sans", "Arial", "sans-serif";
+  --font-family-headline: 'Charter', 'Bitstream Charter', 'Sitka Text',
+    'Cambria', 'serif';
+  --font-family-body: 'Inter', 'Roboto', 'Helvetica Neue', 'Arial Nova',
+    'Nimbus Sans', 'Arial', 'sans-serif';
   --font-size-xs: clamp(0.7rem, calc(0.81rem + -0.13vw), 0.78rem);
   --font-size-s: clamp(0.94rem, calc(0.94rem + 0vw), 0.94rem);
   --font-size-m: clamp(1.13rem, calc(1.08rem + 0.22vw), 1.25rem);

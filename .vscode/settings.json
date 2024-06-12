@@ -1,30 +1,25 @@
 {
-    "files.exclude": {
-        "**/.husky": true,
-        "**/node_modules": true,
-        "commitlint.config.js": true,
-        "docs/.dendron.port": true,
-        "docs/.dendron.ws": true,
-        "docs/.gitignore": true,
-        "docs/dendron.code-workspace": true,
-        "docs/dendron.yml": true,
-        "docs/notes/.dendron.cache.json": true,
-        "docs/notes/.vscode": true,
-        "docs/notes/assets": true,
-        "docs/notes/root.schema.yml": true,
-        "package-lock.json": true,
-        ".github": true,
-        ".vscode": true,
-        ".gitignore": true,
-        "CHANGELOG.md": true,
-        "index.css": true,
-        "index.js": true
-    },
-    "workbench.colorCustomizations": {
-        "statusBar.background": "#536248",
-        "statusBar.foreground": "#e7e7e7",
-        "statusBarItem.hoverBackground": "#6c7f5e",
-        "statusBarItem.remoteBackground": "#536248",
-        "statusBarItem.remoteForeground": "#e7e7e7"
-    }
+  "files.exclude": {
+    "**/.husky": false,
+    "**/node_modules": false,
+    "commitlint.config.js": false,
+    "docs/.dendron.port": false,
+    "docs/.dendron.ws": false,
+    "docs/.gitignore": false,
+    "docs/dendron.code-workspace": false,
+    "docs/dendron.yml": false,
+    "docs/notes/.dendron.cache.json": false,
+    "docs/notes/.vscode": false,
+    "docs/notes/assets": false,
+    "docs/notes/root.schema.yml": false,
+    "package-lock.json": false,
+    ".github": false,
+    ".vscode": false,
+    ".gitignore": false,
+    "CHANGELOG.md": false,
+    "index.css": false,
+    "index.js": false,
+    "temp": false,
+    "dist": false
+  }
 }
