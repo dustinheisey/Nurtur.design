@@ -1,12 +1,12 @@
 p {
-  font-size: var(--font-size-body);
-  line-height: var(--line-height-body);
-  font-family: var(--font-family-body);
-  font-weight: var(--font-weight-body);
   color: var(--color-on-background);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-body);
+  line-height: var(--line-height-body);
+  margin: 0;
   max-inline-size: 60ch;
   min-inline-size: 10ch;
-  margin: 0;
 }
 
 .measure-s {
@@ -14,20 +14,20 @@ p {
 }
 
 .lead {
+  color: var(--color-on-background);
   font-size: var(--font-size-l);
   max-inline-size: 50ch;
   min-inline-size: 5ch;
-  color: var(--color-on-background);
 }
 
 .overline {
+  color: var(--color-primary);
   font-family: var(--font-family-body);
   font-size: var(--font-size-s);
-  color: var(--color-primary);
-  text-transform: uppercase;
-  letter-spacing: var(--letter-spacing-overline);
   font-weight: var(--font-weight-headline);
+  letter-spacing: var(--letter-spacing-overline);
   min-inline-size: unset;
+  text-transform: uppercase;
 }
 
 .color-primary {

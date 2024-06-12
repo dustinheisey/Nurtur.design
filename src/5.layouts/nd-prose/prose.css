@@ -43,8 +43,7 @@
 
 /* Blockquote */
 .prose :not(.not-prose):where(blockquote) {
-  margin-block-end: var(--space-l);
-  margin-block-start: var(--space-2xl);
+  margin-block: var(--space-2xl) var(--space-l);
   margin-inline: 0;
 }
 
@@ -73,12 +72,12 @@
 }
 
 .prose :not(.not-prose):where(li) {
-  margin-block: var(--space-2xs);
-  font-size: var(--font-size-body);
-  display: inline-flex;
   align-items: flex-start;
+  display: inline-flex;
+  font-size: var(--font-size-body);
   gap: var(--space-xs);
   line-height: var(--line-height-body);
+  margin-block: var(--space-2xs);
 }
 
 .prose :not(.not-prose):where(ul > li, ol > li) {
@@ -100,21 +99,18 @@
 
 /* Title */
 .prose :not(.not-prose):where(h4, .title-headline) {
-  margin-block-start: var(--space-m);
-  margin-block-end: var(--space-2xs);
+  margin-block: var(--space-m) var(--space-2xs);
 }
 
 /* Section */
 .prose :not(.not-prose):where(h3, .section-headline) {
-  margin-block-start: var(--space-s);
-  margin-block-end: var(--space-2xs);
+  margin-block: var(--space-s) var(--space-2xs);
 }
 
 /* Region */
 .prose :not(.not-prose):where(h2),
 .prose :not(.not-prose):where(.region-headline) {
-  margin-block-start: var(--space-m);
-  margin-block-end: var(--space-s);
+  margin-block: var(--space-m) var(--space-s);
 }
 
 .prose :not(.not-prose):where(svg + h4) {

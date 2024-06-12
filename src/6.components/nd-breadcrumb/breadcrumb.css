@@ -1,16 +1,16 @@
 nav.breadcrumb ol {
+  list-style: none;
   margin: 0;
   padding-left: 0;
-  list-style: none;
 }
 
 .breadcrumb li + li::before {
-  display: inline-block;
-  transform: rotate(15deg);
   border-right: 0.1em solid var(--color-primary);
+  content: '';
+  display: inline-block;
   height: 0.8em;
   margin-inline-end: var(--space-xs);
-  content: '';
+  transform: rotate(15deg);
 }
 
 nav.breadcrumb [aria-current='page'] {

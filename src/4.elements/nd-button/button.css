@@ -1,25 +1,25 @@
 .btn {
-  color-scheme: light;
-  font-family: var(--font-family-body);
-  font-weight: 400;
-  letter-spacing: var(--letter-spacing-body);
-  color: var(--color-on-btn, var(--color-on-primary));
-  line-height: var(--line-height-body);
-  font-size: var(--font-size-s);
-  display: inline-flex;
   align-items: center;
-  justify-content: center;
+  background-color: var(--color-primary);
+  border: 1.5px solid var(--color-primary);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-xs);
+  color: var(--color-on-btn, var(--color-on-primary));
+  color-scheme: light;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-s);
+  font-weight: 400;
   gap: var(--space-3xs);
   inline-size: auto;
-  cursor: pointer;
-  background-color: var(--color-primary);
-  border-radius: var(--radius-pill);
-  border: 1.5px solid var(--color-primary);
+  justify-content: center;
+  letter-spacing: var(--letter-spacing-body);
+  line-height: var(--line-height-body);
   padding: var(--space-2xs) var(--space-s);
-  box-shadow: var(--shadow-xs);
-  transition: all 0.2s ease-in-out;
   position: relative;
   transform: translate3d(0, 0, 0);
+  transition: all 0.2s ease-in-out;
   will-change: transform;
 }
 
@@ -30,22 +30,22 @@
 
 .btn-secondary {
   background-color: transparent;
-  color: var(--color-btn, var(--color-primary));
   border-color: var(--color-btn, var(--color-primary));
   box-shadow: none;
+  color: var(--color-btn, var(--color-primary));
 }
 
 .btn-secondary:hover {
-  color: var(--color-on-btn, var(--color-primary));
   border-color: var(--color-btn, var(--color-primary));
   box-shadow: none;
+  color: var(--color-on-btn, var(--color-primary));
 }
 
 .btn-tertiary {
   background-color: transparent;
-  color: var(--color-btn, var(--color-primary));
   border-color: transparent;
   box-shadow: none;
+  color: var(--color-btn, var(--color-primary));
   font-size: var(--font-size-s);
 
   /* text-decoration: underline; */
@@ -57,8 +57,8 @@
 }
 
 .btn-tertiary:hover {
-  border-color: transparent;
   background-color: transparent;
+  border-color: transparent;
   box-shadow: none;
 }
 
@@ -71,19 +71,19 @@
 }
 
 .btn-circular {
-  inline-size: 50px;
   block-size: 50px;
+  inline-size: 50px;
   padding: 0;
 }
 
 .btn-circular.btn-s {
-  inline-size: 44px;
   block-size: 44px;
+  inline-size: 44px;
   padding: 0;
 }
 
 .btn-circular.btn-l {
-  inline-size: 56px;
   block-size: 56px;
+  inline-size: 56px;
   padding: 0;
 }

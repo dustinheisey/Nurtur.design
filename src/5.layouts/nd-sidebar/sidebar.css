@@ -1,7 +1,7 @@
 .sidebar {
+  align-items: center;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   gap: var(--gap, var(--space-m));
 }
 

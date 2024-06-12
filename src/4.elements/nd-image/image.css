@@ -3,8 +3,8 @@ img,
 video,
 picture {
   display: block;
-  max-width: 100%;
   height: auto;
+  max-width: 100%;
 }
 
 picture {
@@ -12,10 +12,10 @@ picture {
 }
 
 img {
-  border-radius: var(--radius-m);
-  max-inline-size: 100%;
   block-size: auto;
+  border-radius: var(--radius-m);
   box-shadow: var(--elevation-3);
+  max-inline-size: 100%;
 
   /* position: relative; */
 }
@@ -25,22 +25,22 @@ img.rounded {
 }
 
 .img-container {
-  display: grid;
   block-size: 100%;
+  display: grid;
   grid-template-columns: var(--space-m) 1fr var(--space-m);
   grid-template-rows: var(--space-m) 1fr var(--space-m);
 }
 
 .img-container > * {
-  inline-size: 100%;
   block-size: 100%;
+  inline-size: 100%;
 }
 
 .img-container .img-bg {
+  background-color: var(--primary);
+  border-radius: var(--radius-m);
   grid-column: 2/-1;
   grid-row: 1/3;
-  border-radius: var(--radius-m);
-  background-color: var(--primary);
 }
 
 .img-container img {

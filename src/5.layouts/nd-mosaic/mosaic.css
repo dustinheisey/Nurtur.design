@@ -1,8 +1,8 @@
 .mosaic {
   --mosaic: 'one one two' 'one one three' 'four five six';
 
-  grid-template-columns: repeat(12, 1fr);
   grid-template-areas: var(--mosaic);
+  grid-template-columns: repeat(12, 1fr);
 }
 
 .mosaic > :nth-child(1) {

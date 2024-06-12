@@ -1,13 +1,13 @@
 .banner {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
+  background-color: var(--color-primary);
+  display: flex;
+  inline-size: 100vw;
+  justify-content: space-between;
+  left: 0;
+  padding: var(--space-2xs);
   position: fixed;
   top: 0;
-  left: 0;
-  inline-size: 100vw;
-  padding: var(--space-2xs);
-  background-color: var(--color-primary);
 }
 
 .banner p {
@@ -18,11 +18,11 @@
 }
 
 .banner button {
-  cursor: pointer;
-  border: none;
-  padding: 0;
   background: transparent;
+  border: none;
   color: var(--color-on-primary);
+  cursor: pointer;
+  padding: 0;
 }
 
 /* .dismissible {

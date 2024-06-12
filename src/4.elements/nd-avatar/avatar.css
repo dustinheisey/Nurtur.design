@@ -1,15 +1,15 @@
 .avatar {
-  border-radius: 50%;
-  inline-size: 2em;
   aspect-ratio: 1/1;
-  font-size: 1.25em;
   border: 3px solid var(--color-background);
+  border-radius: 50%;
+  font-size: 1.25em;
+  inline-size: 2em;
 }
 
 .avatar-img {
-  max-inline-size: 25em;
   aspect-ratio: 1/1;
   border-radius: var(--radius-l);
+  max-inline-size: 25em;
 }
 
 .avatar-s {
@@ -21,9 +21,9 @@
 }
 
 .avatar-list {
+  align-items: baseline;
   display: inline-flex;
   flex-flow: row nowrap;
-  align-items: baseline;
 }
 
 .avatar-list > *:not(:first-child) {

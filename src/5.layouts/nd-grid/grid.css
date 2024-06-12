@@ -1,12 +1,11 @@
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(15rem, 100%), 1fr));
-
   --grid-gap: var(--gap, var(--space-m));
 
+  display: grid;
   gap: var(--grid-gap);
-  place-items: stretch;
+  grid-template-columns: repeat(auto-fit, minmax(min(15rem, 100%), 1fr));
   place-content: stretch;
+  place-items: stretch;
 }
 
 .row-gap-xl {

@@ -1,26 +1,26 @@
 fieldset.cards {
+  border: none;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
   gap: var(--space-xs);
+  justify-content: center;
+  margin: 0;
   margin-left: auto;
   margin-right: auto;
-  user-select: none;
-  border: none;
-  margin: 0;
   padding: 0;
+  user-select: none;
+  width: 100%;
 }
 
 fieldset.cards > label {
-  flex: 1;
   aspect-ratio: 1/1;
+  flex: 1;
 }
 
 fieldset.cards > legend {
   font-family: var(--font-family-body);
-  text-align: start;
-  padding: 0;
   margin: 0;
   margin-block-end: var(--space-xs);
+  padding: 0;
+  text-align: start;
 }

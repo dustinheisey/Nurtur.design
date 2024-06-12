@@ -5,8 +5,6 @@ tool-tip {
 
 @media (--tablet-landscape-up) {
   tool-tip {
-    display: inline-block;
-
     --_p-inline: 1.5ch;
     --_p-block: 0.75ch;
     --_triangle-size: 7px;
@@ -41,30 +39,31 @@ tool-tip {
       )
       left / 50% 100% no-repeat;
 
-    pointer-events: none;
-    user-select: none;
+    background: var(--_bg);
+    border-radius: 5px;
+    color: var(--color-on-background);
+    display: inline-block;
+    filter: drop-shadow(0 3px 3px hsl(0deg 0% 0% / var(--_shadow-alpha)))
+      drop-shadow(0 12px 12px hsl(0deg 0% 0% / var(--_shadow-alpha)));
+    font-size: 1rem;
+    font-weight: normal;
+    inline-size: max-content;
+    line-height: normal;
+    line-height: initial;
+    margin: 0;
+    max-inline-size: 25ch;
     opacity: 0;
+    padding: var(--_p-block) var(--_p-inline);
+    pointer-events: none;
+    position: absolute;
+    text-align: start;
     transform: translateX(var(--_x, 0)) translateY(var(--_y, 0));
     transition:
       opacity 0.2s ease,
       transform 0.2s ease;
-    position: absolute;
-    z-index: 1;
-    inline-size: max-content;
-    max-inline-size: 25ch;
-    text-align: start;
-    font-size: 1rem;
-    font-weight: normal;
-    line-height: normal;
-    line-height: initial;
-    padding: var(--_p-block) var(--_p-inline);
-    margin: 0;
-    border-radius: 5px;
-    background: var(--_bg);
-    color: var(--color-on-background);
+    user-select: none;
     will-change: filter;
-    filter: drop-shadow(0 3px 3px hsl(0deg 0% 0% / var(--_shadow-alpha)))
-      drop-shadow(0 12px 12px hsl(0deg 0% 0% / var(--_shadow-alpha)));
+    z-index: 1;
   }
 
   /* create a stacking context for elements with > tool-tips */
@@ -80,25 +79,25 @@ tool-tip {
 
   /* prepend some prose for screen readers only */
   tool-tip::before {
-    content: '; Has tooltip: ';
     clip: rect(1px, 1px, 1px, 1px);
     clip-path: inset(50%);
+    content: '; Has tooltip: ';
     height: 1px;
-    width: 1px;
     margin: -1px;
     overflow: hidden;
     padding: 0;
     position: absolute;
+    width: 1px;
   }
 
   /* tooltip shape is a pseudo element so we can cast a shadow */
   tool-tip::after {
-    content: '';
     background: var(--_bg);
-    position: absolute;
-    z-index: -1;
+    content: '';
     inset: 0;
     mask: var(--_tip);
+    position: absolute;
+    z-index: -1;
   }
 
   /* top tooltip styles */
@@ -131,10 +130,10 @@ tool-tip {
       [tip-position='block-start'],
       :not([tip-position])
     ) {
-    inset-inline-start: 50%;
-    inset-block-end: calc(100% + var(--_p-block) + var(--_triangle-size));
-
     --_x: calc(50% * var(--isRTL));
+
+    inset-block-end: calc(100% + var(--_p-block) + var(--_triangle-size));
+    inset-inline-start: 50%;
   }
 
   tool-tip:is(
@@ -144,22 +143,22 @@ tool-tip {
     )::after {
     --_tip: var(--_bottom-tip);
 
-    inset-block-end: calc(var(--_triangle-size) * -1);
     border-block-end: var(--_triangle-size) solid transparent;
+    inset-block-end: calc(var(--_triangle-size) * -1);
   }
 
   tool-tip:is([tip-position='right'], [tip-position='inline-end']) {
-    inset-inline-start: calc(100% + var(--_p-inline) + var(--_triangle-size));
-    inset-block-end: 50%;
-
     --_y: 50%;
+
+    inset-block-end: 50%;
+    inset-inline-start: calc(100% + var(--_p-inline) + var(--_triangle-size));
   }
 
   tool-tip:is([tip-position='right'], [tip-position='inline-end'])::after {
     --_tip: var(--_left-tip);
 
-    inset-inline-start: calc(var(--_triangle-size) * -1);
     border-inline-start: var(--_triangle-size) solid transparent;
+    inset-inline-start: calc(var(--_triangle-size) * -1);
   }
 
   tool-tip:is([tip-position='right'], [tip-position='inline-end']):dir(
@@ -169,31 +168,31 @@ tool-tip {
   }
 
   tool-tip:is([tip-position='bottom'], [tip-position='block-end']) {
-    inset-inline-start: 50%;
-    inset-block-start: calc(100% + var(--_p-block) + var(--_triangle-size));
-
     --_x: calc(50% * var(--isRTL));
+
+    inset-block-start: calc(100% + var(--_p-block) + var(--_triangle-size));
+    inset-inline-start: 50%;
   }
 
   tool-tip:is([tip-position='bottom'], [tip-position='block-end'])::after {
     --_tip: var(--_top-tip);
 
-    inset-block-start: calc(var(--_triangle-size) * -1);
     border-block-start: var(--_triangle-size) solid transparent;
+    inset-block-start: calc(var(--_triangle-size) * -1);
   }
 
   tool-tip:is([tip-position='left'], [tip-position='inline-start']) {
-    inset-inline-end: calc(100% + var(--_p-inline) + var(--_triangle-size));
-    inset-block-end: 50%;
-
     --_y: 50%;
+
+    inset-block-end: 50%;
+    inset-inline-end: calc(100% + var(--_p-inline) + var(--_triangle-size));
   }
 
   tool-tip:is([tip-position='left'], [tip-position='inline-start'])::after {
     --_tip: var(--_right-tip);
 
-    inset-inline-end: calc(var(--_triangle-size) * -1);
     border-inline-end: var(--_triangle-size) solid transparent;
+    inset-inline-end: calc(var(--_triangle-size) * -1);
   }
 
   tool-tip:is([tip-position='left'], [tip-position='inline-start']):dir(

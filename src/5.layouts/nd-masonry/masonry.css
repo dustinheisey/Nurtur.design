@@ -2,8 +2,8 @@
 
 /* Masonry style grid */
 .masonry {
-  gap: var(--gap, var(--space-m));
   columns: 1;
+  gap: var(--gap, var(--space-m));
 }
 
 .masonry > * {
@@ -11,8 +11,8 @@
 }
 
 .masonry > * + * {
-  margin-block-start: var(--gap, var(--space-m));
   display: block;
+  margin-block-start: var(--gap, var(--space-m));
 }
 
 @media (--tablet-portrait-up) {

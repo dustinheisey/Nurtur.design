@@ -54,7 +54,7 @@ body {
   font-family:
     system-ui,
     -apple-system,
-    /* Firefox supports this but not yet `system-ui` */ 'Segoe UI',
+     'Segoe UI',
     Roboto,
     Helvetica,
     Arial,
@@ -74,8 +74,8 @@ Grouping content
 */
 
 hr {
-  height: 0; /* 1 */
   color: inherit; /* 2 */
+  height: 0; /* 1 */
 }
 
 /*
@@ -154,8 +154,8 @@ Tabular data
 */
 
 table {
-  text-indent: 0; /* 1 */
   border-color: inherit; /* 2 */
+  text-indent: 0; /* 1 */
 }
 
 /*
@@ -295,8 +295,8 @@ summary {
 
 /* Added */
 html {
-  scroll-behavior: smooth;
   font-size: 100%;
+  scroll-behavior: smooth;
 }
 
 * {
@@ -305,8 +305,8 @@ html {
 }
 
 img {
-  max-inline-size: 100%;
   max-block-size: 100%;
+  max-inline-size: 100%;
 }
 
 table {

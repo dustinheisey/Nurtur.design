@@ -1,16 +1,16 @@
 .icon {
-  display: inline-block;
-  color: inherit;
-  inline-size: 24px;
   block-size: 24px;
-  line-height: 1;
+  color: inherit;
+  display: inline-block;
   flex-shrink: 0;
+  inline-size: 24px;
+  line-height: 1;
   max-width: initial;
 }
 
 .icon use {
   /* icon secondary color */
-  fill: currentColor;
+  fill: currentcolor;
 }
 
 .icon-primary {
@@ -37,18 +37,18 @@ Sizes
 
 /* relative units */
 .icon-s {
-  inline-size: 20px;
   block-size: 20px;
+  inline-size: 20px;
 }
 
 .icon-l {
-  inline-size: 32px;
   block-size: 32px;
+  inline-size: 32px;
 }
 
 .icon-xl {
-  inline-size: 48px;
   block-size: 48px;
+  inline-size: 48px;
 }
 
 .block {
@@ -103,9 +103,9 @@ Caps/Corners
 .icon use {
   --icon-stroke-linecap-butt: butt;
 
-  stroke-miterlimit: 10;
   stroke-linecap: square;
   stroke-linejoin: miter;
+  stroke-miterlimit: 10;
 }
 
 .stroke-round use {

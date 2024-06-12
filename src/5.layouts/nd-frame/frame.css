@@ -2,16 +2,16 @@
 
 /* ? The Frame - Cropping media (videos and images) to a desired aspect ratio */
 .frame {
-  overflow: hidden;
+  align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center;
+  overflow: hidden;
 }
 
 .frame * {
   background-color: var(--color-background-light);
-  inline-size: 100%;
   block-size: 100%;
+  inline-size: 100%;
   object-fit: cover;
 
   /* padding: var(--space-3xs); */
@@ -42,8 +42,8 @@
 }
 
 .frame.full {
-  inline-size: 100%;
   block-size: 100%;
+  inline-size: 100%;
 }
 
 .frame-cover,

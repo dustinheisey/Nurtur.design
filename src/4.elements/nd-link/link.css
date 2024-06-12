@@ -1,19 +1,19 @@
 a {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
 }
 
 .link {
-  transition: all 0.3s;
-  vertical-align: baseline;
+  color: var(--color-primary);
+  cursor: pointer;
   font-family: var(--font-family-body);
   font-size: var(--font-size-m);
-  line-height: var(--line-height-body);
   letter-spacing: var(--letters-spacing-body);
-  color: var(--color-primary);
-  text-decoration: underline;
-  cursor: pointer;
+  line-height: var(--line-height-body);
   max-inline-size: 100%;
+  text-decoration: underline;
+  transition: all 0.3s;
+  vertical-align: baseline;
 }
 
 .link-navigation.link-s {
@@ -30,11 +30,11 @@ a {
 }
 
 .link-navigation {
-  color: var(--color-primary);
-  background: linear-gradient(0deg, currentColor, currentColor) no-repeat right
+  background: linear-gradient(0deg, currentcolor, currentcolor) no-repeat right
     bottom / 0 2px;
-  padding-block-end: 2px;
+  color: var(--color-primary);
   inline-size: max-content;
+  padding-block-end: 2px;
   text-decoration: none;
   transition: background-size 350ms;
 }
@@ -45,6 +45,6 @@ a {
 
 .link-navigation:hover,
 .link-navigation:focus-visible {
-  background-size: 100% 2px;
   background-position-x: left;
+  background-size: 100% 2px;
 }

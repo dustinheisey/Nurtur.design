@@ -1,27 +1,27 @@
 .checkbox {
   appearance: none;
   background-color: var(--color-bg-tertiary);
-  margin: 0;
-  font: inherit;
-  width: 1.15em;
-  height: 1.15em;
   border: 0.15em solid var(--color-outline);
   border-radius: var(--radius-s);
-  transform: translateY(-0.075em);
   display: grid;
+  font: inherit;
+  height: 1.15em;
+  margin: 0;
   place-content: center;
+  transform: translateY(-0.075em);
+  width: 1.15em;
 }
 
 .checkbox::before {
-  content: '';
-  width: 0.65em;
-  height: 0.65em;
+  background-color: CanvasText;
+  box-shadow: inset 1em 1em var(--color-primary);
   clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  content: '';
+  height: 0.65em;
   transform: scale(0);
   transform-origin: bottom left;
   transition: 120ms transform ease-in-out;
-  box-shadow: inset 1em 1em var(--color-primary);
-  background-color: CanvasText;
+  width: 0.65em;
 }
 
 .checkbox:checked::before {
@@ -45,22 +45,22 @@
 }
 
 .input-card span {
+  align-items: center;
+  background-color: var(--color-surface);
+  block-size: 100%;
+  border: 2px solid var(--color-outline-variant);
+  border-radius: var(--radius-m);
+  box-shadow: var(--shadow-xs);
+  cursor: pointer;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
   gap: var(--space-2xs);
   inline-size: 100%;
-  block-size: 100%;
-  border-radius: var(--radius-m);
-  border: 2px solid var(--color-outline-variant);
-  background-color: var(--color-surface);
-  box-shadow: var(--shadow-xs);
-  transition: 0.15s ease;
-  cursor: pointer;
-  position: relative;
+  justify-content: center;
   padding: var(--space-2xs);
+  position: relative;
+  text-align: center;
+  transition: 0.15s ease;
 }
 
 .input-card input[type='checkbox']:is(:hover, :focus) + span {
@@ -77,6 +77,6 @@
 }
 
 .input-card span svg {
-  width: 3rem;
   height: 3rem;
+  width: 3rem;
 }

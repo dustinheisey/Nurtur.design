@@ -19,6 +19,7 @@ footer .region {
 
 footer {
   padding: var(--inset-page);
+
   /* margin-block-start: calc(var(--gap-page) / 2);
   margin-block-end: calc(var(--gap-page) / 2); */
 }
@@ -39,12 +40,13 @@ footer.bg-img > .stack {
 }
 
 .region {
-  padding-inline: var(--inset, var(--inset-page));
+  --gap: var(--gap-region);
+
+  inline-size: 100%;
   margin-inline: auto;
   max-inline-size: var(--max-inline-size-region);
-  inline-size: 100%;
   padding-block: calc(var(--inset, var(--gap-page)) / 2);
-  --gap: var(--gap-region);
+  padding-inline: var(--inset, var(--inset-page));
 }
 
 .no-inset {
@@ -52,8 +54,8 @@ footer.bg-img > .stack {
 }
 
 .gap {
-  padding-block: unset;
   margin-block-start: calc(var(--gap-page) / 2);
+  padding-block: unset;
 }
 
 :is(.region, .section, header, footer) > * {
@@ -62,9 +64,9 @@ footer.bg-img > .stack {
 
 /* Accessibility */
 :focus {
+  border-radius: var(--radius-s);
   outline: 2px solid var(--color-primary);
   outline-offset: 3px;
-  border-radius: var(--radius-s);
 }
 
 :focus:not(:focus-visible) {
@@ -84,13 +86,13 @@ footer.bg-img > .stack {
 }
 
 .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  white-space: nowrap;
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 [hidden] {
@@ -98,8 +100,8 @@ footer.bg-img > .stack {
 }
 
 .header-anchor {
-  font-size: var(--font-size-xl);
   color: var(--color-primary);
+  font-size: var(--font-size-xl);
 }
 
 /*! purgecss end ignore */

@@ -20,6 +20,14 @@
     "index.css": false,
     "index.js": false,
     "temp": false,
-    "dist": false
+    "dist": false,
+    ".editorconfig": false,
+    ".prettierignore": false,
+    "prettier.config.js": false,
+    "stylelint.config.js": false,
+    "package.json": false,
+    "eslint.config.js": false,
+    ".alexrc": false,
+    ".storybook": false
   }
 }

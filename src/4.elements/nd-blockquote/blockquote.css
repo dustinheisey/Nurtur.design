@@ -4,15 +4,15 @@ figure {
 
 blockquote {
   border: none;
-  quotes: '\201C' '\201D' '\2018' '\2019';
-  position: relative;
-  margin: 0;
-  font-family: var(--font-family-headline);
-  font-style: italic;
-  font-size: var(--font-size-xl);
-  line-height: var(--line-height-body);
   color: var(--color-blockquote-override, var(--color-on-background));
+  font-family: var(--font-family-headline);
+  font-size: var(--font-size-xl);
+  font-style: italic;
+  line-height: var(--line-height-body);
+  margin: 0;
   max-width: 40ch;
+  position: relative;
+  quotes: '\201C' '\201D' '\2018' '\2019';
 }
 
 blockquote.blockquote-accent {
@@ -20,20 +20,20 @@ blockquote.blockquote-accent {
 }
 
 blockquote.blockquote-accent::before {
+  color: var(--color-primary);
   content: open-quote;
+  font-family: var(--font-family-headline);
   font-size: 7.5em;
+  font-style: normal;
+  left: -0.05em;
   position: absolute;
   top: -0.75em;
-  left: -0.05em;
-  font-style: normal;
-  font-family: var(--font-family-headline);
-  color: var(--color-primary);
 }
 
 blockquote ~ figcaption {
-  padding: 0;
-  margin-block-start: var(--space-xs);
+  color: var(--color-primary);
   font-family: var(--font-family-body);
   font-size: var(--font-size-s);
-  color: var(--color-primary);
+  margin-block-start: var(--space-xs);
+  padding: 0;
 }

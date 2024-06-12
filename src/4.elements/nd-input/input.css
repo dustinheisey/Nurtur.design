@@ -3,21 +3,21 @@ input {
 }
 
 .input {
-  font-family: var(--font-family-body);
-  font-weight: 400;
-  margin: 0;
   appearance: none;
   background-color: var(--color-surface);
-  color: var(--color-on-background);
   border: 1px solid var(--color-outline-variant);
-  padding: var(--space-3xs) var(--space-2xs) var(--space-3xs) var(--space-2xs);
-  display: block;
-  width: 100%;
   border-radius: var(--radius-s);
   box-shadow: none;
+  color: var(--color-on-background);
+  display: block;
+  font-family: var(--font-family-body);
   font-size: var(--font-size-s);
+  font-weight: 400;
   line-height: var(--line-height-body);
+  margin: 0;
   margin-block-start: var(--space-2xs);
+  padding: var(--space-3xs) var(--space-2xs) var(--space-3xs) var(--space-2xs);
+  width: 100%;
 }
 
 .input::placeholder {
@@ -30,15 +30,15 @@ input {
 }
 
 .input-underline {
-  border-radius: 0;
-  display: block;
-  width: 100%;
-  padding: 0 var(--space-2xs);
   border: none;
   border-block-end: 2px solid var(--color-outline);
+  border-radius: 0;
+  display: block;
+  padding: 0 var(--space-2xs);
+  width: 100%;
 }
 
 .input-underline:focus {
-  outline: none;
   border-color: var(--color-on-surface);
+  outline: none;
 }

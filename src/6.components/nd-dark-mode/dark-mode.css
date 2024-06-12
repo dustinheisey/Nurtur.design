@@ -1,7 +1,5 @@
 /*! purgecss start ignore */
 .dark-mode-toggle {
-  color: var(--color-primary);
-
   --size: 1.5rem;
   --icon-fill: var(--color-primary);
   --ease-1: cubic-bezier(0.25, 0, 0.5, 1);
@@ -39,6 +37,8 @@
   --ease-step-3: steps(4);
   --ease-step-4: steps(7);
   --ease-step-5: steps(10);
+
+  color: var(--color-primary);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -59,8 +59,8 @@
 
   [data-theme='dark'] .sun-and-moon > .sun {
     transform: scale(1.75);
-    transition-timing-function: var(--ease-3);
     transition-duration: 0.25s;
+    transition-timing-function: var(--ease-3);
   }
 
   [data-theme='dark'] .sun-and-moon > .sun-beams {
@@ -75,22 +75,22 @@
 }
 
 .dark-mode-toggle {
-  background: none;
-  border: none;
-  padding: 0;
-  inline-size: var(--size);
-  block-size: var(--size);
   aspect-ratio: 1/1;
+  background: none;
+  block-size: var(--size);
+  border: none;
   border-radius: 50%;
   cursor: pointer;
-  touch-action: manipulation;
-  -webkit-tap-highlight-color: transparent;
+  inline-size: var(--size);
   outline-offset: 5px;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 .dark-mode-toggle > svg {
-  inline-size: 100%;
   block-size: 100%;
+  inline-size: 100%;
   stroke-linecap: round;
 }
 

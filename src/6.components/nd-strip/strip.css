@@ -1,11 +1,10 @@
 .strip {
   display: block;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
+  overflow: scroll hidden;
   -webkit-overflow-scrolling: touch;
   scroll-snap-type: x mandatory;
   scrollbar-width: none; /* Firefox */
+  white-space: nowrap;
 }
 
 .strip::-webkit-scrollbar {
@@ -13,6 +12,6 @@
 }
 
 .reel > .card {
-  width: 20rem;
   scroll-snap-align: start;
+  width: 20rem;
 }

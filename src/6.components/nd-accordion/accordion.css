@@ -1,8 +1,8 @@
 details > summary {
-  list-style-type: none;
   cursor: pointer;
-  position: relative;
+  list-style-type: none;
   padding-inline-end: var(--space-xl);
+  position: relative;
 }
 
 details {
@@ -14,12 +14,12 @@ details > summary::-webkit-details-marker {
 }
 
 details > summary::before {
+  content: '+';
+  font-size: var(--font-size-l);
   position: absolute;
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  content: '+';
-  font-size: var(--font-size-l);
 }
 
 details[open] > summary::before {

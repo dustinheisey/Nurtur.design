@@ -1,9 +1,9 @@
 /* ? The Cover - “Above the fold” introductory content */
 .cover {
   display: flex;
-  min-block-size: 100vh;
-  inline-size: 100%;
   gap: var(--gap-region);
+  inline-size: 100%;
+  min-block-size: 100vh;
   padding: var(--inset, var(--inset-page));
 }
 

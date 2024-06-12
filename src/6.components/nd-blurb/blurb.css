@@ -1,8 +1,8 @@
 .blurb {
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
 }
 
 .blurb > :is(h1, h2, h3, h4, h5, h6) + p {

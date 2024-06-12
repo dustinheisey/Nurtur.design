@@ -10,9 +10,6 @@
 }
 
 .theme-dark {
-  background-color: var(--color-on-background-light);
-  color: var(--color-background-light);
-
   --color-primary: var(--color-primary-dark);
   --color-on-primary: var(--color-on-primary-dark);
   --color-secondary: var(--color-secondary-dark);
@@ -31,6 +28,9 @@
   --color-on-surface: var(--color-on-surface-dark);
   --color-outline: var(--color-outline-dark);
   --color-outline-variant: var(--color-outline-variant-dark);
+
+  background-color: var(--color-on-background-light);
+  color: var(--color-background-light);
 }
 
 .theme-surface {
@@ -39,9 +39,6 @@
 }
 
 .theme-surface-inverse {
-  background-color: var(--color-on-surface-light);
-  color: var(--color-surface-light);
-
   --color-primary: var(--color-primary-dark);
   --color-on-primary: var(--color-on-primary-dark);
   --color-secondary: var(--color-secondary-dark);
@@ -60,12 +57,12 @@
   --color-on-surface: var(--color-on-surface-dark);
   --color-outline: var(--color-outline-dark);
   --color-outline-variant: var(--color-outline-variant-dark);
+
+  background-color: var(--color-on-surface-light);
+  color: var(--color-surface-light);
 }
 
 .theme-primary {
-  background-color: var(--color-primary-light);
-  color: var(--color-on-primary-light);
-
   --color-primary: var(--color-on-primary-light);
   --color-on-primary: var(--color-primary-light);
   --color-primary-container: var(--color-on-primary-light);
@@ -84,12 +81,12 @@
   --color-on-background: var(--color-on-primary-light);
   --color-surface: var(--color-primary-light);
   --color-on-surface: var(--color-on-primary-light);
+
+  background-color: var(--color-primary-light);
+  color: var(--color-on-primary-light);
 }
 
 .theme-primary-container {
-  background-color: var(--color-primary-container);
-  color: var(--color-on-primary-container);
-
   --color-badge-primary: var(--color-primary);
   --color-on-badge-primary: var(--color-on-primary);
   --color-secondary-container: var(--color-secondary);
@@ -102,12 +99,12 @@
   --color-on-background: var(--color-on-primary-container);
   --color-surface: var(--color-primary-container);
   --color-on-surface: var(--color-on-primary-container);
+
+  background-color: var(--color-primary-container);
+  color: var(--color-on-primary-container);
 }
 
 .theme-secondary {
-  background-color: var(--color-secondary-light);
-  color: var(--color-on-secondary-light);
-
   --color-primary: var(--color-on-secondary-light);
   --color-on-primary: var(--color-secondary-light);
   --color-primary-container: var(--color-on-secondary-light);
@@ -128,12 +125,12 @@
   --color-on-background: var(--color-on-secondary-light);
   --color-surface: var(--color-secondary-light);
   --color-on-surface: var(--color-on-secondary-light);
+
+  background-color: var(--color-secondary-light);
+  color: var(--color-on-secondary-light);
 }
 
 .theme-secondary-container {
-  background-color: var(--color-secondary-container);
-  color: var(--color-on-secondary-container);
-
   --color-badge-secondary: var(--color-secondary);
   --color-on-badge-secondary: var(--color-on-secondary);
   --color-primary: var(--color-secondary);
@@ -148,12 +145,12 @@
   --color-on-background: var(--color-on-secondary-container);
   --color-surface: var(--color-secondary-container);
   --color-on-surface: var(--color-on-secondary-container);
+
+  background-color: var(--color-secondary-container);
+  color: var(--color-on-secondary-container);
 }
 
 .theme-tertiary {
-  background-color: var(--color-tertiary-light);
-  color: var(--color-on-tertiary-light);
-
   --color-primary: var(--color-on-tertiary-light);
   --color-on-primary: var(--color-tertiary-light);
   --color-primary-container: var(--color-on-tertiary-light);
@@ -176,12 +173,12 @@
   --color-on-background: var(--color-on-tertiary-light);
   --color-surface: var(--color-tertiary-light);
   --color-on-surface: var(--color-on-tertiary-light);
+
+  background-color: var(--color-tertiary-light);
+  color: var(--color-on-tertiary-light);
 }
 
 .theme-tertiary-container {
-  background-color: var(--color-tertiary-container);
-  color: var(--color-on-tertiary-container);
-
   --color-badge-tertiary: var(--color-tertiary);
   --color-on-badge-tertiary: var(--color-on-tertiary);
   --color-primary: var(--color-tertiary);
@@ -196,12 +193,12 @@
   --color-on-background: var(--color-on-tertiary-container);
   --color-surface: var(--color-tertiary-container);
   --color-on-surface: var(--color-on-tertiary-container);
+
+  background-color: var(--color-tertiary-container);
+  color: var(--color-on-tertiary-container);
 }
 
 .theme-error {
-  background-color: var(--color-error-light);
-  color: var(--color-on-error-light);
-
   --color-primary: var(--color-on-error-light);
   --color-on-primary: var(--color-error-light);
   --color-primary-container: var(--color-on-error-light);
@@ -228,12 +225,12 @@
   --color-on-background: var(--color-on-error-light);
   --color-surface: var(--color-error-light);
   --color-on-surface: var(--color-on-error-light);
+
+  background-color: var(--color-error-light);
+  color: var(--color-on-error-light);
 }
 
 .theme-error-container {
-  background-color: var(--color-error-container);
-  color: var(--color-on-error-container);
-
   --color-primary: var(--color-error);
   --color-on-primary: var(--color-on-error);
   --color-primary-container: var(--color-primary);
@@ -248,4 +245,7 @@
   --color-on-background: var(--color-on-error-container);
   --color-surface: var(--color-error-container);
   --color-on-surface: var(--color-on-error-container);
+
+  background-color: var(--color-error-container);
+  color: var(--color-on-error-container);
 }

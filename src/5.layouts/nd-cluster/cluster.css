@@ -1,10 +1,10 @@
 /* ? The Cluster - Horizontally laid out elements */
 .cluster {
+  align-items: center;
   display: flex;
   flex-wrap: wrap;
   gap: var(--gap, var(--space-s));
   justify-content: flex-start;
-  align-items: center;
 }
 
 .cluster.justify-start {
