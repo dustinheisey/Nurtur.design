@@ -1,0 +1,71 @@
+import { Meta } from '@storybook/blocks'
+import { DesignTokenDocBlock } from 'storybook-design-token'
+
+<Meta title="Tokens/Z Index" />
+
+# Z Index
+
+Z-index values control the stacking order of elements on the web page, determining which elements appear on top of others. Properly managing z-index values is essential for creating intuitive and accessible user interfaces, especially in complex layouts involving modals, tooltips, and other overlapping elements. In an accessibility-first design system, it is important to use z-index thoughtfully to avoid visual clutter and ensure that important elements remain visible and interactable.
+
+<DesignTokenDocBlock categoryName="Z Index" />
+
+## Usage Guidelines
+
+### Drawer
+
+Used for sidebar or drawer components that slide in from the side of the screen.
+_Usage_: Ensures the drawer stays above most content but below modals and tooltips.
+
+```css
+.drawer {
+  z-index: var(--z-drawer);
+}
+```
+
+### Dialog
+
+Used for modal dialog windows that need to overlay most content.
+_Usage_: Keeps dialogs above drawers but below dropdowns, toasts, and tooltips.
+
+```css
+.dialog {
+  z-index: var(--z-dialog);
+}
+```
+
+### Dropdown
+
+Used for dropdown menus that appear above most interface elements.
+_Usage_: Ensures dropdowns are above dialogs and drawers but below toasts and tooltips.
+
+```css
+.dropdown {
+  z-index: var(--z-dropdown);
+}
+```
+
+### Toast
+
+Used for toast notifications that briefly appear and need to be visible above most content.
+_Usage_: Ensures toasts are above dropdowns, dialogs, and drawers but below tooltips.
+
+```css
+.toast {
+  z-index: var(--z-toast);
+}
+```
+
+### Tooltip
+
+Used for tooltips that need to appear on top of all other elements to provide contextual information.
+_Usage_: Ensures tooltips are the highest element, always appearing above all other elements.
+
+```css
+.tooltip {
+  z-index: var(--z-tooltip);
+}
+```
+
+Using well-defined z-index tokens helps maintain a clear and consistent stacking order, preventing visual and functional conflicts between overlapping elements. By applying these z-index values appropriately, we can ensure that our user interface remains intuitive and accessible, enhancing the overall user experience.
+
+Each z-index token is chosen to reflect the priority of the element, ensuring that the most important elements (like tooltips) always appear on top while maintaining a logical order for other interactive components.

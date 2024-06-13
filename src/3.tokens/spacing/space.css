@@ -1,4 +1,4 @@
-/* Space */
+/* Space utopia.fyi */
 :root {
   --space-3xs: clamp(0.31rem, calc(0.31rem + 0vw), 0.31rem);
   --space-2xs: clamp(0.56rem, calc(0.54rem + 0.11vw), 0.63rem);
@@ -19,12 +19,4 @@
   --space-xl-2xl: clamp(3.38rem, calc(2.81rem + 2.83vw), 5rem);
   --space-2xl-3xl: clamp(4.5rem, calc(3.46rem + 5.22vw), 7.5rem);
   --space-3xl-4xl: clamp(6.75rem, calc(3.88rem + 14.35vw), 15rem);
-}
-
-:root {
-  --inset-page: var(--space-m-l);
-  --gap-page: var(--space-3xl-4xl);
-  --gap-region: var(--space-2xl);
-  --gap-section: var(--space-xs);
-  --max-inline-size-region: 1200px;
 }

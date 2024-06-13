@@ -1,3 +1,4 @@
+/* container queries, mobile first media queries */
 @layer tokens {
   @custom-media --phone-only (max-width: 37.4375em);
   @custom-media --tablet-portrait-up (min-width: 37.5em);

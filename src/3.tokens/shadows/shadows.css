@@ -1,12 +1,6 @@
 :root {
-  --z-drawer: 700;
-  --z-dialog: 800;
-  --z-dropdown: 900;
-  --z-toast: 950;
-  --z-tooltip: 1000;
-
   /**
-  * @tokens Elevation
+  * @tokens Shadows
   * @presenter Shadow
   */
   --shadow-inset: inset 0 2px 4px 0 rgb(0 0 0 / 5%);
