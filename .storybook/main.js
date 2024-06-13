@@ -6,6 +6,10 @@ export default {
     '@storybook/addon-interactions',
     '@storybook/addon-docs',
     'storybook-design-token',
+    '@etchteam/storybook-addon-status',
+    '@storybook/addon-themes',
+    '@storybook/addon-viewport',
+    'storybook-addon-pseudo-states',
   ],
   core: {
     builder: '@storybook/builder-vite',
