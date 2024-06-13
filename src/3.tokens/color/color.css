@@ -1,6 +1,8 @@
-/*! purgecss start ignore */
 :root {
-  /* light */
+  /**
+  * @tokens Color
+  * @presenter Color
+  */
   --color-primary-light: #566500;
   --color-on-primary-light: #fff;
   --color-primary-container-light: #d9ec7b;
@@ -29,8 +31,6 @@
   --color-inverse-primary-light: #93d786;
   --color-surface-tint-light: #2c6b28;
   --color-outline-variant-light: #c2c8bc;
-
-  /* dark */
   --color-primary-dark: #bdd062;
   --color-on-primary-dark: #2c3400;
   --color-primary-container-dark: #414c00;
@@ -196,5 +196,3 @@ html.mode-dark {
     --color-scrim: var(--color-scrim-light);
   }
 }
-
-/*! purgecss end ignore */

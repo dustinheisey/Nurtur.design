@@ -3,6 +3,9 @@
 
 // setCustomElements(customElements)
 
+import '../src/2.global/global.css'
+import '../src/2.global/reset.css'
+
 export default {
   parameters: {
     controls: {
@@ -10,6 +13,19 @@ export default {
         color: /(background|color)$/i,
         date: /Date$/i,
       },
+    },
+    layout: 'centered',
+    storySort: [
+      'Principles',
+      'Tokens',
+      'Elements',
+      'Layouts',
+      'Components',
+      'Screens',
+      'Views',
+    ],
+    designToken: {
+      disable: true,
     },
   },
 }

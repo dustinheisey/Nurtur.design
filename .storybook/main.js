@@ -1,10 +1,11 @@
 export default {
-  stories: ['../src/1.docs/**/*.mdx'],
+  stories: ['../src/**/*.mdx', '../**/*.story.js'],
   addons: [
     '@storybook/addon-essentials',
     '@storybook/addon-links',
     '@storybook/addon-interactions',
     '@storybook/addon-docs',
+    'storybook-design-token',
   ],
   core: {
     builder: '@storybook/builder-vite',

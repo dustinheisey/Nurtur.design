@@ -1,18 +1,6 @@
-import { LitElement, html, css } from 'lit-element'
+import { LitElement, html, css } from 'lit'
 
-/**
- * <nd-button> Component description here.
- *
- * @customElement
- * @litElement
- * @polymer
- */
 class NdButton extends LitElement {
-  /**
-   * The styles for the component.
-   *
-   * @returns {Array}
-   */
   static get styles() {
     return [
       css`
@@ -109,28 +97,14 @@ class NdButton extends LitElement {
     ]
   }
 
-  /**
-   * Static getter properties.
-   *
-   * @returns { Object }
-   */
   static get properties() {
     return {}
   }
 
-  /**
-   * Constructor for the component.
-   * Binding and props initialization.
-   */
   constructor() {
     super()
   }
 
-  /**
-   * Renders the component.
-   *
-   * @returns {HTMLElement}
-   */
   render() {
     return html` <button><slot></slot></button>`
   }

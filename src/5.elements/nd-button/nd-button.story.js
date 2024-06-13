@@ -1,8 +1,8 @@
-import { html } from 'lit-html'
+import { html } from 'lit'
 import './nd-button.js'
 
 export default {
-  title: 'Button',
+  title: 'Components/ND Button',
   component: 'nd-button',
 }
 
