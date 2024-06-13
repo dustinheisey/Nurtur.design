@@ -27,6 +27,8 @@
     "stylelint.config.js": true,
     "package.json": true,
     "eslint.config.js": true,
-    ".alexrc": true
+    ".alexrc": true,
+    ".stylelintrc.json": true,
+    "public": true
   }
 }
