@@ -5,6 +5,8 @@
 
 import '../src/2.global/global.css'
 import '../src/2.global/reset.css'
+import '../src/2.global/accessibility.css'
+import '../src/2.global/utilities.css'
 
 export default {
   parameters: {

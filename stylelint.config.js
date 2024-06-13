@@ -1,9 +1,0 @@
-export default {
-  extends: 'stylelint-config-standard',
-  plugins: ['stylelint-order'],
-  rules: {
-    'color-hex-length': 'short',
-    'order/order': ['custom-properties', 'declarations'],
-    'order/properties-alphabetical-order': true,
-  },
-}
