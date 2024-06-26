@@ -3,6 +3,11 @@ import './nd-reading-progress.js'
 
 export default {
   title: 'Components/Reading Progress',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
 }
 
 const Template = () => html`

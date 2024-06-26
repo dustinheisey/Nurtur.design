@@ -3,6 +3,11 @@ import './masonry.css'
 
 export default {
   title: 'Layouts/Masonry',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
 }
 
 const Template = (args) => html`

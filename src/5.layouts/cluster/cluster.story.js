@@ -3,6 +3,11 @@ import './cluster.css'
 
 export default {
   title: 'Layouts/Cluster',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
 }
 
 const Template = (args) => html`

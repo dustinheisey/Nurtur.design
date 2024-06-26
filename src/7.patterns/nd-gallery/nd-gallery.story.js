@@ -3,6 +3,11 @@ import './nd-gallery.js'
 
 export default {
   title: 'Patterns/Gallery',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
   component: 'nd-gallery',
   argTypes: {
     theme: { control: 'text' },

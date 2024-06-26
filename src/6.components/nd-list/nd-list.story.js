@@ -3,6 +3,11 @@ import './nd-list.js'
 
 export default {
   title: 'Components/List',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
   argTypes: {
     theme: { control: 'text' },
     full: { control: 'boolean' },

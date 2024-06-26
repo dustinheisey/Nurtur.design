@@ -2,7 +2,12 @@ import { html } from 'lit'
 import './blockquote.css'
 
 export default {
-  title: 'Elements/Blockquote',
+  title: 'Components/Blockquote',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
 }
 
 const Template = (args) => html`

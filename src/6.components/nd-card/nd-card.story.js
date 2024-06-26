@@ -3,6 +3,11 @@ import './nd-card.js'
 
 export default {
   title: 'Components/Card',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
 }
 
 const Template = (args) => html`

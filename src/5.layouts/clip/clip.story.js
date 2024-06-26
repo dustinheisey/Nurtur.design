@@ -3,6 +3,11 @@ import './clip.css'
 
 export default {
   title: 'Layouts/Clip',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
 }
 
 const Template = (args) => html`

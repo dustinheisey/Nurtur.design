@@ -3,6 +3,11 @@ import './textarea.css'
 
 export default {
   title: 'Elements/Textarea',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
 }
 
 const Template = (args) => html`

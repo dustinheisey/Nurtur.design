@@ -3,6 +3,11 @@ import './grid.css'
 
 export default {
   title: 'Layouts/Grid',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
 }
 
 const Template = (args) => html`

@@ -7,6 +7,11 @@
 
   body {
     margin: unset;
+    background: var(--color-background);
+  }
+
+  .sbdocs-preview {
+    background: var(--color-background);
   }
 
   button,

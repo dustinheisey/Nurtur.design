@@ -3,6 +3,11 @@ import './nd-sparkline.js'
 
 export default {
   title: 'Patterns/Sparkline',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
   component: 'nd-sparkline',
   argTypes: {
     class: { control: 'text' },

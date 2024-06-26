@@ -3,22 +3,30 @@ import './avatar.css'
 
 export default {
   title: 'Elements/Avatar',
+  parameters: {
+    status: {
+      type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
 }
 
 const Template = (args) => html`
   <div class="avatar-list">
-    <div class="avatar ${args.class}" style="background-color: lightgray;">
-      A
-    </div>
-    <div class="avatar ${args.class}" style="background-color: lightblue;">
-      B
-    </div>
-    <div class="avatar ${args.class}" style="background-color: lightgreen;">
-      C
-    </div>
-    <div class="avatar ${args.class}" style="background-color: lightcoral;">
-      D
-    </div>
+    <img
+      src="https://picsum.photos/200"
+      class="avatar ${args.class}"
+      alt="Avatar Image 1"
+    />
+    <img
+      src="https://picsum.photos/200"
+      class="avatar ${args.class}"
+      alt="Avatar Image 2"
+    />
+    <img
+      src="https://picsum.photos/200"
+      class="avatar ${args.class}"
+      alt="Avatar Image 3"
+    />
   </div>
 `
 
@@ -30,29 +38,3 @@ Small.args = { class: 'avatar-s' }
 
 export const Large = Template.bind({})
 Large.args = { class: 'avatar-l' }
-
-const ImageTemplate = (args) => html`
-  <div class="avatar-list">
-    <img
-      src="path-to-your-image.jpg"
-      class="avatar-img ${args.class}"
-      alt="Avatar Image 1"
-    />
-    <img
-      src="path-to-your-image.jpg"
-      class="avatar-img ${args.class}"
-      alt="Avatar Image 2"
-    />
-    <img
-      src="path-to-your-image.jpg"
-      class="avatar-img ${args.class}"
-      alt="Avatar Image 3"
-    />
-  </div>
-`
-
-export const ImageDefault = ImageTemplate.bind({})
-ImageDefault.args = { class: '' }
-
-export const ImageLarge = ImageTemplate.bind({})
-ImageLarge.args = { class: 'avatar-l' }

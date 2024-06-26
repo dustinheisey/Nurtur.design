@@ -3,6 +3,11 @@ import './nd-breadcrumb.js'
 
 export default {
   title: 'Components/Breadcrumb',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
 }
 
 const Template = (args) => html`

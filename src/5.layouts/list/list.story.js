@@ -3,6 +3,11 @@ import './list.css'
 
 export default {
   title: 'Layouts/List',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
 }
 
 const Template = (args) => html`

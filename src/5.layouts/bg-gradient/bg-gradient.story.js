@@ -3,6 +3,11 @@ import './bg-gradient.css'
 
 export default {
   title: 'Layouts/Background Gradient',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
 }
 
 const Template = () => html`

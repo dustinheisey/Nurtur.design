@@ -3,6 +3,11 @@ import './nd-blog.js'
 
 export default {
   title: 'Patterns/Blog',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
   component: 'nd-blog',
   argTypes: {
     variant: { control: 'text' },
@@ -60,6 +65,11 @@ Default.args = {
       date: '2023-01-01',
       tags: ['Technology'],
       title: 'Tech Post 1',
+      parameters: {
+        status: {
+          type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+        },
+      },
       description: 'Description for tech post 1',
       url: '/post1',
     },
@@ -67,6 +77,11 @@ Default.args = {
       date: '2023-02-01',
       tags: ['Health'],
       title: 'Health Post 1',
+      parameters: {
+        status: {
+          type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+        },
+      },
       description: 'Description for health post 1',
       url: '/post2',
     },
@@ -74,6 +89,11 @@ Default.args = {
       date: '2023-03-01',
       tags: ['Travel'],
       title: 'Travel Post 1',
+      parameters: {
+        status: {
+          type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+        },
+      },
       description: 'Description for travel post 1',
       url: '/post3',
     },

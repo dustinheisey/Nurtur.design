@@ -3,6 +3,11 @@ import './range.css'
 
 export default {
   title: 'Elements/Range',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
 }
 
 const Template = (args) => html`

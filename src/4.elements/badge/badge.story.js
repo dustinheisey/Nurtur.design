@@ -3,6 +3,11 @@ import './badge.css'
 
 export default {
   title: 'Elements/Badge',
+  parameters: {
+    status: {
+      type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
 }
 
 const Template = (args) => html`

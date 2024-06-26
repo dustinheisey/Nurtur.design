@@ -3,6 +3,11 @@ import './p.css'
 
 export default {
   title: 'Elements/Paragraph',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
 }
 
 const Template = (args) => html`

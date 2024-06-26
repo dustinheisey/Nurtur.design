@@ -3,6 +3,11 @@ import './nd-bg-center.js'
 
 export default {
   title: 'Patterns/BgCenter',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
   component: 'nd-bg-center',
   argTypes: {
     imgSrc: { control: 'text' },

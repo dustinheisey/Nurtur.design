@@ -3,6 +3,11 @@ import './cover.css'
 
 export default {
   title: 'Layouts/Cover',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
 }
 
 const Template = (args) => html`

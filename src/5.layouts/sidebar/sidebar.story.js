@@ -3,6 +3,11 @@ import './sidebar.css'
 
 export default {
   title: 'Layouts/Sidebar',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
 }
 
 const Template = (args) => html`

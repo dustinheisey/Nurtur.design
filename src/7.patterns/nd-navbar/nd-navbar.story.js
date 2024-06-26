@@ -3,6 +3,11 @@ import './nd-navbar.js'
 
 export default {
   title: 'Patterns/Navbar',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
   argTypes: {
     config: { control: 'object' },
     type: { control: 'text' },

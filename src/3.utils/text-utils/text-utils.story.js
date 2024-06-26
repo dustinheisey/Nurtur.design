@@ -3,6 +3,11 @@ import './text-utils.css'
 
 export default {
   title: 'Utilities/Text',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
 }
 
 const textClasses = [

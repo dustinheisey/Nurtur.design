@@ -3,6 +3,11 @@ import './nd-center.js'
 
 export default {
   title: 'Patterns/Center',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
   component: 'nd-center',
   argTypes: {
     theme: { control: 'text' },
