@@ -3,6 +3,11 @@ import './nd-switcher.js'
 
 export default {
   title: 'Patterns/Switcher',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
   component: 'nd-switcher',
   argTypes: {
     theme: { control: 'text' },

@@ -3,6 +3,11 @@ import './nd-footer.js'
 
 export default {
   title: 'Patterns/Footer',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
   component: 'nd-footer',
   argTypes: {
     class: { control: 'text' },
@@ -28,6 +33,11 @@ Default.args = {
       groups: [
         {
           title: 'Group 1',
+          parameters: {
+            status: {
+              type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+            },
+          },
           links: [
             { url: '#', label: 'Link 1' },
             { url: '#', label: 'Link 2' },
@@ -35,6 +45,11 @@ Default.args = {
         },
         {
           title: 'Group 2',
+          parameters: {
+            status: {
+              type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+            },
+          },
           links: [
             { url: '#', label: 'Link 3' },
             { url: '#', label: 'Link 4' },

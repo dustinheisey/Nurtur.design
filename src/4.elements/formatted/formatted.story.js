@@ -3,6 +3,11 @@ import './formatted.css'
 
 export default {
   title: 'Elements/Formatted',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
 }
 
 const Template = (args) => html`

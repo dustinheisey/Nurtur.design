@@ -3,6 +3,11 @@ import './nd-end-heavy.js'
 
 export default {
   title: 'Patterns/EndHeavy',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
   component: 'nd-end-heavy',
   argTypes: {
     mobile: { control: 'select', options: ['start', 'end'] },

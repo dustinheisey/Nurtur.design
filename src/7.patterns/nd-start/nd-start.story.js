@@ -3,6 +3,11 @@ import './nd-start.js'
 
 export default {
   title: 'Patterns/Start',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
   component: 'nd-start',
   argTypes: {
     class: { control: 'text' },

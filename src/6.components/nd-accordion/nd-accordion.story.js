@@ -3,6 +3,11 @@ import './nd-accordion.js'
 
 export default {
   title: 'Components/Accordion',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
 }
 
 const Template = (args) => html`

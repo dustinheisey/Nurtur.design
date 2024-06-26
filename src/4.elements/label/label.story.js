@@ -3,6 +3,11 @@ import './label.css'
 
 export default {
   title: 'Elements/Label',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
 }
 
 const Template = (args) => html`

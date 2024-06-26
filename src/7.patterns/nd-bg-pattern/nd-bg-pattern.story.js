@@ -3,6 +3,11 @@ import './nd-bg-pattern.js'
 
 export default {
   title: 'Patterns/BgPattern',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
   component: 'nd-bg-pattern',
   argTypes: {
     pattern: { control: 'text' },

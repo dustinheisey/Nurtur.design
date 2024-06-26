@@ -3,6 +3,11 @@ import './fieldset.css'
 
 export default {
   title: 'Elements/Fieldset',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
 }
 
 const Template = (args) => html`

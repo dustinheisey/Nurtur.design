@@ -3,6 +3,11 @@ import './frame.css'
 
 export default {
   title: 'Layouts/Frame',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
 }
 
 const Template = (args) => html`

@@ -3,6 +3,11 @@ import './layout-utils.css'
 
 export default {
   title: 'Utilities/Layout',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
 }
 
 const layouts = [

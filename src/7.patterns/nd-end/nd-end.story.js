@@ -3,6 +3,11 @@ import './nd-end.js'
 
 export default {
   title: 'Patterns/End',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
   component: 'nd-end',
   argTypes: {
     class: { control: 'text' },

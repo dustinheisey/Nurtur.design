@@ -3,6 +3,11 @@ import './mosaic.css'
 
 export default {
   title: 'Layouts/Mosaic',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
 }
 
 const Template = (args) => html`

@@ -3,6 +3,11 @@ import './select.css'
 
 export default {
   title: 'Elements/Select',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
 }
 
 const Template = (args) => html`

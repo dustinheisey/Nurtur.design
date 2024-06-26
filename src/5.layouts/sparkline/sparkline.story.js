@@ -3,6 +3,11 @@ import './sparkline.css'
 
 export default {
   title: 'Layouts/Sparkline',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
 }
 
 const Template = (args) => html`

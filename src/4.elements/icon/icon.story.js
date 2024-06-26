@@ -3,6 +3,11 @@ import './icon.css'
 
 export default {
   title: 'Elements/Icon',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
 }
 
 const Template = (args) => html`

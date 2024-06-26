@@ -3,6 +3,11 @@ import './nd-split.js'
 
 export default {
   title: 'Patterns/Split',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
   component: 'nd-split',
   argTypes: {
     theme: { control: 'text' },

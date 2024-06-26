@@ -3,6 +3,11 @@ import './bg-pattern.css'
 
 export default {
   title: 'Layouts/Background Pattern',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
 }
 
 const Template = () => html`

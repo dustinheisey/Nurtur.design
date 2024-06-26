@@ -3,6 +3,11 @@ import './button.css'
 
 export default {
   title: 'Elements/Button',
+  parameters: {
+    status: {
+      type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
 }
 
 const Template = (args) => html`

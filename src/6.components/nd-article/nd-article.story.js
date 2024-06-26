@@ -3,6 +3,11 @@ import './nd-article.js'
 
 export default {
   title: 'Components/Article',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
 }
 
 const Template = (args) => html`

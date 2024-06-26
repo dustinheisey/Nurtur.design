@@ -3,6 +3,11 @@ import './color-utils.css'
 
 export default {
   title: 'Utilities/Color',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
 }
 
 const colors = [

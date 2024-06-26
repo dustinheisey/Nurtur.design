@@ -3,6 +3,11 @@ import './prose.css'
 
 export default {
   title: 'Layouts/Prose',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
 }
 
 const Template = (args) => html`

@@ -3,6 +3,11 @@ import './nd-dark-mode-toggle.js'
 
 export default {
   title: 'Components/Dark Mode Toggle',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
 }
 
 const Template = () => html` <nd-dark-mode-toggle></nd-dark-mode-toggle> `

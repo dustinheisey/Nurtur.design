@@ -3,6 +3,11 @@ import './inline.css'
 
 export default {
   title: 'Layouts/Inline',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
 }
 
 const Template = (args) => html`

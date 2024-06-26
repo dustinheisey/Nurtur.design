@@ -3,6 +3,11 @@ import './dropdown.css'
 
 export default {
   title: 'Layouts/Dropdown',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
 }
 
 const Template = (args) => html`

@@ -3,6 +3,11 @@ import './nd-start-heavy.js'
 
 export default {
   title: 'Patterns/Start Heavy',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
   component: 'nd-start-heavy',
   argTypes: {
     mobile: { control: 'text' },

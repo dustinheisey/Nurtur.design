@@ -3,6 +3,11 @@ import './nd-strip.js'
 
 export default {
   title: 'Components/Strip',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
   component: 'nd-strip',
   argTypes: {
     items: { control: 'object' },

@@ -3,6 +3,11 @@ import './space-utils.css'
 
 export default {
   title: 'Utilities/Space',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
 }
 
 const spaceClasses = [

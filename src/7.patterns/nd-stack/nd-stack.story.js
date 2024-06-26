@@ -3,6 +3,11 @@ import './nd-stack.js'
 
 export default {
   title: 'Patterns/Stack',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
   component: 'nd-stack',
   argTypes: {
     class: { control: 'text' },

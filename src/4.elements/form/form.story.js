@@ -3,6 +3,11 @@ import './form.css'
 
 export default {
   title: 'Elements/Form',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
 }
 
 const Template = (args) => html`

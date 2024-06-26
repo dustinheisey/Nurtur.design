@@ -3,6 +3,11 @@ import './svg.css'
 
 export default {
   title: 'Elements/SVG',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
 }
 
 const Template = (args) => html`

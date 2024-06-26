@@ -3,6 +3,11 @@ import './nd-header.js'
 
 export default {
   title: 'Patterns/Header',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
   component: 'nd-header',
   argTypes: {
     class: { control: 'text' },
@@ -46,6 +51,11 @@ Default.args = {
       groups: [
         {
           title: 'Company',
+          parameters: {
+            status: {
+              type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+            },
+          },
           links: [
             { url: '/about', label: 'About Us' },
             { url: '/careers', label: 'Careers' },

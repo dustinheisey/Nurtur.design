@@ -3,6 +3,11 @@ import './nd-subgallery.js'
 
 export default {
   title: 'Components/Subgallery',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
   component: 'nd-subgallery',
   argTypes: {
     headline: { control: 'text' },

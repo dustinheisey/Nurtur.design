@@ -3,6 +3,11 @@ import './nd-portfolio.js'
 
 export default {
   title: 'Patterns/Portfolio',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
   component: 'nd-portfolio',
   argTypes: {
     class: { control: 'text' },
@@ -47,6 +52,11 @@ Default.args = {
           alt: 'Project 1',
           permalink: '/project1',
           title: 'Project 1',
+          parameters: {
+            status: {
+              type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+            },
+          },
           summary: 'Summary of Project 1',
         },
       },
@@ -56,6 +66,11 @@ Default.args = {
           alt: 'Project 2',
           permalink: '/project2',
           title: 'Project 2',
+          parameters: {
+            status: {
+              type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+            },
+          },
           summary: 'Summary of Project 2',
         },
       },

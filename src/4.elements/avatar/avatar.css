@@ -1,23 +1,16 @@
 .avatar {
   aspect-ratio: 1/1;
   border: 3px solid var(--color-background);
-  border-radius: 50%;
-  font-size: 1.25em;
-  inline-size: 2em;
-}
-
-.avatar-img {
-  aspect-ratio: 1/1;
-  border-radius: var(--radius-l);
-  max-inline-size: 25em;
+  border-radius: var(--radius-circle);
+  inline-size: var(--font-size-3xl);
 }
 
 .avatar-s {
-  font-size: 1em;
+  inline-size: var(--font-size-2xl);
 }
 
 .avatar-l {
-  font-size: 1.5em;
+  inline-size: var(--font-size-4xl);
 }
 
 .avatar-list {
@@ -27,5 +20,5 @@
 }
 
 .avatar-list > *:not(:first-child) {
-  margin-inline-start: -0.5em;
+  margin-inline-start: calc(-1 * var(--space-2xs));
 }

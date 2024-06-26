@@ -3,6 +3,11 @@ import './nd-stats.js'
 
 export default {
   title: 'Components/Stats',
+  parameters: {
+    status: {
+      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
   component: 'nd-stats',
   argTypes: {
     headline: { control: 'text' },
