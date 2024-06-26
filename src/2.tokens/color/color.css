@@ -1,12 +1,4 @@
-/*
-- color palette for all hues
-- nurtur.design branding color palette
-  - primary
-  - secondary
-  - accent
-
-  dark mode system, color mode independant color names, generative color palettes
-*/
+/* Material Theme Builder */
 :root {
   /**
   * @tokens Color
@@ -20,10 +12,10 @@
   --color-on-secondary-light: #fff;
   --color-secondary-container-light: #ffddb7;
   --color-on-secondary-container-light: #2a1700;
-  --color-tertiary-light: #785a00;
-  --color-on-tertiary-light: #fff;
-  --color-tertiary-container-light: #ffdf9d;
-  --color-on-tertiary-container-light: #251a00;
+  --color-accent-light: #785a00;
+  --color-on-accent-light: #fff;
+  --color-accent-container-light: #ffdf9d;
+  --color-on-accent-container-light: #251a00;
   --color-error-light: #ba1a1a;
   --color-error-container-light: #ffdad6;
   --color-on-error-light: #fff;
@@ -48,10 +40,10 @@
   --color-on-secondary-dark: #472a00;
   --color-secondary-container-dark: #653e00;
   --color-on-secondary-container-dark: #ffddb7;
-  --color-tertiary-dark: #f5be34;
-  --color-on-tertiary-dark: #3f2e00;
-  --color-tertiary-container-dark: #5b4300;
-  --color-on-tertiary-container-dark: #ffdf9d;
+  --color-accent-dark: #f5be34;
+  --color-on-accent-dark: #3f2e00;
+  --color-accent-container-dark: #5b4300;
+  --color-on-accent-container-dark: #ffdf9d;
   --color-error-dark: #ffb4ab;
   --color-error-container-dark: #93000a;
   --color-on-error-dark: #690005;
@@ -68,9 +60,6 @@
   --color-inverse-primary-dark: #2c6b28;
   --color-surface-tint-dark: #93d786;
   --color-outline-variant-dark: #42493f;
-}
-
-:root {
   --color-primary: var(--color-primary-light);
   --color-on-primary: var(--color-on-primary-light);
   --color-primary-container: var(--color-primary-container-light);
@@ -79,10 +68,10 @@
   --color-on-secondary: var(--color-on-secondary-light);
   --color-secondary-container: var(--color-secondary-container-light);
   --color-on-secondary-container: var(--color-on-secondary-container-light);
-  --color-tertiary: var(--color-tertiary-light);
-  --color-on-tertiary: var(--color-on-tertiary-light);
-  --color-tertiary-container: var(--color-tertiary-container-light);
-  --color-on-tertiary-container: var(--color-on-tertiary-container-light);
+  --color-accent: var(--color-accent-light);
+  --color-on-accent: var(--color-on-accent-light);
+  --color-accent-container: var(--color-accent-container-light);
+  --color-on-accent-container: var(--color-on-accent-container-light);
   --color-error: var(--color-error-light);
   --color-error-container: var(--color-error-container-light);
   --color-on-error: var(--color-on-error-light);
@@ -113,10 +102,10 @@ html.mode-dark {
   --color-on-secondary: var(--color-on-secondary-dark);
   --color-secondary-container: var(--color-secondary-container-dark);
   --color-on-secondary-container: var(--color-on-secondary-container-dark);
-  --color-tertiary: var(--color-tertiary-dark);
-  --color-on-tertiary: var(--color-on-tertiary-dark);
-  --color-tertiary-container: var(--color-tertiary-container-dark);
-  --color-on-tertiary-container: var(--color-on-tertiary-container-dark);
+  --color-accent: var(--color-accent-dark);
+  --color-on-accent: var(--color-on-accent-dark);
+  --color-accent-container: var(--color-accent-container-dark);
+  --color-on-accent-container: var(--color-on-accent-container-dark);
   --color-error: var(--color-error-dark);
   --color-error-container: var(--color-error-container-dark);
   --color-on-error: var(--color-on-error-dark);
@@ -147,10 +136,10 @@ html.mode-dark {
     --color-on-secondary: var(--color-on-secondary-dark);
     --color-secondary-container: var(--color-secondary-container-dark);
     --color-on-secondary-container: var(--color-on-secondary-container-dark);
-    --color-tertiary: var(--color-tertiary-dark);
-    --color-on-tertiary: var(--color-on-tertiary-dark);
-    --color-tertiary-container: var(--color-tertiary-container-dark);
-    --color-on-tertiary-container: var(--color-on-tertiary-container-dark);
+    --color-accent: var(--color-accent-dark);
+    --color-on-accent: var(--color-on-accent-dark);
+    --color-accent-container: var(--color-accent-container-dark);
+    --color-on-accent-container: var(--color-on-accent-container-dark);
     --color-error: var(--color-error-dark);
     --color-error-container: var(--color-error-container-dark);
     --color-on-error: var(--color-on-error-dark);
@@ -181,10 +170,10 @@ html.mode-dark {
     --color-on-secondary: var(--color-on-secondary-light);
     --color-secondary-container: var(--color-secondary-container-light);
     --color-on-secondary-container: var(--color-on-secondary-container-light);
-    --color-tertiary: var(--color-tertiary-light);
-    --color-on-tertiary: var(--color-on-tertiary-light);
-    --color-tertiary-container: var(--color-tertiary-container-light);
-    --color-on-tertiary-container: var(--color-on-tertiary-container-light);
+    --color-accent: var(--color-accent-light);
+    --color-on-accent: var(--color-on-accent-light);
+    --color-accent-container: var(--color-accent-container-light);
+    --color-on-accent-container: var(--color-on-accent-container-light);
     --color-error: var(--color-error-light);
     --color-error-container: var(--color-error-container-light);
     --color-on-error: var(--color-on-error-light);
