@@ -44,6 +44,11 @@ export default {
     designToken: {
       disable: true,
     },
+    darkMode: {
+      darkClass: 'mode-dark',
+      lightClass: 'mode-light',
+      stylePreview: true,
+    },
     status: {
       statuses: {
         released: {
@@ -54,5 +59,6 @@ export default {
       },
     },
   },
+
   tags: ['autodocs'],
 }

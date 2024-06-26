@@ -7,6 +7,7 @@ export default {
   },
   stories: ['../src/**/*.mdx', '../**/*.story.js'],
   addons: [
+    'storybook-dark-mode',
     '@storybook/addon-essentials',
     '@storybook/addon-links',
     '@storybook/addon-interactions',
@@ -16,6 +17,7 @@ export default {
     '@storybook/addon-viewport',
     'storybook-addon-pseudo-states',
     '@chromatic-com/storybook',
+
     {
       name: '@storybook/addon-docs',
       options: {
