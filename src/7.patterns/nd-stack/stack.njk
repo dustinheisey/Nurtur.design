@@ -1,0 +1,22 @@
+{% from "../component.njk" import component %}
+<div class="region inset stack {{props.class}}">
+    <section class="prose {% if props.text %}text-{{props.text}}{% else  %}text-center{% endif %} stack align-center">
+        {% if props.headline %}
+            {% if props.overline %}
+                <p class="overline">{{props.overline}}</p>
+            {% endif %}
+            <h2 class="page-headline">
+                {{props.headline}}
+            </h2>
+            {% if props.body %}
+                <p>{{props.body}}</p>
+            {% endif %}
+        {% endif %}
+    </section>
+    <div class="stack gap-xl">
+        {% for item in props.items %}
+        <hr />
+        {{ component(item) }}
+        {% endfor %}
+    </div>
+</div>

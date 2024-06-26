@@ -1,0 +1,87 @@
+import { Meta } from '@storybook/blocks'
+import { DesignTokenDocBlock } from 'storybook-design-token'
+
+<Meta title="Tokens/Easing" />
+
+## Easing
+
+Easing functions play a crucial role in creating smooth and natural animations in user interfaces. They control the speed of an animation to make it feel more dynamic and engaging. By manipulating the timing of animations, easing functions can help draw attention to key elements, provide visual feedback, and enhance the overall user experience.
+
+In an accessibility-first design system, it's important to use easing functions judiciously. Overly aggressive or poorly chosen easings can disrupt the user experience, particularly for users with cognitive or visual impairments. Our design tokens include a range of easing functions tailored to ensure that animations are both aesthetically pleasing and accessible. Each easing function is selected to provide smooth transitions that enhance usability without causing distractions or accessibility issues.
+
+<DesignTokenDocBlock categoryName="Easing" />
+
+### Linear Easing
+
+Linear easing creates a constant speed from start to finish.
+
+_Usage_: Use linear easing for simple, uniform transitions where no acceleration or deceleration is needed.
+
+_Examples_:
+
+- Progress Bars: Smoothly filling a progress bar.
+- Sliding Elements: Horizontal or vertical slides that need to maintain a constant speed.
+
+```css
+transition: all 0.3s var(--easing-linear);
+```
+
+### Ease-In
+
+Ease-in easing starts slow and accelerates towards the end of the animation.
+
+_Usage_: Use ease-in easing for elements that need a smooth, gradual start.
+
+_Examples_:
+
+- Tooltips: When tooltips appear, they can start slow and finish quickly.
+- Modals: When a modal window opens, providing a smooth entrance.
+
+```css
+transition: all 0.3s var(--easing-in);
+```
+
+### Ease-Out
+
+Ease-out easing starts quickly and decelerates towards the end.
+
+_Usage_: Use ease-out easing for elements that need to come to a gentle stop.
+
+_Examples_:
+
+- Buttons: When a button is pressed, the easing out can make the animation feel responsive and smooth.
+- Image Galleries: When swiping through images, providing a smooth stop.
+
+```css
+transition: all 0.3s var(--easing-out);
+```
+
+### Ease-In-Out
+
+Ease-in-out easing starts slow, speeds up in the middle, and slows down again at the end.
+
+_Usage_: Use ease-in-out easing for elements that need a smooth, flowing animation.
+
+_Examples_:
+
+- Dropdown Menus: When a dropdown opens or closes.
+- Accordions: When expanding or collapsing sections, providing a smooth animation.
+
+```css
+transition: all 0.3s var(--easing-in-out);
+```
+
+### Bounce
+
+Bounce easing creates a bouncing effect, starting fast, slowing down, and then rebounding.
+
+_Usage_: Use bounce easing for playful, attention-grabbing animations.
+
+_Examples_:
+
+- Notifications: When a notification appears, adding a bounce can make it more noticeable.
+- Call-to-Action Buttons: Making a call-to-action button bounce can draw user attention.
+
+```css
+transition: all 0.5s var(--easing-bounce);
+```

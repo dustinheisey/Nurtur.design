@@ -1,0 +1,123 @@
+<div class="stack gap-xl {{class}}">
+    {% if props.navbar %}
+        <header class="navbar">
+            <nav class="inset-0">
+                <div class="cluster justify-between region inset-0 gap-m">
+                    <a href="/">
+                        <span class="sr-only">Home</span>
+                        {% svg './public/svg/logo' %}
+                    </a>
+                    <div class="cluster">
+                        <ul class="topbar cluster gap-m">
+                            {% for link in props.navbar.header.links %} {% if link.subLinks %}
+                            <li>
+                                <drop-down>
+                                    <a href="{{ link.url }}" class="link link-navigation" {% if isActive %}aria-current="page" {% endif %}>
+                                        {{ link.label }}
+                                    </a>
+                                    <ul>
+                                        {% for subLink in link.subLinks %}
+                                        <li>
+                                            <a href="{{ subLink.url }}" class="link link-navigation" {% if isActive %}aria-current="page" {% endif %}>
+                                                {{ subLink.label }}
+                                            </a>
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                </drop-down>
+                            </li>
+                            {% else %}
+                            <li>
+                                <a href="{{ link.url }}" class="link link-navigation">
+                                    {{ link.label }}
+                                </a>
+                            </li>
+                            {% endif %} {% endfor %}
+                        </ul>
+                        <div class="cluster gap-xs">
+                            <button type="button" class="dark-mode-toggle" id="theme-toggle" title="Toggles light & dark" aria-live="polite">
+                                <svg focusable="false" class="sun-and-moon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24">
+                                    <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="var(--color-primary)" />
+                                    <g class="sun-beams" stroke="var(--color-primary)">
+                                        <line x1="12" y1="1" x2="12" y2="3" />
+                                        <line x1="12" y1="21" x2="12" y2="23" />
+                                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                                        <line x1="1" y1="12" x2="3" y2="12" />
+                                        <line x1="21" y1="12" x2="23" y2="12" />
+                                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                                    </g>
+                                    <mask class="moon" id="moon-mask">
+                                        <rect x="0" y="0" height="100%" width="100%" fill="white" />
+                                        <circle cx="24" cy="10" r="6" fill="black" />
+                                    </mask>
+                                </svg>
+                                <tool-tip tip-position="block-end">Toggle <span class="badge badge-primary">\</span></tool-tip>
+                            </button>
+                            <a href="{{props.navbar.header.action.url}}" class="btn">{{props.navbar.header.action.label}}</a>
+                        </div>
+                    </div>
+                    <div class="bottombar">
+                        <ul>
+                            {% for item in props.navbar.bottombar.links %}
+                            <li>
+                                <a href="{{item.url}}" class="navigation">
+                                    {% icon item.icon %}
+                                    <span>{{item.label}}</span>
+                                </a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        <a href="{{props.navbar.bottombar.fab.url}}" class="fab">
+                            <span class="sr-only">{{props.navbar.bottombar.fab.label}}</span>
+                            {% icon props.navbar.bottombar.fab.icon %}
+                        </a>
+                    </div>
+                </div>
+                {% if props.type === "article" %}
+                <div id="reading-progress" aria-hidden="true"></div>
+                {% endif %}
+            </nav>
+        </header>
+    {% endif %}
+
+    <section class="prose auto stack gap-xs justify-center align-{{config.align or 'start'}} grow-1">
+        {% if props.overline %}
+            <p class="overline">{{props.overline}}</p>
+        {% endif %}
+        {% if props.size === 'hero' %}
+            <h1 class="hero-headline">
+                {% if props.accent %}
+                    <span class="color-primary">{{props.accent}}</span>
+                {% endif %}
+                {{props.headline}}
+            </h1>
+        {% elif props.size === 'page' %}
+            <h1 class="page-headline">
+                {{props.headline}}
+            </h1>
+        {% elif props.size === 'region' %}
+            <h2 class="region-headline">
+                {{props.headline}}
+            </h2> 
+        {% elif props.size === 'title' %}
+            <h3 class="title-headline">
+                {{props.headline}}
+            </h3> 
+        {% endif %}
+        {% if props.lead %}
+            <p class="lead">{{props.lead}}</p>
+        {% endif %}
+        <p>{{props.body}}</p>
+        {% if props.btn %}
+            <a href="{{props.btn.url}}" class="btn {% if props.btn.variant %}btn-{{props.btn.variant}}{% endif %}">{{props.btn.label}}</a>
+        {% endif %}
+        {% if props.input %}
+            <div class="input-group">
+                <input type="{{props.input.type}}" placeholder="{{props.input.placeholder}}" class="input">
+                <button type="submit" class="btn btn-primary">{{props.input.btn}}</button>
+            </div>
+        {% endif %}
+    </section>
+</div>

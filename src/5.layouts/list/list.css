@@ -1,0 +1,78 @@
+/* ? The List  */
+
+/* 
+- lists with disk/decimal markers flex stack with gap
+- list with disk/decimal markers flex stack gap 2 column layout that stacks to one when needed
+- list with svg markers flex stack gap 2 column layout that stacks to one when needed
+- list with svg markers flex stack gap
+*/
+
+/* Reset */
+ol,
+ul {
+  font-family: var(--font-family-body);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  font-size: var(--font-size-body);
+  max-inline-size: 66ch;
+}
+
+/* List */
+.list {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap, var(--space-xs));
+  justify-content: flex-start;
+}
+
+/* ol,
+ul {
+  columns: 2;
+  column-gap: var(--gutter);
+}
+
+li {
+  column-span: all;
+}
+
+li:nth-last-child(n + 3),
+li:nth-last-child(n + 3) ~ * {
+  column-span: none;
+} */
+
+.list {
+  --grid-gap: var(--gap, var(--space-xs));
+
+  display: grid;
+  gap: var(--grid-gap);
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(
+      max(var(--min-inline-size, 15ch), calc((100% - 1 * var(--grid-gap)) / 2)),
+      1fr
+    )
+  );
+}
+
+.list li {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: var(--space-3xs);
+  margin: 0;
+  min-inline-size: 15ch;
+  padding: 0;
+}
+
+/* Modifiers */
+ul.list-marker {
+  list-style-type: disk;
+}
+
+ol.list-marker {
+  list-style-type: decimal;
+}

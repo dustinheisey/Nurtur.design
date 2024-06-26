@@ -1,0 +1,31 @@
+.avatar {
+  aspect-ratio: 1/1;
+  border: 3px solid var(--color-background);
+  border-radius: 50%;
+  font-size: 1.25em;
+  inline-size: 2em;
+}
+
+.avatar-img {
+  aspect-ratio: 1/1;
+  border-radius: var(--radius-l);
+  max-inline-size: 25em;
+}
+
+.avatar-s {
+  font-size: 1em;
+}
+
+.avatar-l {
+  font-size: 1.5em;
+}
+
+.avatar-list {
+  align-items: baseline;
+  display: inline-flex;
+  flex-flow: row nowrap;
+}
+
+.avatar-list > *:not(:first-child) {
+  margin-inline-start: -0.5em;
+}

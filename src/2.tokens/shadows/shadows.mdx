@@ -1,0 +1,80 @@
+import { Meta } from '@storybook/blocks'
+import { DesignTokenDocBlock } from 'storybook-design-token'
+
+<Meta title="Tokens/Shadows" />
+
+# Shadows
+
+Shadows play a crucial role in providing a sense of depth and hierarchy in user interfaces. They help differentiate elements by creating a visual separation between them and their background. In an accessibility-first design system, shadows are used to enhance the visual clarity of elements without overwhelming the user. Proper use of shadows can guide the user's attention and improve the overall aesthetic appeal of the interface.
+
+<DesignTokenDocBlock categoryName="Shadows" />
+
+## Usage Guidelines
+
+### Inset Shadow
+
+Used for creating an inset shadow effect, giving the impression that the element is embedded in its background.
+_Usage_: Useful for input fields and buttons to provide a subtle, inset look.
+
+```css
+.input-inset {
+  box-shadow: var(--shadow-inset);
+}
+```
+
+### Extra Small Shadow (XS)
+
+Used for subtle elevation, providing a light shadow that gives a slight lift to the element.
+_Usage_: Ideal for small UI elements like buttons and icons.
+
+```css
+.button-xs {
+  box-shadow: var(--shadow-xs);
+}
+```
+
+### Small Shadow (S)
+
+Used for moderate elevation, adding a more noticeable shadow to elements.
+_Usage_: Suitable for cards, dropdowns, and other small components that need more emphasis.
+
+```css
+.card-s {
+  box-shadow: var(--shadow-s);
+}
+```
+
+### Medium Shadow (M)
+
+Used for significant elevation, giving elements a strong presence on the page.
+_Usage_: Great for modals, pop-ups, and other larger components that need to stand out.
+
+```css
+.modal-m {
+  box-shadow: var(--shadow-m);
+}
+```
+
+### Large Shadow (L)
+
+Used for high elevation, making elements appear prominently above others.
+_Usage_: Useful for large cards or containers that need to draw attention.
+
+```css
+.container-l {
+  box-shadow: var(--shadow-l);
+}
+```
+
+### Extra Large Shadow (XL)
+
+Used for the highest elevation, creating a deep shadow that makes elements appear very prominent.
+_Usage_: Ideal for elements that need to stand out the most, such as main containers or high-priority content areas.
+
+```css
+.feature-xl {
+  box-shadow: var(--shadow-xl);
+}
+```
+
+Using well-defined shadow tokens helps maintain a clear and consistent visual hierarchy, preventing visual clutter and ensuring that important elements stand out appropriately. By applying these shadow values thoughtfully, we can enhance the visual clarity and aesthetic appeal of our user interface while ensuring it remains accessible to all users. Each shadow token is chosen to provide the right amount of depth and emphasis for different types of elements, reflecting their importance and interaction level.

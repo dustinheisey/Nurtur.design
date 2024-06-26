@@ -1,0 +1,16 @@
+label {
+  color: var(--color-label-override, var(--color-on-background));
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-s);
+  font-weight: 400;
+
+  /* max-inline-size: 66ch; */
+  inline-size: 100%;
+  line-height: var(--light-height-body);
+}
+
+.required::after {
+  color: var(--color-label-accent-override, var(--color-secondary));
+  content: '*';
+  font-size: var(--font-size-body);
+}

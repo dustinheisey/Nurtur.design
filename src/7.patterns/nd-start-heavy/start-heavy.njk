@@ -1,0 +1,13 @@
+{% from "../component.njk" import component %}
+
+{% if props.mobile === 'end' %}
+    <div class="region sidebar sidebar-split gap-m {{props.class}} {% if props.align %}align-{{props.align}}{% endif %}">
+        {{ component(props.end, 'fixed') }}
+        {{ component(props.start) }}
+    </div>
+{% else %}
+    <div class="region sidebar sidebar-split gap-m {{props.class}} {% if props.align %}align-{{props.align}}{% endif %}">
+        {{ component(props.start) }}
+        {{ component(props.end, 'fixed') }}
+    </div>
+{% endif %}

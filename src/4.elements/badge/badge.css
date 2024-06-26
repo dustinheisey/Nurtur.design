@@ -1,0 +1,43 @@
+.badge-primary {
+  --bg: var(--color-badge-primary, var(--color-primary-container));
+  --on-bg: var(--color-on-badge-primary, var(--color-on-primary-container));
+}
+
+.badge-secondary {
+  --bg: var(--color-badge-secondary, var(--color-secondary-container));
+  --on-bg: var(--color-on-badge-secondary, var(--color-on-secondary-container));
+}
+
+.badge-tertiary {
+  --bg: var(--color-badge-tertiary, var(--color-tertiary-container));
+  --on-bg: var(--color-on-badge-tertiary, var(--color-on-tertiary-container));
+}
+
+.badge {
+  align-items: center;
+
+  /* border: 1.5px solid var(--on-bg); */
+  background-color: var(--bg);
+  border-radius: var(--radius-pill);
+  color: var(--on-bg);
+  display: inline-flex;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  padding: var(--space-3xs) var(--space-2xs);
+}
+
+.badge-l {
+  font-size: var(--font-size-s);
+  padding: var(--space-2xs) var(--space-xs);
+}
+
+.status::before {
+  background-color: var(--on-bg);
+  border-radius: 50%;
+  content: '';
+  display: inline-block;
+  height: 8px;
+  margin-right: var(--space-2xs);
+  width: 8px;
+}

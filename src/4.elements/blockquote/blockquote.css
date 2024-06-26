@@ -1,0 +1,39 @@
+figure {
+  margin: 0;
+}
+
+blockquote {
+  border: none;
+  color: var(--color-blockquote-override, var(--color-on-background));
+  font-family: var(--font-family-headline);
+  font-size: var(--font-size-xl);
+  font-style: italic;
+  line-height: var(--line-height-body);
+  margin: 0;
+  max-width: 40ch;
+  position: relative;
+  quotes: '\201C' '\201D' '\2018' '\2019';
+}
+
+blockquote.blockquote-accent {
+  margin-block-start: var(--space-xl);
+}
+
+blockquote.blockquote-accent::before {
+  color: var(--color-primary);
+  content: open-quote;
+  font-family: var(--font-family-headline);
+  font-size: 7.5em;
+  font-style: normal;
+  left: -0.05em;
+  position: absolute;
+  top: -0.75em;
+}
+
+blockquote ~ figcaption {
+  color: var(--color-primary);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-s);
+  margin-block-start: var(--space-xs);
+  padding: 0;
+}

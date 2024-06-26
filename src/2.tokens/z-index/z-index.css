@@ -1,0 +1,12 @@
+@layer tokens {
+  /**
+  * @tokens Z Index
+  */
+  :root {
+    --z-drawer: 700;
+    --z-dialog: 800;
+    --z-dropdown: 900;
+    --z-toast: 950;
+    --z-tooltip: 1000;
+  }
+}

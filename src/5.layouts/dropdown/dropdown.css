@@ -1,0 +1,59 @@
+drop-down {
+  display: inline-block;
+  position: relative;
+}
+
+drop-down > a::after {
+  border-bottom: var(--space-3xs) solid transparent;
+  border-left: var(--space-3xs) solid transparent;
+  border-right: var(--space-3xs) solid transparent;
+  border-top: var(--space-3xs) solid var(--color-primary);
+  content: '';
+  display: inline-block;
+  height: 0;
+  margin-inline-start: var(--space-3xs);
+  width: 0;
+}
+
+drop-down > ul {
+  align-items: flex-start;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-s);
+  box-shadow: var(--shadow-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xs);
+  inline-size: max-content;
+  justify-content: center;
+  opacity: 0;
+  padding: var(--space-xs);
+  position: absolute;
+  visibility: hidden;
+  z-index: 900;
+}
+
+drop-down > ul li {
+  inline-size: 100%;
+}
+
+drop-down > ul li a {
+  inline-size: 100%;
+}
+
+drop-down:is(:hover, :focus-within) ul {
+  opacity: 1;
+  transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+  visibility: visible;
+}
+
+drop-down::before {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  content: '; Has a sub menu: ';
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}

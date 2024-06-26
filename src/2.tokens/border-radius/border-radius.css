@@ -1,0 +1,15 @@
+/* Using rem for border-radius makes sense because larger elements like cards get a larger border radius than buttons, and when a user increases their font size, the buttons and cards get bigger, so the border radius should increase. */
+
+@layer tokens {
+  :root {
+    /**
+    * @tokens BorderRadius
+    * @presenter BorderRadius
+    */
+    --radius-s: 0.25rem;
+    --radius-m: 0.5rem;
+    --radius-l: 1rem;
+    --radius-pill: 999px;
+    --radius-circle: 50%;
+  }
+}

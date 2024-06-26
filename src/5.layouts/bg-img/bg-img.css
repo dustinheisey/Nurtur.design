@@ -1,0 +1,33 @@
+.bg-img {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  place-content: center;
+  place-items: center;
+}
+
+.bg-img > img,
+.bg-img > svg,
+.bg-img > picture {
+  border-radius: 0;
+  grid-column: 1;
+  grid-row: 1;
+  min-block-size: 100%;
+  min-inline-size: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+.bg-img > :not(img, svg, picture) {
+  grid-column: 1;
+  grid-row: 1;
+  z-index: 1;
+}
+
+.bg-img .filter {
+  background-color: var(--color-background);
+  border-radius: var(--radius-l);
+  box-shadow: var(--shadow-xl);
+  padding: var(--space-xl);
+}

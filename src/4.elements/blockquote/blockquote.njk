@@ -1,0 +1,12 @@
+<figure>
+    <blockquote class="{% if props.variant === 'accent' %}blockquote-accent{% endif %}">
+        {% if props.variant === 'accent' %}
+            {{props.quote}}
+        {% else %}
+            &OpenCurlyDoubleQuote;{{ props.quote }}&CloseCurlyDoubleQuote;
+        {% endif %}
+    </blockquote>
+    <figcaption class="overline">
+        {{ props.author }}
+    </figcaption>
+</figure>

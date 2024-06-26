@@ -1,0 +1,122 @@
+.sparkline {
+  display: grid;
+  gap: var(--space-m);
+  grid-template-columns: auto 1fr;
+  position: relative;
+}
+
+.sparkline .line {
+  background: var(--color-outline-variant);
+  block-size: 100%;
+  grid-column: 1/2;
+  inline-size: 1px;
+  margin-block-start: var(--space-2xs);
+}
+
+.sparkline :not(.line) {
+  grid-column: 2/3;
+}
+
+.sparkline .line::before {
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  content: '';
+  display: block;
+  height: 0.35rem;
+  margin-block-end: var(--space-xs);
+  top: 0;
+  transform: translateX(-50%);
+  width: 0.35rem;
+}
+
+@media (--tablet-landscape-up) {
+  .sparkline-inline {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .sparkline-inline .line {
+    block-size: 1px;
+    grid-column: span 1;
+    grid-row: 1/2;
+    inline-size: 100%;
+  }
+
+  .sparkline-inline :not(.line) {
+    grid-column: auto;
+    grid-row: 2/3;
+  }
+
+  .sparkline-inline .line::before {
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .sparkline-inline-staggered {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: 1fr max-content 1fr;
+  }
+
+  .sparkline-inline-staggered .line {
+    block-size: 1px;
+    grid-column: auto;
+    grid-row: 2/3;
+    inline-size: 100%;
+  }
+
+  .sparkline-inline-staggered .line::before {
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .sparkline-inline-staggered :not(.line):nth-child(2) {
+    align-self: end;
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  .sparkline-inline-staggered :not(.line):nth-child(6) {
+    align-self: end;
+    grid-column: 3/4;
+    grid-row: 1/2;
+  }
+
+  .sparkline-inline-staggered :not(.line):nth-child(4) {
+    grid-column: 2/3;
+    grid-row: 3/4;
+  }
+
+  .sparkline-inline-staggered :not(.line):nth-child(8) {
+    grid-column: 4/5;
+    grid-row: 3/4;
+  }
+
+  .sparkline-block-staggered {
+    grid-template-columns: 1fr max-content 1fr;
+  }
+
+  .sparkline-block-staggered .line {
+    grid-column: 2/3;
+  }
+
+  .sparkline-block-staggered :not(.line):nth-child(2) {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  .sparkline-block-staggered :not(.line):nth-child(6) {
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+
+  .sparkline-block-staggered :not(.line):nth-child(4) {
+    grid-column: 3/4;
+    grid-row: 2/3;
+  }
+
+  .sparkline-block-staggered :not(.line):nth-child(8) {
+    grid-column: 3/4;
+    grid-row: 4/5;
+  }
+}

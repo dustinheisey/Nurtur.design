@@ -1,0 +1,41 @@
+/* ? The Center - Center something */
+.center {
+  box-sizing: content-box;
+  margin: auto;
+}
+
+.center-vertical {
+  box-sizing: content-box;
+  margin-block: auto;
+}
+
+.center-horizontal {
+  box-sizing: content-box;
+  margin-inline: auto;
+}
+
+.center-intrinsic {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.auto {
+  margin: auto;
+}
+
+.start {
+  box-sizing: content-box;
+  margin-inline-end: auto;
+}
+
+.end {
+  box-sizing: content-box;
+  inline-size: fit-content;
+  margin-inline-start: auto;
+}

@@ -1,0 +1,8 @@
+/* container queries, mobile first media queries */
+@layer tokens {
+  @custom-media --phone-only (max-width: 37.4375em);
+  @custom-media --tablet-portrait-up (min-width: 37.5em);
+  @custom-media --tablet-landscape-up (min-width: 56.25em);
+  @custom-media --desktop-up (min-width: 75em);
+  @custom-media --desktop-hd-up (min-width: 112.5em);
+}

@@ -1,0 +1,28 @@
+/* ? The Masonry - Product galleries, testimonials, blog posts, portfolio items */
+
+/* Masonry style grid */
+.masonry {
+  columns: 1;
+  gap: var(--gap, var(--space-m));
+}
+
+.masonry > * {
+  break-inside: avoid;
+}
+
+.masonry > * + * {
+  display: block;
+  margin-block-start: var(--gap, var(--space-m));
+}
+
+@media (--tablet-portrait-up) {
+  .masonry.col-2 {
+    columns: 2;
+  }
+}
+
+@media (--tablet-landscape-up) {
+  .masonry.col-3 {
+    columns: 3;
+  }
+}

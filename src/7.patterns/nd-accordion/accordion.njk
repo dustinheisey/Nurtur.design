@@ -1,0 +1,17 @@
+{% from "../component.njk" import component %}
+<div class="region {{props.class}}">
+    {% if props.headline %}
+        <section class="prose">
+            {% if props.overline %}
+                <p class="overline">{{props.overline}}</p>
+            {% endif %}
+            <h2 class="region-headline">{{props.headline}}</h2>
+        </section>
+    {% endif %}
+    <div class="space-xl">
+        {% for item in props.items %}
+        {{ component(item) }}
+        <hr />
+        {% endfor %}
+    </div>
+</div>

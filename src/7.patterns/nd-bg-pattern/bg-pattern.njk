@@ -1,0 +1,28 @@
+{% from "../component.njk" import component %}
+<div class="region bg-pattern pattern-{{props.pattern}} {{props.class}} theme-{{props.theme}} inset-xl">
+    <section class="prose {% if props.align %}stack align-{{props.align}}{% endif %}">
+        {% if props.overline %}
+        <p class="overline">{{props.overline}}</p>
+        {% endif %}
+        {% if props.headline %}
+        <h2 class="region-headline">{{props.headline}}</h2>
+        {% endif %}
+        {% if props.lead %}
+        <p class="lead {% if props.center %}auto{% endif %}">{{props.lead}}</p>
+        {% endif %}
+        {% if props.body %}
+        <p>{{props.body}}</p>
+        {% endif %}
+        {% if props.btn %}
+            <a href="{{props.btn.url}}" class="btn {% if props.btn.variant %}btn-{{props.btn.variant}}{% endif %}">{{props.btn.label}}</a>
+        {% endif %}
+        {% if props.input %}
+            <form class="sidebar gap-0 input-group" method="POST" name="newsletter">
+                <input type="hidden" name="form-name" value="newsletter">
+                <label class="sr-only required" for="newsletter-email">Email Address</label>
+                <input class="input" id="newsletter-email" name="newsletter-email" required="" type="email" placeholder="Email Address">
+                <button class="btn btn-primary fixed" type="submit">Subscribe</button>
+            </form>
+        {% endif %}
+    </section>
+</div>
