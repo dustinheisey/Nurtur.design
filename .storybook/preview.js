@@ -54,4 +54,5 @@ export default {
       },
     },
   },
+  tags: ['autodocs'],
 }
