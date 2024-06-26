@@ -1,0 +1,150 @@
+nav {
+  padding: var(--inset-page);
+  position: relative;
+}
+
+#reading-progress {
+  background-color: var(--color-primary);
+  block-size: 3px;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  transform: translate(-100vw, 0);
+  width: 100vw;
+  will-change: transform;
+  z-index: 1;
+}
+
+.navbar {
+  position: sticky;
+  top: -200px;
+  z-index: 999;
+
+  /* transition: top 0.5s ease; */
+}
+
+.navbar .logo-bg {
+  fill: var(--color-background);
+}
+
+.navbar.floating .logo-bg {
+  fill: var(--color-surface);
+}
+
+.navbar.floating {
+  animation: transition 0.2s ease-in-out;
+  animation-fill-mode: forwards;
+  box-shadow: var(--shadow-l);
+}
+
+.navbar.floating > nav {
+  padding: var(--space-2xs);
+}
+
+.navbar .topbar,
+.navbar a.btn {
+  display: none;
+}
+
+.bottombar {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+}
+
+.bottombar > ul {
+  align-items: stretch;
+  background: var(--color-surface);
+  bottom: 0;
+  box-shadow: var(--shadow-l);
+  display: flex;
+  inline-size: 100%;
+  justify-content: space-around;
+  left: 0;
+  padding-block-end: env(safe-area-inset-bottom);
+  position: relative;
+  right: 0;
+}
+
+.bottombar > ul > * {
+  min-block-size: 44px;
+  min-inline-size: 44px;
+}
+
+.bottombar > ul > li {
+  flex: 1;
+}
+
+.bottombar > ul svg {
+  block-size: 20px;
+  inline-size: 20px;
+}
+
+.bottombar > ul a {
+  block-size: 100%;
+  font-size: var(--font-size-xs) !important;
+  font-weight: 500;
+  gap: 4px !important;
+  inline-size: 100%;
+  padding-block: 12px;
+}
+
+.bottombar > ul .navigation {
+  align-items: center;
+  color: var(--color-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.fab {
+  align-items: center;
+  aspect-ratio: 1/1;
+  background: var(--color-primary);
+  border-radius: var(--radius-circle);
+  bottom: 100%;
+  box-shadow: var(--shadow-l);
+  color: var(--color-on-primary);
+  display: flex;
+  fill: var(--color-on-primary);
+  flex-direction: column;
+  gap: var(--space-3xs);
+  margin-block-end: var(--space-xs);
+  margin-inline-end: var(--space-3xs);
+  padding: var(--space-m);
+  position: absolute;
+  right: var(--space-3xs);
+}
+
+.bottombar > ul > .fab > a {
+  padding-block: 0 0;
+}
+
+@media (--tablet-portrait-up) {
+  .bottombar {
+    display: none;
+  }
+
+  .navbar .topbar {
+    display: flex;
+  }
+
+  .navbar a.btn {
+    display: inline-block;
+  }
+}
+
+@keyframes transition {
+  from {
+    background-color: transparent;
+    top: -200px;
+  }
+
+  to {
+    background-color: var(--color-surface);
+    top: 0;
+  }
+}
