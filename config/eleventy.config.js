@@ -7,6 +7,7 @@ import pluginNavigation from '@11ty/eleventy-navigation';
 import inclusiveLangPlugin from '@11ty/eleventy-plugin-inclusive-language';
 import pluginSyntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight';
 import svgSprite from 'eleventy-plugin-svg-sprite';
+import eleventyHTMLValidate from 'eleventy-plugin-html-validate';
 
 export default (eleventyConfig) => {
   // ? Plugins
@@ -27,6 +28,7 @@ export default (eleventyConfig) => {
     sourcemap: false,
     inlineWorkboxRuntime: true
   });
+  eleventyConfig.addPlugin(eleventyHTMLValidate);
 
   // ? Shortcodes
   eleventyConfig.addNunjucksShortcode(
