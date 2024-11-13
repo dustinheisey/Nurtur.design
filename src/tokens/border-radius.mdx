@@ -1,0 +1,96 @@
+import { Meta } from '@storybook/blocks'
+import { getProperty } from '../utilities/util.js'
+
+<Meta
+  title="Tokens/Border Radius"
+  parameters={{ status: { type: 'stable' } }}
+/>
+
+# Border Radius
+
+<table>
+  <thead>
+    <tr>
+      <th>Token</th>
+      <th>Value</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>`--radius-s`</td>
+      <td>{getProperty('--radius-s')}</td>
+      <td>
+        <div
+          className="rounded-demo"
+          style={{
+            backgroundColor: 'var(--color-primary-light)',
+            width: 'var(--space-xl)',
+            height: 'var(--space-xl)',
+            borderRadius: 'var(--radius-s)',
+          }}
+        ></div>
+      </td>
+    </tr>
+    <tr>
+      <td>`--radius-m`</td>
+      <td>{getProperty('--radius-m')}</td>
+      <td>
+        <div
+          className="rounded-demo"
+          style={{
+            backgroundColor: 'var(--color-primary-light)',
+            width: 'var(--space-xl)',
+            height: 'var(--space-xl)',
+            borderRadius: 'var(--radius-m)',
+          }}
+        ></div>
+      </td>
+    </tr>
+    <tr>
+      <td>`--radius-l`</td>
+      <td>{getProperty('--radius-l')}</td>
+      <td>
+        <div
+          className="rounded-demo"
+          style={{
+            backgroundColor: 'var(--color-primary-light)',
+            width: 'var(--space-xl)',
+            height: 'var(--space-xl)',
+            borderRadius: 'var(--radius-l)',
+          }}
+        ></div>
+      </td>
+    </tr>
+    <tr>
+      <td>`--radius-pill`</td>
+      <td>{getProperty('--radius-pill')}</td>
+      <td>
+        <div
+          className="rounded-demo"
+          style={{
+            backgroundColor: 'var(--color-primary-light)',
+            width: 'var(--space-2xl)',
+            height: 'var(--space-l)',
+            borderRadius: 'var(--radius-pill)',
+          }}
+        ></div>
+      </td>
+    </tr>
+    <tr>
+      <td>`--radius-circle`</td>
+      <td>{getProperty('--radius-circle')}</td>
+      <td>
+        <div
+          className="rounded-demo"
+          style={{
+            backgroundColor: 'var(--color-primary-light)',
+            width: 'var(--space-xl)',
+            height: 'var(--space-xl)',
+            borderRadius: 'var(--radius-circle)',
+          }}
+        ></div>
+      </td>
+    </tr>
+  </tbody>
+</table>

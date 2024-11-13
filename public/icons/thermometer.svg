@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewBox="0 0 32 32">
-    <title>temperature 2</title>
-    <g fill="currentColor" class="nc-icon-wrapper">
-        <path d="M24,17.788V5A5,5,0,0,0,14,5V17.809A8.062,8.062,0,0,0,11,24a8,8,0,0,0,16,0A7.831,7.831,0,0,0,24,17.788ZM19,28a3.992,3.992,0,0,1-1-7.858V11h2v9.142A3.992,3.992,0,0,1,19,28Z" fill="currentColor"></path>
-        <rect data-color="color-2" x="3" y="4" width="8" height="2" fill="currentColor"></rect>
-        <rect data-color="color-2" x="6" y="9" width="5" height="2" fill="currentColor"></rect>
-        <rect data-color="color-2" x="3" y="14" width="8" height="2" fill="currentColor"></rect>
-    </g>
-</svg>

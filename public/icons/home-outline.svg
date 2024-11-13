@@ -1,8 +1,0 @@
-<svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-    <title>Home</title>
-    <g stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="none" stroke="currentColor">
-        <polyline points="1 11 12 2 23 11"></polyline>
-        <polyline points="10 23 10 17 14 17 14 23"></polyline>
-        <path d="M4,13v8c0,1.105,.895,2,2,2h12c1.105,0,2-.895,2-2V13"></path>
-    </g>
-</svg>

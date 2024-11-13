@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewBox="0 0 32 32">
-    <title>potion</title>
-    <g fill="currentColor" class="nc-icon-wrapper">
-        <circle cx="12.5" cy="15.5" r="1.5" fill="currentColor" data-color="color-2"></circle>
-        <path d="M20,8.7V4h1a1,1,0,0,0,1-1V1a1,1,0,0,0-1-1H11a1,1,0,0,0-1,1V3a1,1,0,0,0,1,1h1V8.7a12,12,0,1,0,8,0Zm-4,11.3a9.984,9.984,0,0,1-9.922,1.2A9.944,9.944,0,0,1,14,10.2V4h4v6.206a10,10,0,0,1,7.919,8.579A9.981,9.981,0,0,0,16,19.992Z" fill="currentColor"></path>
-    </g>
-</svg>

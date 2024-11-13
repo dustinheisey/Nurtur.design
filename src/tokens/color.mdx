@@ -1,0 +1,62 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/blocks'
+
+<Meta title="Tokens/Color" parameters={{ status: { type: 'stable' } }} />
+
+# Color
+
+<ColorPalette>
+  <ColorItem
+    title="Backgrounds"
+    colors={{
+      Background: 'var(--color-background)',
+      Surface: 'var(--color-surface)',
+      SurfaceVariant: 'var(--color-surface-variant)',
+    }}
+  />
+  <ColorItem
+    title="Foregrounds"
+    colors={{
+      OnBackground: 'var(--color-on-background)',
+      OnSurface: 'var(--color-on-surface)',
+      OnSurfaceVariant: 'var(--color-on-surface-variant)',
+      Outline: 'var(--color-outline)',
+      OutlineVariant: 'var(--color-outline-variant)',
+    }}
+  />
+  <ColorItem
+    title="Primary"
+    colors={{
+      Primary: 'var(--color-primary)',
+      OnPrimary: 'var(--color-on-primary)',
+      PrimaryContainer: 'var(--color-primary-container)',
+      OnPrimaryContainer: 'var(--color-on-primary-container)',
+    }}
+  />
+  <ColorItem
+    title="Secondary"
+    colors={{
+      Primary: 'var(--color-secondary)',
+      OnPrimary: 'var(--color-on-secondary)',
+      PrimaryContainer: 'var(--color-secondary-container)',
+      OnPrimaryContainer: 'var(--color-on-secondary-container)',
+    }}
+  />
+  <ColorItem
+    title="Accent"
+    colors={{
+      Primary: 'var(--color-accent)',
+      OnPrimary: 'var(--color-on-accent)',
+      PrimaryContainer: 'var(--color-accent-container)',
+      OnPrimaryContainer: 'var(--color-on-accent-container)',
+    }}
+  />
+  <ColorItem
+    title="Error"
+    colors={{
+      Primary: 'var(--color-error)',
+      OnPrimary: 'var(--color-on-error)',
+      PrimaryContainer: 'var(--color-error-container)',
+      OnPrimaryContainer: 'var(--color-on-error-container)',
+    }}
+  />
+</ColorPalette>
