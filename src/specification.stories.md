@@ -1,6 +1,7 @@
 # Specification
 
 - Foundations
+
   - introduction
   - accessibility
   - neuroinclusivity
@@ -8,6 +9,7 @@
   - sustainability
 
 - Design Tokens
+
   - typography
   - space
   - color
@@ -15,17 +17,18 @@
   - border radius
 
 - Elements
+
   - elements
 
 - Layouts
+
   - layout primitives
 
 - Components
+
   - components
 
 - Regions
   - page regions
 
-
 @layer reset, base, elements, layouts, components, utilities, overrides;
-

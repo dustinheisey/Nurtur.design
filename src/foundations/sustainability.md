@@ -1,7 +1,3 @@
-import { Meta } from '@storybook/blocks'
-
-<Meta title="Foundations/Sustainability" />
-
 # Sustainability
 
 Environmental sustainability is a core principle of our design system. We aim to reduce our ecological footprint through thoughtful design and development practices.

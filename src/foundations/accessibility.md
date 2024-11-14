@@ -1,7 +1,3 @@
-import { Meta } from '@storybook/blocks'
-
-<Meta title="Foundations/Accessibility" />
-
 # Accessibility
 
 Ensuring accessibility in our design system is a core principle. Our goal is to make our components usable by as many people as possible, including those with disabilities.

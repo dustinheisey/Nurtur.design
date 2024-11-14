@@ -1,7 +1,3 @@
-import { Meta } from '@storybook/blocks'
-
-<Meta title="Introduction" />
-
 # Introduction
 
 What is the point of this design system? What is different about it? Why don't I just use someone elses design system?

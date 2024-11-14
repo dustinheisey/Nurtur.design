@@ -1,7 +1,3 @@
-import { Meta } from '@storybook/blocks'
-
-<Meta title="Foundations/Neuroinclusivity" />
-
 # Neuroinclusivity
 
 Our design system is built with neurodiverse users in mind. We aim to create interfaces that are inclusive and considerate of various cognitive needs.

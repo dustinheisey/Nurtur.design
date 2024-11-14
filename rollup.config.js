@@ -13,7 +13,7 @@ export default {
     chunkFileNames: '[hash].js',
     assetFileNames: '[hash][extname]',
     format: 'es',
-    dir: 'dist',
+    dir: 'dist'
   },
   preserveEntrySignatures: false,
 
@@ -22,15 +22,15 @@ export default {
     html({
       minify: true,
       injectServiceWorker: true,
-      serviceWorkerPath: 'dist/sw.js',
+      serviceWorkerPath: 'dist/sw.js'
     }),
     /** Resolve bare module imports */
     nodeResolve(),
     /** Minify JS, compile JS to a lower language target */
     esbuild({
       minify: true,
-      target: ['chrome64', 'firefox67', 'safari11.1'],
-    }),    
+      target: ['chrome64', 'firefox67', 'safari11.1']
+    }),
     /** Bundle assets references via import.meta.url */
     importMetaAssets(),
     /** Minify html and css tagged template literals */
@@ -47,11 +47,11 @@ export default {
               conservativeCollapse: true,
               removeComments: true,
               caseSensitive: true,
-              minifyCSS: true,
-            },
-          },
-        ],
-      ],
+              minifyCSS: true
+            }
+          }
+        ]
+      ]
     }),
     /** Create and inject a service worker */
     generateSW({
@@ -65,7 +65,7 @@ export default {
       globPatterns: ['**/*.{html,js,css,webmanifest}'],
       skipWaiting: true,
       clientsClaim: true,
-      runtimeCaching: [{ urlPattern: 'polyfills/*.js', handler: 'CacheFirst' }],
-    }),
-  ],
+      runtimeCaching: [{ urlPattern: 'polyfills/*.js', handler: 'CacheFirst' }]
+    })
+  ]
 };
