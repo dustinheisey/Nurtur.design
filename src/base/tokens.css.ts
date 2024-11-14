@@ -1,6 +1,6 @@
 import { css } from 'lit';
 
-export const themeStyles = css`
+export const tokenStyles = css`
   :root,
   :host {
     /* ? Typography */

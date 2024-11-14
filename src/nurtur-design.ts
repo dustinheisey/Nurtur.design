@@ -1,6 +1,6 @@
 import { html, css, LitElement } from 'lit';
 import { customElement } from 'lit/decorators.js';
-import { global } from './base/global.css.js';
+import { global } from './index.css.js';
 
 @customElement('nurtur-design')
 export class NurturDesign extends LitElement {
