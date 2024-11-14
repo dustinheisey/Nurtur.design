@@ -6,6 +6,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "clean": "rm -rf node_modules && npm cache clean --force ** npm install",
     "lint": "eslint --ext .ts,.html . --ignore-path .gitignore",
     "format": "prettier \"**/*.{cjs,html,js,json,md,ts}\" --ignore-path ./.gitignore --write",
     "prepare": "husky",

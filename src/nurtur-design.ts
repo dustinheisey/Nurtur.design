@@ -1,38 +1,23 @@
-import { LitElement, html } from 'lit';
-import { property, customElement } from 'lit/decorators.js';
-
-const logo = new URL('../../assets/open-wc-logo.svg', import.meta.url).href;
+import { html, css, LitElement } from 'lit';
+import { customElement } from 'lit/decorators.js';
+import { global } from './base/global.css.js';
 
 @customElement('nurtur-design')
 export class NurturDesign extends LitElement {
-  @property({ type: String }) header = 'My app';
+  static styles = [
+    global,
+    css`
+      h1 {
+        color: red;
+      }
+    `
+  ];
 
   render() {
     return html`
       <main>
-        <div class="logo"><img alt="open-wc logo" src=${logo} /></div>
-        <h1>${this.header}</h1>
-
-        <p>Edit <code>src/NurturDesign.ts</code> and save to reload.</p>
-        <a
-          class="app-link"
-          href="https://open-wc.org/guides/developing-components/code-examples"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Code examples
-        </a>
+        <h1 style="font-size: var(--font-size-4xl)">Hello world!</h1>
       </main>
-
-      <p class="app-footer">
-        🚽 Made with love by
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/open-wc"
-          >open-wc</a
-        >.
-      </p>
     `;
   }
 }

@@ -18,10 +18,10 @@
     "incremental": true,
     "skipLibCheck": true
   },
-  "include": ["**/*.ts"],
+  "include": ["**/*.ts", "src/nurtur-design.js"],
   "plugins": [
-      {
-        "name": "ts-lit-plugin"
-      }
-    ]
+    {
+      "name": "ts-lit-plugin"
+    }
+  ]
 }
