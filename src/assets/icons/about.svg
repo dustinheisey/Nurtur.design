@@ -1,0 +1,7 @@
+<svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <title>About</title>
+    <g fill="currentColor">
+        <path d="M12,11c-3.033,0-5.5-2.467-5.5-5.5S8.967,0,12,0s5.5,2.467,5.5,5.5-2.467,5.5-5.5,5.5Z"></path>
+        <path d="M21,24H3c-.552,0-1-.448-1-1,0-5.514,4.486-10,10-10s10,4.486,10,10c0,.552-.448,1-1,1Z"></path>
+    </g>
+</svg>

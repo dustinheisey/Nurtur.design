@@ -1,0 +1,8 @@
+<svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <title>Web Design</title>
+    <g fill="currentColor">
+        <path d="M4,4V1H1C0.448,1,0,1.447,0,2v2H4z"></path>
+        <path d="M0,6v16c0,0.553,0.448,1,1,1h22c0.552,0,1-0.447,1-1V6H0z M11,18H3v-8h8V18z M18,16h-5v-2h5V16z M21,12h-8 v-2h8V12z"></path>
+        <path d="M24,4V2c0-0.553-0.448-1-1-1H6v3H24z"></path>
+    </g>
+</svg>
