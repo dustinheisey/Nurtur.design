@@ -16,7 +16,6 @@
 /.tmp/
 
 # build
-/_site/
 /dist/
 
 storybook-static
