@@ -1,5 +1,4 @@
 ## editors
-/.idea
 /.vscode
 
 ## system files
@@ -9,16 +8,8 @@
 /node_modules/
 /npm-debug.log
 
-## testing
-/coverage/
-
-## temp folders
-/.tmp/
-
 # build
 /dist/
-
-storybook-static
-custom-elements.json
+/out-tsc
 
 package-lock.json

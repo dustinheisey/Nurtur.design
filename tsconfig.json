@@ -18,7 +18,7 @@
     "incremental": true,
     "skipLibCheck": true
   },
-  "include": ["**/*.ts", "src/nurtur-design.js"],
+  "include": ["**/*.ts", "process/nurtur-design.js"],
   "plugins": [
     {
       "name": "ts-lit-plugin"
