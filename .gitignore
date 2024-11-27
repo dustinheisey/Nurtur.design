@@ -13,3 +13,5 @@
 /out-tsc
 
 package-lock.json
+
+*storybook.log
