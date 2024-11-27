@@ -1,0 +1,15 @@
+## editors
+/.vscode
+
+## system files
+.DS_Store
+
+## npm
+/node_modules/
+/npm-debug.log
+
+# build
+/dist/
+/out-tsc
+
+package-lock.json

@@ -1,8 +1,8 @@
 import { html } from 'lit';
 import { fixture, expect } from '@open-wc/testing';
 
-import type { NurturDesign } from '../src/nurtur-design.js';
-import '../src/nurtur-design.js';
+import type { NurturDesign } from '../../nurtur-design.js';
+import '../../nurtur-design.js';
 
 describe('NurturDesign', () => {
   let element: NurturDesign;

@@ -1,0 +1,35 @@
+File Structure:
+  src:
+    assets:
+      icons: (icon svg files)
+    styles:
+      - reset.css
+      - base.css
+      - tokens.css
+      - utilities.css
+    elements: 
+      nd-${element-name}: (variants intellisense)
+        - nd-${element-name}.ts
+        - nd-${element-name}.story.ts
+        - nd-${element-name}.test.ts
+    layouts:
+      nd-${layout-name}: (aria role intellisense)
+        - nd-${layout-name}.ts
+        - nd-${layout-name}.story.ts
+        - nd-${layout-name}.test.ts
+    components:
+      nd-${component-name}: (whatever properties intellisense)
+        - nd-${component-name}.ts
+        - nd-${component-name}.test.ts
+        - nd-${component-name}.story.ts
+    regions:
+      nd-${region-name}: (whatever properties intellisense)
+        - nd-${region-name}.ts
+        - nd-${region-name}.test.ts
+        - nd-${region-name}.story.ts
+    index.css
+    index.ts
+  dist:
+    - nurtur-design.js
+    - nurtur-design.css
+    - nurtur-design.d.ts
