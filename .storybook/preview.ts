@@ -1,15 +1,21 @@
-import type { Preview } from '@storybook/web-components';
-import '../index.css';
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import '../index.css'; 
 
-const preview: Preview = {
-  parameters: {
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/i
-      }
-    }
-  }
+export const parameters = {
+  controls: {
+    matchers: {
+      color: /(background|color)$/i, 
+      date: /Date$/,
+    },
+  },
+  viewport: {
+    viewports: INITIAL_VIEWPORTS,
+  },
+  backgrounds: {
+    default: 'light',
+    values: [
+      { name: 'light', value: '#ffffff' },
+      { name: 'dark', value: '#000000' },
+    ],
+  },
 };
-
-export default preview;

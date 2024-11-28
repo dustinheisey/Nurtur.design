@@ -1,10 +1,15 @@
-import type { StorybookConfig } from '@storybook/web-components-vite';
+import type { StorybookConfig } from '@storybook/vue3-vite';
 
 const config: StorybookConfig = {
-  stories: ['../src/**/*.story.@(js|jsx|mjs|ts|mdx)'],
-  addons: ['@storybook/addon-essentials', '@chromatic-com/storybook'],
+  stories: ['../src/**/*.story.@(ts|mdx)', '../src/stories/*.stories.ts'],
+  addons: [
+    '@storybook/addon-onboarding',
+    '@storybook/addon-essentials',
+    '@chromatic-com/storybook',
+    '@storybook/addon-interactions'
+  ],
   framework: {
-    name: '@storybook/web-components-vite',
+    name: '@storybook/vue3-vite',
     options: {}
   }
 };
