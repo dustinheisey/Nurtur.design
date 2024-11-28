@@ -7,4 +7,12 @@
   </div>
 </template>
 
-<style scoped></style>
+<style scoped lang="scss">
+div {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+</style>

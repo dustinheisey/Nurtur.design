@@ -1,4 +1,4 @@
-@import url('./src/styles/reset.css');
-@import url('./src/styles/global.css');
-@import url('./src/styles/tokens.css');
-@import url('./src/styles/utilities.css');
+@import url('./styles/reset.css');
+@import url('./styles/global.css');
+@import url('./styles/tokens.css');
+@import url('./styles/utilities.css');
