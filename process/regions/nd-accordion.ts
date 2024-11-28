@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { global } from '../index.css.js';
+
 
 interface AccordionItem {
   headline?: string;
@@ -21,7 +21,7 @@ export class AccordionRegion extends LitElement {
   @property({ type: Array })
   items: AccordionItem[] = [];
 
-  static styles = [global, css``];
+  static styles = [ css``];
 
   render() {
     return html`

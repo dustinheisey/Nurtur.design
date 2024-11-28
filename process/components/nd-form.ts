@@ -1,6 +1,6 @@
 import { html, css, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { global } from '../index.css.js';
+
 
 interface InputBase {
   id: string;
@@ -61,7 +61,7 @@ export class NdForm extends LitElement {
   submit: string = 'Submit';
 
   static styles = [
-    global,
+    
     css`
       .input-card {
         display: flex;

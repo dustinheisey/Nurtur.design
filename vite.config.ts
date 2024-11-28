@@ -1,10 +1,9 @@
-import type { UserConfig } from 'vite'
+import { defineConfig } from 'vite';
 
-const config: UserConfig = {
+export default defineConfig({
+  publicDir: 'public',
   root: '.',
   build: {
-    outDir: '/dist',
-  }
-} 
-
-export default config;
+    outDir: 'dist',
+  },
+});

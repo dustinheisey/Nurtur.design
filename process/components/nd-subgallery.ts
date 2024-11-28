@@ -1,6 +1,6 @@
 import { html, css, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { global } from '../index.css.js';
+
 
 type GalleryVariant = 'masonry' | 'stack' | 'grid';
 
@@ -25,7 +25,7 @@ export class NdSubgallery extends LitElement {
   col: number = 2;
 
   static styles = [
-    global,
+    
     css`
       .stack {
         display: flex;

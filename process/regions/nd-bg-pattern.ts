@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { global } from '../index.css.js';
+
 
 interface ButtonProps {
   url: string;
@@ -43,7 +43,7 @@ export class BgPatternRegion extends LitElement {
   @property({ type: Boolean })
   input = false;
 
-  static styles = [global, css``];
+  static styles = [ css``];
 
   render() {
     return html`

@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { global } from '../index.css.js';
+
 
 @customElement('end-heavy-region')
 export class EndHeavyRegion extends LitElement {
@@ -19,7 +19,7 @@ export class EndHeavyRegion extends LitElement {
   @property({ type: Object })
   end = {};
 
-  static styles = [global, css``];
+  static styles = [ css``];
 
   render() {
     return html`

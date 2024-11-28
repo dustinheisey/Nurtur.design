@@ -1,6 +1,6 @@
 import { html, css, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { global } from '../index.css.js';
+
 
 interface ListItem {
   icon?: string;
@@ -37,7 +37,7 @@ export class NdList extends LitElement {
   items: (ListItem | string)[] = [];
 
   static styles = [
-    global,
+    
     css`
       .grid {
         display: grid;

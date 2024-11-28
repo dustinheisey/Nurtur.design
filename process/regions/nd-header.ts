@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { global } from '../index.css.js';
+
 
 interface HeaderConfig {
   header: {
@@ -19,7 +19,7 @@ export class HeaderRegion extends LitElement {
   @property({ type: String })
   type = '';
 
-  static styles = [global, css``];
+  static styles = [ css``];
 
   render() {
     return html`

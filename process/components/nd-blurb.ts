@@ -1,7 +1,7 @@
 import { html, css, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
-import { global } from '../index.css.js';
+
 
 interface ImageProps {
   variant?: 'avatar';
@@ -33,7 +33,7 @@ export class NdBlurb extends LitElement {
   body: string = '';
 
   static styles = [
-    global,
+    
     css`
       .blurb {
         display: flex;

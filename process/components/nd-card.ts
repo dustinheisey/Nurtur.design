@@ -1,11 +1,11 @@
 import { html, css, LitElement } from 'lit';
 import { customElement } from 'lit/decorators.js';
-import { global } from '../index.css.js';
+
 
 @customElement('nd-card')
 export class NdCard extends LitElement {
   static styles = [
-    global,
+    
     css`
       .card {
         box-shadow: var(--shadow-l);

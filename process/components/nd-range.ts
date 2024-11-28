@@ -1,6 +1,6 @@
 import { html, css, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { global } from '../index.css.js';
+
 
 @customElement('nd-range')
 export class NdRange extends LitElement {
@@ -11,7 +11,7 @@ export class NdRange extends LitElement {
   prefix: string = '$';
 
   static styles = [
-    global,
+    
     css`
       .range-container {
         display: flex;

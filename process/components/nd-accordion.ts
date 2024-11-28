@@ -1,6 +1,6 @@
 import { html, css, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { global } from '../index.css.js';
+
 
 interface AccordionItem {
   title: string;
@@ -21,7 +21,7 @@ export class NdAccordion extends LitElement {
   };
 
   static styles = [
-    global,
+    
     css`
       .region {
         display: block;

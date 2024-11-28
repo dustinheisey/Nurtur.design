@@ -1,7 +1,7 @@
 import { html, css, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
-import { global } from '../index.css.js';
+
 
 interface NavbarLink {
   url: string;
@@ -71,7 +71,7 @@ export class NdText extends LitElement {
   };
 
   static styles = [
-    global,
+    
     css`
       .navbar {
         position: sticky;

@@ -1,6 +1,6 @@
-import { html, LitElement } from 'lit';
+import { html, LitElement, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { global } from '../index.css.js';
+
 
 @customElement('nd-article')
 export class NdArticle extends LitElement {
@@ -19,7 +19,7 @@ export class NdArticle extends LitElement {
   @property({ type: Object })
   btn?: { href: string; label: string };
 
-  static styles = [global];
+  static styles = css``;
 
   render() {
     const imgSrc = `./public/img/${this.img.src}`;

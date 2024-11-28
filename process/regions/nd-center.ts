@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { global } from '../index.css.js';
+
 
 @customElement('center-region')
 export class CenterRegion extends LitElement {
@@ -19,7 +19,7 @@ export class CenterRegion extends LitElement {
   @property({ type: Object })
   content = {};
 
-  static styles = [global, css``];
+  static styles = [ css``];
 
   render() {
     return html`

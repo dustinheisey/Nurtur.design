@@ -1,6 +1,5 @@
 import { html, css, LitElement } from 'lit';
 import { customElement } from 'lit/decorators.js';
-// import { global } from './index.css.js';
 import './base/nd-theme.js';
 
 @customElement('nurtur-design')

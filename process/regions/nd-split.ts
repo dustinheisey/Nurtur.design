@@ -1,13 +1,13 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { global } from '../index.css.js';
+
 
 @customElement('split-region')
 export class SplitRegion extends LitElement {
   @property({ type: String })
   theme = '';
 
-  static styles = [global, css``];
+  static styles = [ css``];
 
   render() {
     return html`

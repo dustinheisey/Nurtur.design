@@ -1,6 +1,6 @@
 import { html, css, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { global } from '../index.css.js';
+
 
 interface StatItem {
   headline: string;
@@ -31,7 +31,7 @@ export class NdStats extends LitElement {
   items: StatItem[] = [];
 
   static styles = [
-    global,
+    
     css`
       .switcher {
         display: flex;

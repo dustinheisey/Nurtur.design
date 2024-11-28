@@ -1,7 +1,7 @@
 /* eslint-disable wc/guard-super-call */
 import { html, css, LitElement } from 'lit';
 import { customElement } from 'lit/decorators.js';
-import { global } from '../index.css.js';
+
 
 @customElement('nd-reading-progress')
 export class NdReadingProgress extends LitElement {
@@ -14,7 +14,7 @@ export class NdReadingProgress extends LitElement {
   private bottom = 10000;
 
   static styles = [
-    global,
+    
     css`
       :host {
         position: fixed;

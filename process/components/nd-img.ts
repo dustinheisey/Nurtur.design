@@ -1,7 +1,7 @@
 import { html, css, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
-import { global } from '../index.css.js';
+
 
 @customElement('nd-img')
 export class NdImg extends LitElement {
@@ -21,7 +21,7 @@ export class NdImg extends LitElement {
   alt?: string;
 
   static styles = [
-    global,
+    
     css`
       .frame {
         display: block;

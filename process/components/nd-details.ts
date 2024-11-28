@@ -1,6 +1,6 @@
 import { html, css, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { global } from '../index.css.js';
+
 
 @customElement('nd-details')
 export class NdDetails extends LitElement {
@@ -17,7 +17,7 @@ export class NdDetails extends LitElement {
   body: string = '';
 
   static styles = [
-    global,
+    
     css`
       details {
         width: 100%;

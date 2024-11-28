@@ -1,11 +1,11 @@
 import { html, css, LitElement } from 'lit';
 import { customElement } from 'lit/decorators.js';
-import { global } from '../index.css.js';
+
 
 @customElement('nd-banner')
 export class NdBanner extends LitElement {
   static styles = [
-    global,
+    
     css`
       .banner {
         display: flex;

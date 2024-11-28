@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { global } from '../index.css.js';
+
 
 interface Category {
   data: {
@@ -57,7 +57,7 @@ export class BlogRegion extends LitElement {
   @property({ type: Array })
   posts: Post[] = [];
 
-  static styles = [global, css``];
+  static styles = [ css``];
 
   private getPostCategory(post: Post): string {
     const category = this.categories.find((cat) =>

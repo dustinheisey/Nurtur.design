@@ -1,6 +1,6 @@
 import { html, css, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { global } from '../index.css.js';
+
 
 @customElement('nd-blockquote')
 export class NdBlockquote extends LitElement {
@@ -14,7 +14,7 @@ export class NdBlockquote extends LitElement {
   author: string = '';
 
   static styles = [
-    global,
+    
     css`
       .blockquote-accent {
         /* Add your accent styles here */

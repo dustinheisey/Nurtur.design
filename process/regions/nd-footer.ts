@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { global } from '../index.css.js';
+
 
 interface FooterConfig {
   variant: 'mission' | 'newsletter';
@@ -33,7 +33,7 @@ export class FooterRegion extends LitElement {
   @property({ type: Object })
   config!: FooterConfig;
 
-  static styles = [global, css``];
+  static styles = [ css``];
 
   render() {
     return html`

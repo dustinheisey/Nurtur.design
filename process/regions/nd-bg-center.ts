@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { global } from '../index.css.js';
+
 
 interface ImageProps {
   src: string;
@@ -32,7 +32,7 @@ export class BgCenterRegion extends LitElement {
   @property({ type: Object })
   btn?: ButtonProps;
 
-  static styles = [global, css``];
+  static styles = [ css``];
 
   render() {
     return html`
