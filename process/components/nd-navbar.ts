@@ -124,8 +124,7 @@ export class NavbarRegion extends LitElement {
   `;
 
   render() {
-    const variantClass =
-      this.config.header.variant ? `justify-${this.getVariantAlignment()}` : '';
+    const variantClass = this.config.header.variant ? `justify-${this.getVariantAlignment()}` : '';
 
     return html`
       <nav>
@@ -148,21 +147,8 @@ export class NavbarRegion extends LitElement {
               title="Toggles light &gt; dark"
               aria-live="polite"
             >
-              <svg
-                class="sun-and-moon"
-                aria-hidden="true"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-              >
-                <circle
-                  class="sun"
-                  cx="12"
-                  cy="12"
-                  r="6"
-                  mask="url(#moon-mask)"
-                  fill="var(--color-primary)"
-                />
+              <svg class="sun-and-moon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24">
+                <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="var(--color-primary)" />
                 <g class="sun-beams" stroke="var(--color-primary)">
                   <line x1="12" y1="1" x2="12" y2="3" />
                   <line x1="12" y1="21" x2="12" y2="23" />
@@ -178,21 +164,15 @@ export class NavbarRegion extends LitElement {
                   <circle cx="24" cy="10" r="6" fill="black" />
                 </mask>
               </svg>
-              <tool-tip tip-position="block-end"
-                >Toggle <span class="badge badge-primary"></span
-              ></tool-tip>
+              <tool-tip tip-position="block-end">Toggle <span class="badge badge-primary"></span></tool-tip>
             </button>
-            <a href="${this.config.header.action.url}" class="btn">
-              ${this.config.header.action.label}
-            </a>
+            <a href="${this.config.header.action.url}" class="btn"> ${this.config.header.action.label} </a>
           </div>
 
           ${this.renderBottomBar()}
         </div>
 
-        ${this.type === 'article' ?
-          html` <div id="reading-progress" aria-hidden="true"></div> `
-        : ''}
+        ${this.type === 'article' ? html` <div id="reading-progress" aria-hidden="true"></div> ` : ''}
       </nav>
     `;
   }
@@ -213,10 +193,9 @@ export class NavbarRegion extends LitElement {
   }
 
   private renderNavLinks() {
-    return this.config.header.links.map((link) => this.renderNavLink(link));
+    return this.config.header.links.map(link => this.renderNavLink(link));
   }
 
-  // eslint-disable-next-line class-methods-use-this
   private renderNavLink(link: NavLink) {
     if (link.subLinks) {
       return html`
@@ -225,11 +204,9 @@ export class NavbarRegion extends LitElement {
             <a href="${link.url}" class="link link-navigation">${link.label}</a>
             <ul>
               ${link.subLinks.map(
-                (subLink) => html`
+                subLink => html`
                   <li>
-                    <a href="${subLink.url}" class="link link-navigation">
-                      ${subLink.label}
-                    </a>
+                    <a href="${subLink.url}" class="link link-navigation"> ${subLink.label} </a>
                   </li>
                 `
               )}
@@ -250,7 +227,7 @@ export class NavbarRegion extends LitElement {
       <div class="bottombar">
         <ul>
           ${this.config.bottombar.links.map(
-            (item) => html`
+            item => html`
               <li>
                 <a href="${item.url}" class="navigation">
                   <slot name="icon-${item.icon}"></slot>

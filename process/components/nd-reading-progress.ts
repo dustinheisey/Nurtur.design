@@ -1,7 +1,5 @@
-/* eslint-disable wc/guard-super-call */
 import { html, css, LitElement } from 'lit';
 import { customElement } from 'lit/decorators.js';
-
 
 @customElement('nd-reading-progress')
 export class NdReadingProgress extends LitElement {
@@ -14,7 +12,6 @@ export class NdReadingProgress extends LitElement {
   private bottom = 10000;
 
   static styles = [
-    
     css`
       :host {
         position: fixed;
@@ -31,11 +28,7 @@ export class NdReadingProgress extends LitElement {
 
   private updateProgress() {
     this.requestedAniFrame = false;
-    const percent = Math.min(
-      (document.scrollingElement!.scrollTop / (this.bottom - this.winHeight)) *
-        100,
-      100
-    );
+    const percent = Math.min((document.scrollingElement!.scrollTop / (this.bottom - this.winHeight)) * 100, 100);
 
     this.style.transform = `translate(-${100 - percent}vw, 0)`;
 
@@ -61,8 +54,7 @@ export class NdReadingProgress extends LitElement {
       new ResizeObserver(() => {
         this.bottom =
           document.scrollingElement!.scrollTop +
-          document.querySelector('#comments,footer')!.getBoundingClientRect()
-            .top;
+          document.querySelector('#comments,footer')!.getBoundingClientRect().top;
         this.winHeight = window.innerHeight;
         this.handleScroll();
       }).observe(document.body);

@@ -1,7 +1,6 @@
 import { html, css, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-
 interface ListItem {
   icon?: string;
   text?: string;
@@ -37,7 +36,6 @@ export class NdList extends LitElement {
   items: (ListItem | string)[] = [];
 
   static styles = [
-    
     css`
       .grid {
         display: grid;
@@ -47,24 +45,17 @@ export class NdList extends LitElement {
   ];
 
   private renderListItems() {
-    const listClass =
-      this.variant === 'grid' ? 'grid grid-2 gap-s' : 'stack gap-xs';
+    const listClass = this.variant === 'grid' ? 'grid grid-2 gap-s' : 'stack gap-xs';
 
     return html`
       <ul class="${listClass}">
-        ${this.items.map((item) => {
+        ${this.items.map(item => {
           const itemIcon = typeof item === 'object' ? item.icon : this.icon;
           const itemText = typeof item === 'object' ? item.text : item;
 
           return html`
             <li class="inline align-start gap-xs">
-              ${itemIcon ?
-                html`<nd-icon
-                  name="${itemIcon}"
-                  class="icon-secondary"
-                ></nd-icon>`
-              : ''}
-              ${itemText}
+              ${itemIcon ? html`<nd-icon name="${itemIcon}" class="icon-secondary"></nd-icon>` : ''} ${itemText}
             </li>
           `;
         })}
@@ -74,22 +65,16 @@ export class NdList extends LitElement {
 
   render() {
     return html`
-      <section
-        class="${this.overrides} theme-${this.theme} ${this.full ? 'full' : (
-          ''
-        )} stack gap-xl"
-      >
-        ${this.headline ?
-          html`
-            <div class="prose">
-              ${this.overline ?
-                html`<p class="overline">${this.overline}</p>`
-              : ''}
-              <h2 class="region-headline">${this.headline}</h2>
-              ${this.body ? html`<p>${this.body}</p>` : ''}
-            </div>
-          `
-        : ''}
+      <section class="${this.overrides} theme-${this.theme} ${this.full ? 'full' : ''} stack gap-xl">
+        ${this.headline
+          ? html`
+              <div class="prose">
+                ${this.overline ? html`<p class="overline">${this.overline}</p>` : ''}
+                <h2 class="region-headline">${this.headline}</h2>
+                ${this.body ? html`<p>${this.body}</p>` : ''}
+              </div>
+            `
+          : ''}
         ${this.renderListItems()}
       </section>
     `;

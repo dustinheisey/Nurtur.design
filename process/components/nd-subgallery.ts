@@ -1,7 +1,6 @@
 import { html, css, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-
 type GalleryVariant = 'masonry' | 'stack' | 'grid';
 
 @customElement('nd-subgallery')
@@ -25,7 +24,6 @@ export class NdSubgallery extends LitElement {
   col: number = 2;
 
   static styles = [
-    
     css`
       .stack {
         display: flex;
@@ -69,17 +67,15 @@ export class NdSubgallery extends LitElement {
   render() {
     return html`
       <div class="stack ${this.overrides || ''}">
-        ${this.headline ?
-          html`
-            <section class="prose center stack align-center text-center">
-              ${this.overline ?
-                html` <p class="overline">${this.overline}</p> `
-              : ''}
-              <h2 class="page-headline">${this.headline}</h2>
-              ${this.body ? html` <p>${this.body}</p> ` : ''}
-            </section>
-          `
-        : ''}
+        ${this.headline
+          ? html`
+              <section class="prose center stack align-center text-center">
+                ${this.overline ? html` <p class="overline">${this.overline}</p> ` : ''}
+                <h2 class="page-headline">${this.headline}</h2>
+                ${this.body ? html` <p>${this.body}</p> ` : ''}
+              </section>
+            `
+          : ''}
         ${this.renderGalleryContent()}
       </div>
     `;

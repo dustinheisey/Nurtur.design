@@ -2,7 +2,6 @@ import { html, css, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
 
-
 @customElement('nd-img')
 export class NdImg extends LitElement {
   @property({ type: String })
@@ -21,7 +20,6 @@ export class NdImg extends LitElement {
   alt?: string;
 
   static styles = [
-    
     css`
       .frame {
         display: block;
@@ -34,12 +32,9 @@ export class NdImg extends LitElement {
   render() {
     return html`
       <div class="${this.overrides} frame ${this.ar || ''}">
-        ${this.variant === 'avatar' ?
-          html`<img src="https://i.pravatar.cc/300" alt="avatar" />`
-        : html`<img
-            src="./public/img/${this.src}"
-            alt="${ifDefined(this.alt)}"
-          />`}
+        ${this.variant === 'avatar'
+          ? html`<img src="https://i.pravatar.cc/300" alt="avatar" />`
+          : html`<img src="./public/img/${this.src}" alt="${ifDefined(this.alt)}" />`}
       </div>
     `;
   }

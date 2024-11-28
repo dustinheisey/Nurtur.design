@@ -34,8 +34,7 @@ export const linkStyles = css`
 
   .link-navigation {
     color: var(--color-primary);
-    background: linear-gradient(0deg, currentColor, currentColor) no-repeat
-      right bottom / 0 2px;
+    background: linear-gradient(0deg, currentColor, currentColor) no-repeat right bottom / 0 2px;
     padding-block-end: 2px;
     inline-size: max-content;
     text-decoration: none;

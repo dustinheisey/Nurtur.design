@@ -1,6 +1,6 @@
 {
   "name": "nurtur-design",
-  "description": "Design System following open-wc recommendations",
+  "description": "Design System",
   "license": "MIT",
   "author": "Dustin Heisey",
   "version": "0.0.0",
@@ -10,41 +10,41 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "clean": "rm -rf node_modules && npm cache clean --force ** npm install",
-    "lint": "eslint --ext .ts,.html . --ignore-path .gitignore",
-    "format": "prettier \"**/*.{cjs,html,js,json,md,ts}\" --ignore-path ./.gitignore --write",
+    "lint": "eslint .",
+    "format": "prettier . --write",
     "prepare": "husky",
-    "analyze": "cem analyze --litelement",
     "sb": "storybook dev -p 6006",
     "sb:build": "storybook build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "vue": "^3.5.13",
     "@vitejs/plugin-vue": "^5.2.1",
+    "vue": "^3.5.13"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.2",
-    "@open-wc/eslint-config": "^12.0.3",
     "@storybook/addon-essentials": "^8.4.5",
     "@storybook/addon-interactions": "^8.4.5",
     "@storybook/blocks": "^8.4.5",
     "@storybook/test": "^8.4.5",
     "@storybook/vue3": "^8.4.5",
     "@storybook/vue3-vite": "^8.4.5",
-    "@typescript-eslint/eslint-plugin": "^8.14.0",
-    "@typescript-eslint/parser": "^8.14.0",
-    
-    "eslint": "^8.57.1",
+    "@typescript-eslint/eslint-plugin": "^8.16.0",
+    "@typescript-eslint/parser": "^8.16.0",
+    "@vue/eslint-config-typescript": "^14.1.4",
+    "eslint": "^9.15.0",
     "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-storybook": "^0.11.1",
+    "eslint-plugin-vue": "^9.31.0",
     "husky": "^9.1.7",
+    "jiti": "^2.4.0",
     "lint-staged": "^15.2.10",
-    "prettier": "^3.4.1",
     "storybook": "^8.4.5",
     "tslib": "^2.8.1",
     "typescript": "^5.7.2",
-    "vite": "^5.4.11"
-  },
-  "customElements": "custom-elements.json"
+    "vite": "^5.4.11",
+    "vue-eslint-parser": "^9.4.3"
+  }
 }

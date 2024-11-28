@@ -1,7 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-
 interface ButtonProps {
   url: string;
   label: string;
@@ -43,61 +42,40 @@ export class BgPatternRegion extends LitElement {
   @property({ type: Boolean })
   input = false;
 
-  static styles = [ css``];
+  static styles = [css``];
 
   render() {
     return html`
-      <div
-        class="region bg-pattern pattern-${this.pattern} ${this
-          .overrides} theme-${this.theme} inset-xl"
-      >
+      <div class="region bg-pattern pattern-${this.pattern} ${this.overrides} theme-${this.theme} inset-xl">
         <section class="prose ${this.align ? `stack align-${this.align}` : ''}">
-          ${this.overline ?
-            html` <p class="overline">${this.overline}</p> `
-          : ''}
-          ${this.headline ?
-            html` <h2 class="region-headline">${this.headline}</h2> `
-          : ''}
-          ${this.lead ?
-            html`
-              <p class="lead ${this.center ? 'auto' : ''}">${this.lead}</p>
-            `
-          : ''}
+          ${this.overline ? html` <p class="overline">${this.overline}</p> ` : ''}
+          ${this.headline ? html` <h2 class="region-headline">${this.headline}</h2> ` : ''}
+          ${this.lead ? html` <p class="lead ${this.center ? 'auto' : ''}">${this.lead}</p> ` : ''}
           ${this.body ? html` <p>${this.body}</p> ` : ''}
-          ${this.btn ?
-            html`
-              <a
-                href="${this.btn.url}"
-                class="btn ${this.btn.variant ? `btn-${this.btn.variant}` : ''}"
-                >${this.btn.label}</a
-              >
-            `
-          : ''}
-          ${this.input ?
-            html`
-              <form
-                class="sidebar gap-0 input-group"
-                method="POST"
-                name="newsletter"
-              >
-                <input type="hidden" name="form-name" value="newsletter" />
-                <label class="sr-only required" for="newsletter-email"
-                  >Email Address</label
+          ${this.btn
+            ? html`
+                <a href="${this.btn.url}" class="btn ${this.btn.variant ? `btn-${this.btn.variant}` : ''}"
+                  >${this.btn.label}</a
                 >
-                <input
-                  class="input"
-                  id="newsletter-email"
-                  name="newsletter-email"
-                  required
-                  type="email"
-                  placeholder="Email Address"
-                />
-                <button class="btn btn-primary fixed" type="submit">
-                  Subscribe
-                </button>
-              </form>
-            `
-          : ''}
+              `
+            : ''}
+          ${this.input
+            ? html`
+                <form class="sidebar gap-0 input-group" method="POST" name="newsletter">
+                  <input type="hidden" name="form-name" value="newsletter" />
+                  <label class="sr-only required" for="newsletter-email">Email Address</label>
+                  <input
+                    class="input"
+                    id="newsletter-email"
+                    name="newsletter-email"
+                    required
+                    type="email"
+                    placeholder="Email Address"
+                  />
+                  <button class="btn btn-primary fixed" type="submit">Subscribe</button>
+                </form>
+              `
+            : ''}
         </section>
       </div>
     `;

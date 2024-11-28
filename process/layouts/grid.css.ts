@@ -23,65 +23,35 @@ export const gridStyles = css`
   .grid-2 {
     grid-template-columns: repeat(
       auto-fit,
-      minmax(
-        max(
-          var(--min-inline-size, 10rem),
-          calc((100% - 1 * var(--grid-gap)) / 2)
-        ),
-        1fr
-      )
+      minmax(max(var(--min-inline-size, 10rem), calc((100% - 1 * var(--grid-gap)) / 2)), 1fr)
     );
   }
 
   .grid-3 {
     grid-template-columns: repeat(
       auto-fit,
-      minmax(
-        max(
-          var(--min-inline-size, 9rem),
-          calc((100% - 2 * var(--grid-gap)) / 3)
-        ),
-        1fr
-      )
+      minmax(max(var(--min-inline-size, 9rem), calc((100% - 2 * var(--grid-gap)) / 3)), 1fr)
     );
   }
 
   .grid-4 {
     grid-template-columns: repeat(
       auto-fit,
-      minmax(
-        max(
-          var(--min-inline-size, 6rem),
-          calc((100% - 3 * var(--grid-gap)) / 4)
-        ),
-        1fr
-      )
+      minmax(max(var(--min-inline-size, 6rem), calc((100% - 3 * var(--grid-gap)) / 4)), 1fr)
     );
   }
 
   .grid-5 {
     grid-template-columns: repeat(
       auto-fit,
-      minmax(
-        max(
-          var(--min-inline-size, 5rem),
-          calc((100% - 4 * var(--grid-gap)) / 5)
-        ),
-        1fr
-      )
+      minmax(max(var(--min-inline-size, 5rem), calc((100% - 4 * var(--grid-gap)) / 5)), 1fr)
     );
   }
 
   .grid-6 {
     grid-template-columns: repeat(
       auto-fit,
-      minmax(
-        max(
-          var(--min-inline-size, 4rem),
-          calc((100% - 5 * var(--grid-gap)) / 6)
-        ),
-        1fr
-      )
+      minmax(max(var(--min-inline-size, 4rem), calc((100% - 5 * var(--grid-gap)) / 6)), 1fr)
     );
   }
 

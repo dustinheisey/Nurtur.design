@@ -8,10 +8,7 @@ export const badgeStyles = css`
 
   .badge-secondary {
     --bg: var(--color-badge-secondary, var(--color-secondary-container));
-    --on-bg: var(
-      --color-on-badge-secondary,
-      var(--color-on-secondary-container)
-    );
+    --on-bg: var(--color-on-badge-secondary, var(--color-on-secondary-container));
   }
 
   .badge-tertiary {

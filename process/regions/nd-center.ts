@@ -1,7 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-
 @customElement('center-region')
 export class CenterRegion extends LitElement {
   @property({ type: String })
@@ -19,7 +18,7 @@ export class CenterRegion extends LitElement {
   @property({ type: Object })
   content = {};
 
-  static styles = [ css``];
+  static styles = [css``];
 
   render() {
     return html`

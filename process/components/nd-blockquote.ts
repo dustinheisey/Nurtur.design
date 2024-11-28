@@ -1,7 +1,6 @@
 import { html, css, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-
 @customElement('nd-blockquote')
 export class NdBlockquote extends LitElement {
   @property({ type: String })
@@ -14,7 +13,6 @@ export class NdBlockquote extends LitElement {
   author: string = '';
 
   static styles = [
-    
     css`
       .blockquote-accent {
         /* Add your accent styles here */
@@ -25,9 +23,7 @@ export class NdBlockquote extends LitElement {
   render() {
     return html`
       <figure>
-        <blockquote
-          class="${this.variant === 'accent' ? 'blockquote-accent' : ''}"
-        >
+        <blockquote class="${this.variant === 'accent' ? 'blockquote-accent' : ''}">
           ${this.variant === 'accent' ? this.quote : html`"${this.quote}"`}
         </blockquote>
         <figcaption class="overline">${this.author}</figcaption>

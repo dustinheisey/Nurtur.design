@@ -1,13 +1,12 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-
 @customElement('start-region')
 export class StartRegion extends LitElement {
   @property({ type: String })
   overrides = '';
 
-  static styles = [ css``];
+  static styles = [css``];
 
   render() {
     return html`

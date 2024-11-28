@@ -1,7 +1,6 @@
 import { html, css, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-
 interface StatItem {
   headline: string;
   body: string;
@@ -31,7 +30,6 @@ export class NdStats extends LitElement {
   items: StatItem[] = [];
 
   static styles = [
-    
     css`
       .switcher {
         display: flex;
@@ -49,12 +47,8 @@ export class NdStats extends LitElement {
       return html`
         <div class="switcher switch-phone align-start gap-xl ${this.overrides}">
           ${this.items.map(
-            (item) => html`
-              <div
-                class="prose stack gap-3xs ${this.center ?
-                  'align-center text-center'
-                : ''}"
-              >
+            item => html`
+              <div class="prose stack gap-3xs ${this.center ? 'align-center text-center' : ''}">
                 <h3 class="section-headline">${item.headline}</h3>
                 <p>${item.body}</p>
               </div>
@@ -68,7 +62,7 @@ export class NdStats extends LitElement {
       return html`
         <div class="stack gap-l fixed ${this.overrides}">
           ${this.items.map(
-            (item) => html`
+            item => html`
               <div class="prose stack gap-3xs">
                 <h3 class="section-headline">${item.headline}</h3>
                 <p>${item.body}</p>
@@ -82,7 +76,7 @@ export class NdStats extends LitElement {
     return html`
       <div class="${this.overrides} grid grid-2 fixed">
         ${this.items.map(
-          (item) => html`
+          item => html`
             <div class="prose stack gap-3xs">
               <h3 class="section-headline">${item.headline}</h3>
               <p>${item.body}</p>
@@ -96,17 +90,15 @@ export class NdStats extends LitElement {
   render() {
     return html`
       <div class="stack gap-xl">
-        ${this.headline ?
-          html`
-            <section>
-              ${this.overline ?
-                html`<p class="overline">${this.overline}</p>`
-              : ''}
-              <h2 class="region-headline">${this.headline}</h2>
-              ${this.body ? html`<p>${this.body}</p>` : ''}
-            </section>
-          `
-        : ''}
+        ${this.headline
+          ? html`
+              <section>
+                ${this.overline ? html`<p class="overline">${this.overline}</p>` : ''}
+                <h2 class="region-headline">${this.headline}</h2>
+                ${this.body ? html`<p>${this.body}</p>` : ''}
+              </section>
+            `
+          : ''}
         ${this.renderStats()}
       </div>
     `;

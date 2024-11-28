@@ -1,11 +1,9 @@
 import { html, css, LitElement } from 'lit';
 import { customElement } from 'lit/decorators.js';
 
-
 @customElement('nd-card')
 export class NdCard extends LitElement {
   static styles = [
-    
     css`
       .card {
         box-shadow: var(--shadow-l);
@@ -144,10 +142,7 @@ export class NdCard extends LitElement {
   render() {
     return html`
       {% if props.url %}
-      <a
-        href="{{props.url}}"
-        class="prose stack card card-link theme-{{props.theme}}"
-      >
+      <a href="{{props.url}}" class="prose stack card card-link theme-{{props.theme}}">
         {% if props.icon %}{% icon props.icon, "icon icon-l" %}{% endif %}
         <h3 class="title-headline">{{props.headline}}</h3>
         <p>{{props.body}}</p>
@@ -160,8 +155,7 @@ export class NdCard extends LitElement {
         <ul class="stack gap-{{props.gap or 'm'}}">
           {% for item in props.items %}
           <li class="inline align-start gap-xs">
-            {% icon item.icon or props.icon, "icon-secondary" %} {{item.text or
-            item}}
+            {% icon item.icon or props.icon, "icon-secondary" %} {{item.text or item}}
           </li>
           {% endfor %}
         </ul>
@@ -170,10 +164,7 @@ export class NdCard extends LitElement {
           <time datetime="{{props.time}}">{{props.label}}</time>
         </div>
         {% endif %}
-        <h3 class="title-headline">
-          {% if props.icon %}{% icon props.icon, "icon" %}{% endif
-          %}{{props.headline}}
-        </h3>
+        <h3 class="title-headline">{% if props.icon %}{% icon props.icon, "icon" %}{% endif %}{{props.headline}}</h3>
         <p>{{props.body}}</p>
         {% endif %}
       </article>

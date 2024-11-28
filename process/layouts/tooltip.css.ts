@@ -15,34 +15,14 @@ export const tooltipStyles = css`
       --_triangle-size: 7px;
       --_bg: var(--color-surface);
       --_shadow-alpha: 50%;
-      --_bottom-tip: conic-gradient(
-          from -30deg at bottom,
-          rgb(0 0 0 / 0%),
-          #000 1deg 60deg,
-          rgb(0 0 0 / 0%) 61deg
-        )
+      --_bottom-tip: conic-gradient(from -30deg at bottom, rgb(0 0 0 / 0%), #000 1deg 60deg, rgb(0 0 0 / 0%) 61deg)
         bottom / 100% 50% no-repeat;
-      --_top-tip: conic-gradient(
-          from 150deg at top,
-          rgb(0 0 0 / 0%),
-          #000 1deg 60deg,
-          rgb(0 0 0 / 0%) 61deg
-        )
-        top / 100% 50% no-repeat;
-      --_right-tip: conic-gradient(
-          from -120deg at right,
-          rgb(0 0 0 / 0%),
-          #000 1deg 60deg,
-          rgb(0 0 0 / 0%) 61deg
-        )
+      --_top-tip: conic-gradient(from 150deg at top, rgb(0 0 0 / 0%), #000 1deg 60deg, rgb(0 0 0 / 0%) 61deg) top / 100%
+        50% no-repeat;
+      --_right-tip: conic-gradient(from -120deg at right, rgb(0 0 0 / 0%), #000 1deg 60deg, rgb(0 0 0 / 0%) 61deg)
         right / 50% 100% no-repeat;
-      --_left-tip: conic-gradient(
-          from 60deg at left,
-          rgb(0 0 0 / 0%),
-          #000 1deg 60deg,
-          rgb(0 0 0 / 0%) 61deg
-        )
-        left / 50% 100% no-repeat;
+      --_left-tip: conic-gradient(from 60deg at left, rgb(0 0 0 / 0%), #000 1deg 60deg, rgb(0 0 0 / 0%) 61deg) left /
+        50% 100% no-repeat;
 
       pointer-events: none;
       user-select: none;
@@ -129,22 +109,14 @@ export const tooltipStyles = css`
       --isRTL: 1;
     }
 
-    tool-tip:is(
-        [tip-position='top'],
-        [tip-position='block-start'],
-        :not([tip-position])
-      ) {
+    tool-tip:is([tip-position='top'], [tip-position='block-start'], :not([tip-position])) {
       inset-inline-start: 50%;
       inset-block-end: calc(100% + var(--_p-block) + var(--_triangle-size));
 
       --_x: calc(50% * var(--isRTL));
     }
 
-    tool-tip:is(
-        [tip-position='top'],
-        [tip-position='block-start'],
-        :not([tip-position])
-      )::after {
+    tool-tip:is([tip-position='top'], [tip-position='block-start'], :not([tip-position]))::after {
       --_tip: var(--_bottom-tip);
 
       inset-block-end: calc(var(--_triangle-size) * -1);
@@ -165,9 +137,7 @@ export const tooltipStyles = css`
       border-inline-start: var(--_triangle-size) solid transparent;
     }
 
-    tool-tip:is([tip-position='right'], [tip-position='inline-end']):dir(
-        rtl
-      )::after {
+    tool-tip:is([tip-position='right'], [tip-position='inline-end']):dir(rtl)::after {
       --_tip: var(--_right-tip);
     }
 
@@ -199,9 +169,7 @@ export const tooltipStyles = css`
       border-inline-end: var(--_triangle-size) solid transparent;
     }
 
-    tool-tip:is([tip-position='left'], [tip-position='inline-start']):dir(
-        rtl
-      )::after {
+    tool-tip:is([tip-position='left'], [tip-position='inline-start']):dir(rtl)::after {
       --_tip: var(--_left-tip);
     }
 
@@ -219,34 +187,26 @@ export const tooltipStyles = css`
     }
 
     @media (prefers-reduced-motion: no-preference) {
-      :has(
-          > tool-tip:is(
-              [tip-position='top'],
-              [tip-position='block-start'],
-              :not([tip-position])
-            )
-        ):not(:hover, :focus-visible, :active)
+      :has(> tool-tip:is([tip-position='top'], [tip-position='block-start'], :not([tip-position]))):not(
+          :hover,
+          :focus-visible,
+          :active
+        )
         tool-tip {
         --_y: 3px;
       }
 
-      :has(
-          > tool-tip:is([tip-position='right'], [tip-position='inline-end'])
-        ):not(:hover, :focus-visible, :active)
+      :has(> tool-tip:is([tip-position='right'], [tip-position='inline-end'])):not(:hover, :focus-visible, :active)
         tool-tip {
         --_x: -3px;
       }
 
-      :has(
-          > tool-tip:is([tip-position='bottom'], [tip-position='block-end'])
-        ):not(:hover, :focus-visible, :active)
+      :has(> tool-tip:is([tip-position='bottom'], [tip-position='block-end'])):not(:hover, :focus-visible, :active)
         tool-tip {
         --_y: -3px;
       }
 
-      :has(
-          > tool-tip:is([tip-position='left'], [tip-position='inline-start'])
-        ):not(:hover, :focus-visible, :active)
+      :has(> tool-tip:is([tip-position='left'], [tip-position='inline-start'])):not(:hover, :focus-visible, :active)
         tool-tip {
         --_x: 3px;
       }

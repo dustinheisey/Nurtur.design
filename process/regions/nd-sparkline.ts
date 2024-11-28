@@ -1,7 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-
 @customElement('sparkline-region')
 export class SparklineRegion extends LitElement {
   @property({ type: String })
@@ -22,22 +21,20 @@ export class SparklineRegion extends LitElement {
   @property({ type: Array })
   items = [];
 
-  static styles = [ css``];
+  static styles = [css``];
 
   render() {
     return html`
       <div class="region stack ${this.overrides}">
-        ${this.headline ?
-          html`
-            <section class="prose center text-center">
-              ${this.overline ?
-                html` <p class="overline">${this.overline}</p> `
-              : ''}
-              <h2 class="region-headline">${this.headline}</h2>
-              ${this.body ? html` <p>${this.body}</p> ` : ''}
-            </section>
-          `
-        : ''}
+        ${this.headline
+          ? html`
+              <section class="prose center text-center">
+                ${this.overline ? html` <p class="overline">${this.overline}</p> ` : ''}
+                <h2 class="region-headline">${this.headline}</h2>
+                ${this.body ? html` <p>${this.body}</p> ` : ''}
+              </section>
+            `
+          : ''}
 
         <div class="sparkline ${this.getSparklineClass()}">
           <div class="line" aria-hidden="true"></div>

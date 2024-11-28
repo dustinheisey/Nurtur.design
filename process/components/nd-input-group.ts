@@ -1,11 +1,9 @@
 import { html, css, LitElement } from 'lit';
 import { customElement } from 'lit/decorators.js';
 
-
 @customElement('nd-input-group')
 export class NdInputGroup extends LitElement {
   static styles = [
-    
     css`
       .input-group {
         display: flex;

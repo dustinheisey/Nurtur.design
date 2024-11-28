@@ -76,9 +76,7 @@ export class NdDarkModeToggle extends LitElement {
     if (localStorage.getItem(this.storageKey)) {
       return localStorage.getItem(this.storageKey) || 'light';
     }
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ?
-        'dark'
-      : 'light';
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   }
 
   private setPreference(): void {
@@ -88,9 +86,7 @@ export class NdDarkModeToggle extends LitElement {
 
   private reflectPreference(): void {
     document.firstElementChild?.setAttribute('data-theme', this.theme.value);
-    document
-      .querySelector('#theme-toggle')
-      ?.setAttribute('aria-label', this.theme.value);
+    document.querySelector('#theme-toggle')?.setAttribute('aria-label', this.theme.value);
   }
 
   private handleClick(): void {
@@ -99,16 +95,13 @@ export class NdDarkModeToggle extends LitElement {
   }
 
   connectedCallback(): void {
-    // eslint-disable-next-line wc/guard-super-call
     super.connectedCallback();
     this.reflectPreference();
 
-    window
-      .matchMedia('(prefers-color-scheme: dark)')
-      .addEventListener('change', ({ matches: isDark }) => {
-        this.theme.value = isDark ? 'dark' : 'light';
-        this.setPreference();
-      });
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', ({ matches: isDark }) => {
+      this.theme.value = isDark ? 'dark' : 'light';
+      this.setPreference();
+    });
   }
 
   render() {
@@ -121,21 +114,8 @@ export class NdDarkModeToggle extends LitElement {
         aria-live="polite"
         @click=${this.handleClick}
       >
-        <svg
-          class="sun-and-moon"
-          aria-hidden="true"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-        >
-          <circle
-            class="sun"
-            cx="12"
-            cy="12"
-            r="6"
-            mask="url(#moon-mask)"
-            fill="currentColor"
-          />
+        <svg class="sun-and-moon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+          <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="currentColor" />
           <g class="sun-beams" stroke="currentColor">
             <line x1="12" y1="1" x2="12" y2="3" />
             <line x1="12" y1="21" x2="12" y2="23" />

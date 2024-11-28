@@ -15,4 +15,3 @@ export default {
   trailingComma: 'none',
   useTabs: false
 };
-

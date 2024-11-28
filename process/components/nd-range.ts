@@ -1,7 +1,6 @@
 import { html, css, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-
 @customElement('nd-range')
 export class NdRange extends LitElement {
   @property({ type: Number })
@@ -11,7 +10,6 @@ export class NdRange extends LitElement {
   prefix: string = '$';
 
   static styles = [
-    
     css`
       .range-container {
         display: flex;
@@ -29,12 +27,7 @@ export class NdRange extends LitElement {
   render() {
     return html`
       <div class="range-container">
-        <input
-          type="range"
-          id="budget"
-          .value=${String(this.value)}
-          @input=${this.handleInput}
-        />
+        <input type="range" id="budget" .value=${String(this.value)} @input=${this.handleInput} />
         <output id="budget-value">${this.prefix}${this.value}</output>
       </div>
     `;

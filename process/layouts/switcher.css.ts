@@ -10,9 +10,7 @@ export const switcherStyles = css`
 
   .switcher > * {
     flex-grow: 1;
-    flex-basis: calc(
-      (var(--threshold) - (100% - var(--gap, var(--space-m)))) * 999
-    );
+    flex-basis: calc((var(--threshold) - (100% - var(--gap, var(--space-m)))) * 999);
     max-inline-size: 100%;
   }
 

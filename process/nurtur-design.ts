@@ -16,11 +16,7 @@ export class NurturDesign extends LitElement {
     return html`
       <nd-theme>
         <main>
-          <h1
-            style="font-family: var(--font-family-headline); font-size: var(--font-size-4xl)"
-          >
-            Hello world!
-          </h1>
+          <h1 style="font-family: var(--font-family-headline); font-size: var(--font-size-4xl)">Hello world!</h1>
         </main>
       </nd-theme>
     `;

@@ -2,7 +2,6 @@ import { html, css, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
 
-
 interface ImageProps {
   variant?: 'avatar';
   src?: string;
@@ -33,7 +32,6 @@ export class NdBlurb extends LitElement {
   body: string = '';
 
   static styles = [
-    
     css`
       .blurb {
         display: flex;
@@ -61,12 +59,9 @@ export class NdBlurb extends LitElement {
 
     return html`
       <div class="frame">
-        ${this.img.variant === 'avatar' ?
-          html`<img src="https://i.pravatar.cc/300" alt="avatar" />`
-        : html`<img
-            src="./public/img/${this.img.src}"
-            alt="${ifDefined(this.img.alt)}"
-          />`}
+        ${this.img.variant === 'avatar'
+          ? html`<img src="https://i.pravatar.cc/300" alt="avatar" />`
+          : html`<img src="./public/img/${this.img.src}" alt="${ifDefined(this.img.alt)}" />`}
       </div>
     `;
   }
@@ -83,14 +78,8 @@ export class NdBlurb extends LitElement {
 
     return html`
       <h3 class="${this.url ? 'section-headline' : 'title-headline'}">
-        ${this.icon ?
-          html`<nd-icon name="${this.icon}" class="icon"></nd-icon>`
-        : ''}
-        ${this.url ?
-          html`<a href="${this.url}" class="link-navigation"
-            >${this.headline}</a
-          >`
-        : this.headline}
+        ${this.icon ? html`<nd-icon name="${this.icon}" class="icon"></nd-icon>` : ''}
+        ${this.url ? html`<a href="${this.url}" class="link-navigation">${this.headline}</a>` : this.headline}
       </h3>
     `;
   }

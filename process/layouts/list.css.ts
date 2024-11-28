@@ -52,13 +52,7 @@ export const listStyles = css`
     display: grid;
     grid-template-columns: repeat(
       auto-fit,
-      minmax(
-        max(
-          var(--min-inline-size, 15ch),
-          calc((100% - 1 * var(--grid-gap)) / 2)
-        ),
-        1fr
-      )
+      minmax(max(var(--min-inline-size, 15ch), calc((100% - 1 * var(--grid-gap)) / 2)), 1fr)
     );
 
     --grid-gap: var(--gap, var(--space-xs));

@@ -1,7 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-
 @customElement('gallery-region')
 export class GalleryRegion extends LitElement {
   @property({ type: String })
@@ -28,34 +27,32 @@ export class GalleryRegion extends LitElement {
   @property({ type: Array })
   items = [];
 
-  static styles = [ css``];
+  static styles = [css``];
 
   render() {
     return html`
       <div class="theme-${this.theme}">
         <div class="region stack ${this.overrides}">
-          ${this.headline ?
-            html`
-              <section class="prose center stack align-center text-center">
-                ${this.overline ?
-                  html` <p class="overline">${this.overline}</p> `
-                : ''}
-                <h2 class="page-headline">${this.headline}</h2>
-                ${this.body ? html` <p>${this.body}</p> ` : ''}
-              </section>
-            `
-          : ''}
-          ${this.variant === 'masonry' ?
-            html`
-              <div class="masonry col-3 gap-m">
-                <slot></slot>
-              </div>
-            `
-          : html`
-              <div class="grid grid-${this.col}">
-                <slot></slot>
-              </div>
-            `}
+          ${this.headline
+            ? html`
+                <section class="prose center stack align-center text-center">
+                  ${this.overline ? html` <p class="overline">${this.overline}</p> ` : ''}
+                  <h2 class="page-headline">${this.headline}</h2>
+                  ${this.body ? html` <p>${this.body}</p> ` : ''}
+                </section>
+              `
+            : ''}
+          ${this.variant === 'masonry'
+            ? html`
+                <div class="masonry col-3 gap-m">
+                  <slot></slot>
+                </div>
+              `
+            : html`
+                <div class="grid grid-${this.col}">
+                  <slot></slot>
+                </div>
+              `}
         </div>
       </div>
     `;

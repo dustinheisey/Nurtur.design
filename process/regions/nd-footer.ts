@@ -1,7 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-
 interface FooterConfig {
   variant: 'mission' | 'newsletter';
   mission?: string;
@@ -33,7 +32,7 @@ export class FooterRegion extends LitElement {
   @property({ type: Object })
   config!: FooterConfig;
 
-  static styles = [ css``];
+  static styles = [css``];
 
   render() {
     return html`
@@ -51,19 +50,14 @@ export class FooterRegion extends LitElement {
 
             <div class="cluster gap-2xl align-start">
               ${this.config.groups.map(
-                (group) => html`
+                group => html`
                   <div class="stack stack-bg gap-2xs">
                     <h3 class="title-headline">${group.title}</h3>
                     <ul class="stack gap-xs">
                       ${group.links.map(
-                        (link) => html`
+                        link => html`
                           <li>
-                            <a
-                              href="${link.url}"
-                              class="link link-s link-navigation"
-                            >
-                              ${link.label}
-                            </a>
+                            <a href="${link.url}" class="link link-s link-navigation"> ${link.label} </a>
                           </li>
                         `
                       )}
@@ -76,35 +70,24 @@ export class FooterRegion extends LitElement {
 
           <hr />
 
-          ${this.config.carbon ?
-            html`
-              <div
-                class="cluster full card theme-surface inset-s justify-center"
-              >
-                <div id="wcb" class="carbonbadge wcb-d"></div>
-                <script
-                  src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js"
-                  defer
-                ></script>
-              </div>
-            `
-          : ''}
+          ${this.config.carbon
+            ? html`
+                <div class="cluster full card theme-surface inset-s justify-center">
+                  <div id="wcb" class="carbonbadge wcb-d"></div>
+                  <script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer></script>
+                </div>
+              `
+            : ''}
 
           <div class="cluster full justify-between">
             <ul class="cluster gap-xs">
               ${this.config.social.map(
-                (link) => html`
+                link => html`
                   <li>
-                    <a
-                      href="${link.url}"
-                      target="_blank"
-                      class="btn btn-circular"
-                    >
+                    <a href="${link.url}" target="_blank" class="btn btn-circular">
                       <span class="sr-only">${link.label}</span>
                       <!-- Icon component would go here -->
-                      <tool-tip tip-position="block-start"
-                        >${link.label}</tool-tip
-                      >
+                      <tool-tip tip-position="block-start">${link.label}</tool-tip>
                     </a>
                   </li>
                 `
@@ -131,9 +114,7 @@ export class FooterRegion extends LitElement {
         <p class="measure-s">${this.config.newsletter?.body}</p>
         <form class="sidebar gap-0 input-group" method="post" name="newsletter">
           <input type="hidden" name="form-name" value="newsletter" />
-          <label class="sr-only required" for="newsletter-email"
-            >Email Address</label
-          >
+          <label class="sr-only required" for="newsletter-email">Email Address</label>
           <input
             class="input"
             id="newsletter-email"

@@ -1,11 +1,9 @@
 import { html, css, LitElement } from 'lit';
 import { customElement } from 'lit/decorators.js';
 
-
 @customElement('nd-breadcrumb')
 export class NdBreadcrumb extends LitElement {
   static styles = [
-    
     css`
       nav.breadcrumb ol {
         margin: 0;

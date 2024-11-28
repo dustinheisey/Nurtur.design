@@ -1,7 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-
 interface HeaderConfig {
   header: {
     theme?: string;
@@ -19,15 +18,11 @@ export class HeaderRegion extends LitElement {
   @property({ type: String })
   type = '';
 
-  static styles = [ css``];
+  static styles = [css``];
 
   render() {
     return html`
-      <header
-        class="navbar ${this.overrides} theme-${this.config.header.theme ||
-        'background'}"
-        id="navbar"
-      >
+      <header class="navbar ${this.overrides} theme-${this.config.header.theme || 'background'}" id="navbar">
         <slot></slot>
       </header>
     `;
