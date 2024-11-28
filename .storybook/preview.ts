@@ -1,5 +1,5 @@
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
-import '../index.css';
+import '../src/index.css';
 
 export const parameters = {
   controls: {
