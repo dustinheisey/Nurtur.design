@@ -1,5 +1,4 @@
-:root,
-:host {
+:root {
   /* ? Typography */
   --font-family-headline: 'Impact', 'Arial Black', 'Arial Bold', sans-serif;
   --font-family-body: 'Open Sans', sans-serif;
@@ -140,8 +139,7 @@
   --color-on-dark-primary: rgb(58 11 1);
 }
 
-:root,
-:host {
+:root {
   --color-primary: var(--color-primary-light);
   --color-on-primary: var(--color-on-primary-light);
   --color-primary-split: var(--color-primary-light);
@@ -175,10 +173,8 @@
   --color-scrim: var(--color-scrim-light);
 }
 
-html.mode-dark,
-html[data-theme='dark'],
-:host.mode-dark,
-:host[data-theme='dark'] {
+:root.mode-dark,
+:root[data-theme='dark'] {
   --color-primary: var(--color-primary-dark);
   --color-on-primary: var(--color-on-primary-dark);
   --color-primary-split: var(--color-dark-primary);
@@ -213,8 +209,7 @@ html[data-theme='dark'],
 }
 
 @media (prefers-color-scheme: dark) {
-  :root,
-  :host {
+  :root {
     --color-primary: var(--color-primary-dark);
     --color-on-primary: var(--color-on-primary-dark);
     --color-primary-split: var(--color-dark-primary);
@@ -248,10 +243,8 @@ html[data-theme='dark'],
     --color-scrim: var(--color-scrim-dark);
   }
 
-  html.mode-light,
-  html[data-theme='light'],
-  :host.mode-light,
-  :host[data-theme='light'] {
+  :root.mode-light,
+  :root[data-theme='light'] {
     --color-primary: var(--color-primary-light);
     --color-on-primary: var(--color-on-primary-light);
     --color-primary-split: var(--color-primary-light);

@@ -2,20 +2,20 @@ import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import '../src/index.css';
 
 export const parameters = {
+  darkMode: {
+    darkClass: 'mode-dark',
+    lightClass: 'mode-light',
+    classTarget: 'html',
+    stylePreview: true
+  },
+  backgrounds: { disable: true },
+  viewport: {
+    viewports: INITIAL_VIEWPORTS
+  },
   controls: {
     matchers: {
       color: /(background|color)$/i,
       date: /Date$/
     }
-  },
-  viewport: {
-    viewports: INITIAL_VIEWPORTS
-  },
-  backgrounds: {
-    default: 'light',
-    values: [
-      { name: 'light', value: '#ffffff' },
-      { name: 'dark', value: '#000000' }
-    ]
   }
 };
