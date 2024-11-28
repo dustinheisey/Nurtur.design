@@ -1,5 +1,5 @@
 ## editors
-/.vscode
+/.vscode/settings.json
 
 ## system files
 .DS_Store

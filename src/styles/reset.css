@@ -1,9 +1,9 @@
-  /*
+/*
 Document
 ========
 */
 
-  /**
+/**
 Use a better box model (opinionated).
 */
 
@@ -86,8 +86,7 @@ code,
 kbd,
 samp,
 pre {
-  font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono',
-    Menlo, monospace; /* 1 */
+  font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace; /* 1 */
 
   font-size: 1em; /* 2 */
 }
