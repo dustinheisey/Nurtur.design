@@ -1,5 +1,5 @@
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
-import '../src/index.css';
+import '../src/index.scss';
 
 export const parameters = {
   darkMode: {
