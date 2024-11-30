@@ -3,7 +3,7 @@ import NdMosaic from './NdMosaic.vue';
 import { argTypes } from '../layout-types.ts';
 
 const meta: Meta<typeof NdMosaic> = {
-  title: 'Layout/NdMosaic',
+  title: 'Layouts/NdMosaic',
   component: NdMosaic,
   tags: ['autodocs'],
   argTypes: argTypes

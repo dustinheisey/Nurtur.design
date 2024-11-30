@@ -3,7 +3,7 @@ import NdCluster from './NdCluster.vue';
 import { argTypes } from '../layout-types.ts';
 
 const meta: Meta<typeof NdCluster> = {
-  title: 'Layout/NdCluster',
+  title: 'Layouts/NdCluster',
   component: NdCluster,
   tags: ['autodocs'],
   argTypes: argTypes

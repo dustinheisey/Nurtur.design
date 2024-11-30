@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/vue3';
 import NdAccordion from './NdAccordion.vue';
 
 const meta: Meta<typeof NdAccordion> = {
-  title: 'Regions/NdAccordion',
+  title: 'Patterns/NdAccordion',
   component: NdAccordion,
   tags: ['autodocs']
 };

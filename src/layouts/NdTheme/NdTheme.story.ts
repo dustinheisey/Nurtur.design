@@ -3,7 +3,7 @@ import NdTheme from './NdTheme.vue';
 import { argTypes } from '../layout-types.ts';
 
 const meta: Meta<typeof NdTheme> = {
-  title: 'Layout/NdTheme',
+  title: 'Layouts/NdTheme',
   component: NdTheme,
   tags: ['autodocs'],
   argTypes: argTypes

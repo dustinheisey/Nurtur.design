@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/vue3';
 import NdSplit from './NdSplit.vue';
 
 const meta: Meta<typeof NdSplit> = {
-  title: 'Regions/NdSplit',
+  title: 'Patterns/NdSplit',
   component: NdSplit,
   tags: ['autodocs']
 };

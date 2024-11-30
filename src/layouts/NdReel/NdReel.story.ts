@@ -3,7 +3,7 @@ import NdReel from './NdReel.vue';
 import { argTypes } from '../layout-types.ts';
 
 const meta: Meta<typeof NdReel> = {
-  title: 'Layout/NdReel',
+  title: 'Layouts/NdReel',
   component: NdReel,
   tags: ['autodocs'],
   argTypes: argTypes

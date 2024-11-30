@@ -1,12 +1,10 @@
 import { Meta, StoryObj } from '@storybook/vue3';
 import NdBlockquote from './NdBlockquote.vue';
-import { argTypes } from '../layout-types.ts';
 
 const meta: Meta<typeof NdBlockquote> = {
-  title: 'Layout/NdBlockquote',
+  title: 'Elements/NdBlockquote',
   component: NdBlockquote,
-  tags: ['autodocs'],
-  argTypes: argTypes
+  tags: ['autodocs']
 };
 export default meta;
 

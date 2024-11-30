@@ -3,7 +3,7 @@ import NdSwitcher from './NdSwitcher.vue';
 import { argTypes } from '../layout-types.ts';
 
 const meta: Meta<typeof NdSwitcher> = {
-  title: 'Layout/NdSwitcher',
+  title: 'Layouts/NdSwitcher',
   component: NdSwitcher,
   tags: ['autodocs'],
   argTypes: argTypes

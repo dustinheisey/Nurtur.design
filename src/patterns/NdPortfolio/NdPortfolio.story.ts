@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/vue3';
 import NdPortfolio from './NdPortfolio.vue';
 
 const meta: Meta<typeof NdPortfolio> = {
-  title: 'Regions/NdPortfolio',
+  title: 'Patterns/NdPortfolio',
   component: NdPortfolio,
   tags: ['autodocs']
 };

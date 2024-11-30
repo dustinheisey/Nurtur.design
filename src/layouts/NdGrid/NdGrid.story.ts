@@ -3,7 +3,7 @@ import NdGrid from './NdGrid.vue';
 import { argTypes } from '../layout-types.ts';
 
 const meta: Meta<typeof NdGrid> = {
-  title: 'Layout/NdGrid',
+  title: 'Layouts/NdGrid',
   component: NdGrid,
   tags: ['autodocs'],
   argTypes: argTypes

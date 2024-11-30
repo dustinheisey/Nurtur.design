@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/vue3';
 import NdSparkline from './NdSparkline.vue';
 
 const meta: Meta<typeof NdSparkline> = {
-  title: 'Regions/NdSparkline',
+  title: 'Patterns/NdSparkline',
   component: NdSparkline,
   tags: ['autodocs']
 };

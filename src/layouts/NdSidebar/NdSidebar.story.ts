@@ -3,7 +3,7 @@ import NdSidebar from './NdSidebar.vue';
 import { argTypes } from '../layout-types.ts';
 
 const meta: Meta<typeof NdSidebar> = {
-  title: 'Layout/NdSidebar',
+  title: 'Layouts/NdSidebar',
   component: NdSidebar,
   tags: ['autodocs'],
   argTypes: argTypes

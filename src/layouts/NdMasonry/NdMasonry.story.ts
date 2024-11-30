@@ -3,7 +3,7 @@ import NdMasonry from './NdMasonry.vue';
 import { argTypes } from '../layout-types.ts';
 
 const meta: Meta<typeof NdMasonry> = {
-  title: 'Layout/NdMasonry',
+  title: 'Layouts/NdMasonry',
   component: NdMasonry,
   tags: ['autodocs'],
   argTypes: argTypes

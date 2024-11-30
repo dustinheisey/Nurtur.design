@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/vue3';
 import NdGallery from './NdGallery.vue';
 
 const meta: Meta<typeof NdGallery> = {
-  title: 'Regions/NdGallery',
+  title: 'Patterns/NdGallery',
   component: NdGallery,
   tags: ['autodocs']
 };

@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/vue3';
 import NdRange from './NdRange.vue';
 
 const meta: Meta<typeof NdRange> = {
-  title: 'Elements/NdRange',
+  title: 'Components/NdRange',
   component: NdRange,
   tags: ['autodocs']
 };

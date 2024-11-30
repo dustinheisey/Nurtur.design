@@ -3,7 +3,7 @@ import NdStack from './NdStack.vue';
 import { argTypes } from '../layout-types.ts';
 
 const meta: Meta<typeof NdStack> = {
-  title: 'Layout/NdStack',
+  title: 'Layouts/NdStack',
   component: NdStack,
   tags: ['autodocs'],
   argTypes: argTypes

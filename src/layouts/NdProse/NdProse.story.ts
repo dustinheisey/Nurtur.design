@@ -3,7 +3,7 @@ import NdProse from './NdProse.vue';
 import { argTypes } from '../layout-types.ts';
 
 const meta: Meta<typeof NdProse> = {
-  title: 'Layout/NdProse',
+  title: 'Layouts/NdProse',
   component: NdProse,
   tags: ['autodocs'],
   argTypes: argTypes

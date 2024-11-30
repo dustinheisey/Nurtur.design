@@ -3,7 +3,7 @@ import NdBg from './NdBg.vue';
 import { argTypes } from '../layout-types.ts';
 
 const meta: Meta<typeof NdBg> = {
-  title: 'Layout/NdBg',
+  title: 'Layouts/NdBg',
   component: NdBg,
   tags: ['autodocs'],
   argTypes: argTypes

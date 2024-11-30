@@ -3,7 +3,7 @@ import NdFrame from './NdFrame.vue';
 import { argTypes } from '../layout-types.ts';
 
 const meta: Meta<typeof NdFrame> = {
-  title: 'Layout/NdFrame',
+  title: 'Layouts/NdFrame',
   component: NdFrame,
   tags: ['autodocs'],
   argTypes: argTypes

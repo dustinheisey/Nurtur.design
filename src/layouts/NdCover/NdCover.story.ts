@@ -3,7 +3,7 @@ import NdCover from './NdCover.vue';
 import { argTypes } from '../layout-types.ts';
 
 const meta: Meta<typeof NdCover> = {
-  title: 'Layout/NdCover',
+  title: 'Layouts/NdCover',
   component: NdCover,
   tags: ['autodocs'],
   argTypes: argTypes

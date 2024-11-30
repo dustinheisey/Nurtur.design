@@ -3,7 +3,7 @@ import NdClip from './NdClip.vue';
 import { argTypes } from '../layout-types.ts';
 
 const meta: Meta<typeof NdClip> = {
-  title: 'Layout/NdClip',
+  title: 'Layouts/NdClip',
   component: NdClip,
   tags: ['autodocs'],
   argTypes: argTypes

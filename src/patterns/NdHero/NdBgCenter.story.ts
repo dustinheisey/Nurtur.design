@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/vue3';
 import NdBgCenter from './NdBgCenter.vue';
 
 const meta: Meta<typeof NdBgCenter> = {
-  title: 'Regions/NdBgCenter',
+  title: 'Patterns/NdBgCenter',
   component: NdBgCenter,
   tags: ['autodocs']
 };

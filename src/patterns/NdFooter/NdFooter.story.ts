@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/vue3';
 import NdFooter from './NdFooter.vue';
 
 const meta: Meta<typeof NdFooter> = {
-  title: 'Regions/NdFooter',
+  title: 'Patterns/NdFooter',
   component: NdFooter,
   tags: ['autodocs']
 };

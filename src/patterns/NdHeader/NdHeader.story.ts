@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/vue3';
 import NdHeader from './NdHeader.vue';
 
 const meta: Meta<typeof NdHeader> = {
-  title: 'Regions/NdHeader',
+  title: 'Patterns/NdHeader',
   component: NdHeader,
   tags: ['autodocs']
 };

@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/vue3';
 import NdList from './NdList.vue';
 
 const meta: Meta<typeof NdList> = {
-  title: 'Layout/NdList',
+  title: 'Patterns/NdList',
   component: NdList,
   tags: ['autodocs']
 };

@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/vue3';
 import NdStack from './NdStack.vue';
 
 const meta: Meta<typeof NdStack> = {
-  title: 'Regions/NdStack',
+  title: 'Patterns/NdStack',
   component: NdStack,
   tags: ['autodocs']
 };

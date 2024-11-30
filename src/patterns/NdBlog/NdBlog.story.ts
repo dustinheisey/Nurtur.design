@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/vue3';
 import NdBlog from './NdBlog.vue';
 
 const meta: Meta<typeof NdBlog> = {
-  title: 'Regions/NdBlog',
+  title: 'Patterns/NdBlog',
   component: NdBlog,
   tags: ['autodocs']
 };

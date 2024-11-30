@@ -3,7 +3,7 @@ import NdJustify from './NdJustify.vue';
 import { argTypes } from '../layout-types.ts';
 
 const meta: Meta<typeof NdJustify> = {
-  title: 'Layout/NdJustify',
+  title: 'Layouts/NdJustify',
   component: NdJustify,
   tags: ['autodocs'],
   argTypes: argTypes

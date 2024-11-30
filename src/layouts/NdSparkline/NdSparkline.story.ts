@@ -3,7 +3,7 @@ import NdSparkline from './NdSparkline.vue';
 import { argTypes } from '../layout-types.ts';
 
 const meta: Meta<typeof NdSparkline> = {
-  title: 'Layout/NdSparkline',
+  title: 'Layouts/NdSparkline',
   component: NdSparkline,
   tags: ['autodocs'],
   argTypes: argTypes

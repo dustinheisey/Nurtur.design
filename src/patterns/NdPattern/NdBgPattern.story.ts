@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/vue3';
 import NdBgPattern from './NdBgPattern.vue';
 
 const meta: Meta<typeof NdBgPattern> = {
-  title: 'Regions/NdBgPattern',
+  title: 'Patterns/NdBgPattern',
   component: NdBgPattern,
   tags: ['autodocs']
 };

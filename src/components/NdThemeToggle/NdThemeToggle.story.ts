@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/vue3';
 import NdThemeToggle from './NdThemeToggle.vue';
 
 const meta: Meta<typeof NdThemeToggle> = {
-  title: 'Elements/NdThemeToggle',
+  title: 'Components/NdThemeToggle',
   component: NdThemeToggle,
   tags: ['autodocs'],
   argTypes: {
