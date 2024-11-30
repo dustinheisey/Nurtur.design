@@ -1,20 +1,30 @@
 import { Meta, StoryObj } from '@storybook/vue3';
-import NdAvatar from './NdAvatar.vue';
 
-const meta: Meta<typeof NdAvatar> = {
+const meta: Meta = {
   title: 'Elements/NdAvatar',
-  component: NdAvatar,
   tags: ['autodocs'],
   argTypes: {
     size: {
       control: 'select',
-      options: ['s', 'l']
+      options: ['avatar-s', 'avatar-l'],
+      description: 'The size of the avatar.',
+      table: {
+        type: { summary: 'avatar-s | avatar-l' }
+      }
     },
     src: {
-      control: 'text'
+      control: 'text',
+      description: 'The source URL of the avatar image.',
+      table: {
+        type: { summary: 'string' }
+      }
     },
     alt: {
-      control: 'text'
+      control: 'text',
+      description: 'The alternative text for the avatar.',
+      table: {
+        type: { summary: 'string' }
+      }
     }
   },
   args: {
@@ -24,14 +34,13 @@ const meta: Meta<typeof NdAvatar> = {
 };
 export default meta;
 
-export const Default: StoryObj<typeof NdAvatar> = {
+export const Default: StoryObj = {
   render: args => ({
-    components: { NdAvatar },
     setup() {
       return { args };
     },
     template: `
-      <NdAvatar v-bind="args"></NdAvatar>
+      <img :class="['avatar', args.size]" :src="args.src" :alt="args.alt" />
     `
   })
 };

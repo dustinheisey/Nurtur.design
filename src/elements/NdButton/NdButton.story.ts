@@ -1,36 +1,60 @@
 import { Meta, StoryObj } from '@storybook/vue3';
-import NdButton from './NdButton.vue';
 
-const meta: Meta<typeof NdButton> = {
+const meta: Meta = {
   title: 'Elements/NdButton',
-  component: NdButton,
   tags: ['autodocs'],
   argTypes: {
-    size: {
-      control: 'select',
-      options: ['s', 'l']
-    },
     variant: {
       control: 'select',
-      options: ['primary', 'secondary', 'tertiary']
+      options: ['default', 'button-secondary', 'button-tertiary'],
+      description: 'The style variant of the button.',
+      table: {
+        type: { summary: 'default | button-secondary | button-tertiary' }
+      }
     },
-    circular: {
-      control: 'boolean'
+    size: {
+      control: 'select',
+      options: ['button-s', 'button-l', 'button-circular'],
+      description: 'The size of the button.',
+      table: {
+        type: { summary: 'button-s | button-l | button-circular' }
+      }
+    },
+    label: {
+      control: 'text',
+      description: 'The text content of the button.',
+      table: {
+        type: { summary: 'string' }
+      }
+    },
+    onClick: {
+      action: 'clicked',
+      description: 'The click event handler.',
+      table: {
+        type: { summary: 'function' }
+      }
     }
+  },
+  args: {
+    variant: 'default',
+    size: 'button-s',
+    label: 'Click Me'
   }
 };
 export default meta;
 
-export const Default: StoryObj<typeof NdButton> = {
+export const Default: StoryObj = {
   render: args => ({
-    components: { NdButton },
     setup() {
       return { args };
     },
     template: `
-      <NdButton v-bind="args">
-        Button Text
-      </NdButton>
+      <button
+        :class="['button', args.variant, args.size]"
+        @click="args.onClick"
+      >
+        {{ args.label }}
+      </button>
     `
   })
 };

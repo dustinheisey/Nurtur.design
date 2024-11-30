@@ -1,0 +1,33 @@
+.icon {
+  display: inline-block;
+  color: inherit;
+  inline-size: 24px;
+  block-size: 24px;
+  line-height: 1;
+  flex-shrink: 0;
+  max-width: initial;
+}
+.icon use {
+  fill: currentColor;
+}
+.icon-primary {
+  color: var(--color-primary);
+}
+.icon-secondary {
+  color: var(--color-secondary);
+}
+.icon-tertiary {
+  color: var(--color-tertiary);
+}
+.icon-s {
+  inline-size: 20px;
+  block-size: 20px;
+}
+.icon-l {
+  inline-size: 32px;
+  block-size: 32px;
+}
+.icon-xl {
+  inline-size: 48px;
+  block-size: 48px;
+}

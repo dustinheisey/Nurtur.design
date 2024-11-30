@@ -1,25 +1,6 @@
-<script setup lang="ts">
-import { computed } from 'vue';
-
-const props = defineProps<{
-  variant?: 'underline';
-}>();
-
-const classes = computed(() => ({
-  input: true,
-  [`input-${props.variant}`]: props.variant
-}));
-</script>
-
-<template>
-  <input :class="classes" />
-</template>
-
-<style lang="scss" scoped>
 input {
   cursor: pointer;
 }
-
 .input {
   font-family: var(--font-family-body);
   font-weight: 400;
@@ -37,16 +18,13 @@ input {
   line-height: var(--line-height-body);
   margin-block-start: var(--space-2xs);
 }
-
 .input::placeholder {
   color: var(--color-outline);
 }
-
 .input:focus {
   border-color: transparent;
   outline: 2px solid var(--color-primary);
 }
-
 .input-underline {
   border-radius: 0;
   display: block;
@@ -55,9 +33,7 @@ input {
   border: none;
   border-block-end: 2px solid var(--color-outline);
 }
-
 .input-underline:focus {
   outline: none;
   border-color: var(--color-on-surface);
 }
-</style>

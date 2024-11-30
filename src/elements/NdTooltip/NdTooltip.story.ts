@@ -1,37 +1,50 @@
 import { Meta, StoryObj } from '@storybook/vue3';
-import NdTooltip from './NdTooltip.vue';
 
-const meta: Meta<typeof NdTooltip> = {
+const meta: Meta = {
   title: 'Elements/NdTooltip',
-  component: NdTooltip,
   tags: ['autodocs'],
   argTypes: {
-    size: {
+    position: {
       control: 'select',
-      options: ['s', 'l']
+      options: ['tip-block-start', 'tip-block-end', 'tip-inline-start', 'tip-inline-end'],
+      description: 'The position of the tooltip relative to the parent.',
+      table: {
+        type: { summary: 'tip-block-start | tip-block-end | tip-inline-start | tip-inline-end' }
+      }
     },
-    src: {
-      control: 'text'
+    content: {
+      control: 'text',
+      description: 'The text content displayed in the tooltip.',
+      table: {
+        type: { summary: 'string' }
+      }
     },
-    alt: {
-      control: 'text'
+    triggerText: {
+      control: 'text',
+      description: 'The text of the element triggering the tooltip.',
+      table: {
+        type: { summary: 'string' }
+      }
     }
   },
   args: {
-    src: 'https://i.prtooltip.cc/300',
-    alt: 'Tooltip'
+    position: 'tip-block-start',
+    content: 'This is a tooltip.',
+    triggerText: 'Hover over me'
   }
 };
 export default meta;
 
-export const Default: StoryObj<typeof NdTooltip> = {
+export const Default: StoryObj = {
   render: args => ({
-    components: { NdTooltip },
     setup() {
       return { args };
     },
     template: `
-      <NdTooltip v-bind="args"></NdTooltip>
+      <div style="position: relative; display: inline-block;">
+        <button style="cursor: pointer;" aria-describedby="tooltip">{{ args.triggerText }}</button>
+        <tool-tip :class="args.position" id="tooltip">{{ args.content }}</tool-tip>
+      </div>
     `
   })
 };

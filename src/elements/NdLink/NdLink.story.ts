@@ -1,25 +1,52 @@
 import { Meta, StoryObj } from '@storybook/vue3';
-import NdLink from './NdLink.vue';
 
-const meta: Meta<typeof NdLink> = {
+const meta: Meta = {
   title: 'Elements/NdLink',
-  component: NdLink,
-  tags: ['autodocs']
+  tags: ['autodocs'],
+  argTypes: {
+    href: {
+      control: 'text',
+      description: 'The URL the link points to.',
+      table: {
+        type: { summary: 'string' }
+      }
+    },
+    label: {
+      control: 'text',
+      description: 'The text content of the link.',
+      table: {
+        type: { summary: 'string' }
+      }
+    },
+    variant: {
+      control: 'select',
+      options: ['link', 'link-navigation', 'link-navigation link-s'],
+      description: 'The style variant of the link.',
+      table: {
+        type: { summary: 'link | link-navigation | link-navigation link-s' }
+      }
+    }
+  },
+  args: {
+    href: '#',
+    label: 'Click here',
+    variant: 'link'
+  }
 };
 export default meta;
 
-export const Default: StoryObj<typeof NdLink> = {
+export const Default: StoryObj = {
   render: args => ({
-    components: { NdLink },
     setup() {
       return { args };
     },
     template: `
-      <NdLink v-bind="args">
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 1</a>
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 2</a>
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 3</a>
-      </NdLink>
+      <a
+        :class="[args.variant]"
+        :href="args.href"
+      >
+        {{ args.label }}
+      </a>
     `
   })
 };

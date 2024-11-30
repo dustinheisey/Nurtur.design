@@ -1,25 +1,59 @@
 import { Meta, StoryObj } from '@storybook/vue3';
-import NdTextarea from './NdTextarea.vue';
 
-const meta: Meta<typeof NdTextarea> = {
+const meta: Meta = {
   title: 'Elements/NdTextarea',
-  component: NdTextarea,
-  tags: ['autodocs']
+  tags: ['autodocs'],
+  argTypes: {
+    placeholder: {
+      control: 'text',
+      description: 'Placeholder text for the textarea.',
+      table: {
+        type: { summary: 'string' }
+      }
+    },
+    value: {
+      control: 'text',
+      description: 'The current value of the textarea.',
+      table: {
+        type: { summary: 'string' }
+      }
+    },
+    variant: {
+      control: 'select',
+      options: ['default', 'textarea-underline'],
+      description: 'The style variant of the textarea.',
+      table: {
+        type: { summary: 'default | textarea-underline' }
+      }
+    },
+    onInput: {
+      action: 'input',
+      description: 'Event triggered when the value changes.',
+      table: {
+        type: { summary: 'function' }
+      }
+    }
+  },
+  args: {
+    placeholder: 'Enter your text...',
+    value: '',
+    variant: 'default'
+  }
 };
 export default meta;
 
-export const Default: StoryObj<typeof NdTextarea> = {
+export const Default: StoryObj = {
   render: args => ({
-    components: { NdTextarea },
     setup() {
       return { args };
     },
     template: `
-      <NdTextarea v-bind="args">
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 1</a>
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 2</a>
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 3</a>
-      </NdTextarea>
+      <textarea
+        :class="[args.variant === 'textarea-underline' ? 'textarea-underline' : '']"
+        :placeholder="args.placeholder"
+        :value="args.value"
+        @input="args.onInput($event.target.value)"
+      ></textarea>
     `
   })
 };

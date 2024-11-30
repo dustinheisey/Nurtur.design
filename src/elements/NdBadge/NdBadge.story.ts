@@ -1,9 +1,7 @@
 import { Meta, StoryObj } from '@storybook/vue3';
-import NdBadge from './NdBadge.vue';
 
-const meta: Meta<typeof NdBadge> = {
+const meta: Meta = {
   title: 'Elements/NdBadge',
-  component: NdBadge,
   tags: ['autodocs'],
   argTypes: {
     status: {
@@ -16,24 +14,25 @@ const meta: Meta<typeof NdBadge> = {
     variant: {
       control: 'select',
       options: ['primary', 'secondary', 'tertiary']
-    }
+    },
+    label: { control: 'text' }
   },
   args: {
-    variant: 'primary'
+    variant: 'primary',
+    label: '123'
   }
 };
 export default meta;
 
-export const Default: StoryObj<typeof NdBadge> = {
+export const Default: StoryObj = {
   render: args => ({
-    components: { NdBadge },
     setup() {
       return { args };
     },
     template: `
-      <NdBadge v-bind="args">
-        123
-      </NdBadge>
+      <span :class="['badge', 'badge-' + args.variant, 'badge-' + args.size, { status: args.status }]">
+        {{ args.label }}
+      </span>
     `
   })
 };

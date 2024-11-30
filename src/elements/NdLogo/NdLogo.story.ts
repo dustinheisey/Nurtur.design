@@ -1,33 +1,51 @@
 import { Meta, StoryObj } from '@storybook/vue3';
-import NdLogo from './NdLogo.vue';
 
-const meta: Meta<typeof NdLogo> = {
+const meta: Meta = {
   title: 'Elements/NdLogo',
-  component: NdLogo,
   tags: ['autodocs'],
   argTypes: {
-    src: { control: 'text' },
-    alt: { control: 'text' },
     size: {
       control: 'select',
-      options: ['l']
+      options: ['logo', 'logo-l'],
+      description: 'The size of the logo.',
+      table: {
+        type: { summary: 'logo | logo-l' }
+      }
+    },
+    src: {
+      control: 'text',
+      description: 'The source URL for the logo image.',
+      table: {
+        type: { summary: 'string' }
+      }
+    },
+    alt: {
+      control: 'text',
+      description: 'Alternative text for the logo.',
+      table: {
+        type: { summary: 'string' }
+      }
     }
   },
   args: {
-    src: 'https://i.prlogo.cc/300',
-    alt: 'Logo'
+    size: 'logo',
+    src: 'https://via.placeholder.com/150',
+    alt: 'Company Logo'
   }
 };
 export default meta;
 
-export const Default: StoryObj<typeof NdLogo> = {
+export const Default: StoryObj = {
   render: args => ({
-    components: { NdLogo },
     setup() {
       return { args };
     },
     template: `
-      <NdLogo v-bind="args" />
+      <img
+        :class="[args.size]"
+        :src="args.src"
+        :alt="args.alt"
+      />
     `
   })
 };

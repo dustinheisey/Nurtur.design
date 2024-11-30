@@ -1,25 +1,54 @@
 import { Meta, StoryObj } from '@storybook/vue3';
-import NdIcon from './NdIcon.vue';
 
-const meta: Meta<typeof NdIcon> = {
+const meta: Meta = {
   title: 'Elements/NdIcon',
-  component: NdIcon,
-  tags: ['autodocs']
+  tags: ['autodocs'],
+  argTypes: {
+    icon: {
+      control: 'select',
+      options: ['about', 'advocate', 'blog', 'branding'],
+      description: 'The name of the icon to display.',
+      table: {
+        type: { summary: 'string' }
+      }
+    },
+    size: {
+      control: 'select',
+      options: ['icon-s', 'icon', 'icon-l', 'icon-xl'],
+      description: 'The size of the icon.',
+      table: {
+        type: { summary: 'icon-s | icon | icon-l | icon-xl' }
+      }
+    },
+    variant: {
+      control: 'select',
+      options: ['icon-primary', 'icon-secondary', 'icon-tertiary'],
+      description: 'The color variant of the icon.',
+      table: {
+        type: { summary: 'icon-primary | icon-secondary | icon-tertiary' }
+      }
+    }
+  },
+  args: {
+    icon: 'about',
+    size: 'icon',
+    variant: 'icon-primary'
+  }
 };
 export default meta;
 
-export const Default: StoryObj<typeof NdIcon> = {
+export const Default: StoryObj = {
   render: args => ({
-    components: { NdIcon },
     setup() {
       return { args };
     },
     template: `
-      <NdIcon v-bind="args">
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 1</a>
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 2</a>
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 3</a>
-      </NdIcon>
+      <svg
+        :class="['icon', args.size, args.variant]"
+        aria-hidden="true"
+      >
+        <use :href="'./icons/' + args.icon + '.svg'"></use>
+      </svg>
     `
   })
 };

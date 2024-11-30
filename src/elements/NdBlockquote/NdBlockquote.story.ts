@@ -1,25 +1,50 @@
 import { Meta, StoryObj } from '@storybook/vue3';
-import NdBlockquote from './NdBlockquote.vue';
 
-const meta: Meta<typeof NdBlockquote> = {
+const meta: Meta = {
   title: 'Elements/NdBlockquote',
-  component: NdBlockquote,
-  tags: ['autodocs']
+  tags: ['autodocs'],
+  argTypes: {
+    variant: {
+      control: 'select',
+      options: ['default', 'blockquote-accent'],
+      description: 'The style variant of the blockquote.',
+      table: {
+        type: { summary: 'default | blockquote-accent' }
+      }
+    },
+    content: {
+      control: 'text',
+      description: 'The text content of the blockquote.',
+      table: {
+        type: { summary: 'string' }
+      }
+    },
+    citation: {
+      control: 'text',
+      description: 'The citation text for the blockquote.',
+      table: {
+        type: { summary: 'string' }
+      }
+    }
+  },
+  args: {
+    variant: 'default',
+    content: 'This is a sample blockquote. It’s styled with an elegant font and accents.',
+    citation: '— Someone Famous'
+  }
 };
 export default meta;
 
-export const Default: StoryObj<typeof NdBlockquote> = {
+export const Default: StoryObj = {
   render: args => ({
-    components: { NdBlockquote },
     setup() {
       return { args };
     },
     template: `
-      <NdBlockquote v-bind="args">
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 1</a>
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 2</a>
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 3</a>
-      </NdBlockquote>
+      <figure>
+        <blockquote :class="[args.variant]">{{ args.content }}</blockquote>
+        <figcaption>{{ args.citation }}</figcaption>
+      </figure>
     `
   })
 };
