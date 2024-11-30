@@ -14,12 +14,14 @@ const props = defineProps<{
   inset?: Inset;
   space?: Space;
   role?: Role;
+  region?: boolean;
 }>();
 
 const classes = computed(() => ({
   reel: true,
   'no-bar': !props.bar,
   'reel-overflowing': props.overflowing,
+  '.region': props.region,
   [`${props.align}`]: props.align,
   [`${props.justify}`]: props.justify,
   [`${props.gap}`]: props.gap,

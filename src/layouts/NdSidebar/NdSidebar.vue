@@ -13,11 +13,13 @@ const props = defineProps<{
   inset?: Inset;
   space?: Space;
   role?: Role;
+  region?: boolean;
 }>();
 
 const classes = computed(() => ({
   sidebar: true,
   [`split-${props.split}`]: props.split,
+  '.region': props.region,
   [`${props.align}`]: props.align,
   [`${props.justify}`]: props.justify,
   [`${props.gap}`]: props.gap,

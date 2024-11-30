@@ -13,11 +13,13 @@ const props = defineProps<{
   inset?: Inset;
   space?: Space;
   role?: Role;
+  region?: boolean;
 }>();
 
 const classes = computed(() => ({
   mosaic: true,
   [`${props.align}`]: props.align,
+  '.region': props.region,
   [`${props.justify}`]: props.justify,
   [`${props.gap}`]: props.gap,
   [`${props.inset}`]: props.inset,

@@ -19,6 +19,7 @@ const props = defineProps<{
     | 'tertiary-container'
     | 'error'
     | 'error-container';
+  region?: boolean;
   align?: Align;
   justify?: Justify;
   gap?: Gap;
@@ -30,6 +31,7 @@ const props = defineProps<{
 const classes = computed(() => ({
   theme: true,
   [`theme-${props.theme}`]: props.theme,
+  '.region': props.region,
   [`${props.align}`]: props.align,
   [`${props.justify}`]: props.justify,
   [`${props.gap}`]: props.gap,

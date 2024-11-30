@@ -12,12 +12,14 @@ const props = defineProps<{
   inset?: Inset;
   space?: Space;
   role?: Role;
+  region?: boolean;
   clip: 'block-start-start' | 'block-start-end' | 'block-end-start' | 'block-end-end';
 }>();
 
 const classes = computed(() => ({
   clip: true,
   [`clip-${props.clip}`]: props.clip,
+  '.region': props.region,
   [`${props.align}`]: props.align,
   [`${props.justify}`]: props.justify,
   [`${props.gap}`]: props.gap,

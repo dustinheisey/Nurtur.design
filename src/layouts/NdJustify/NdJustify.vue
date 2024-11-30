@@ -13,10 +13,12 @@ const props = defineProps<{
   inset?: Inset;
   space?: Space;
   role?: Role;
+  region?: boolean;
 }>();
 
 const classes = computed(() => ({
   [`justify-${props.justify}`]: props.justify,
+  '.region': props.region,
   [`justify-${props.justify}-intrinsic`]: props.intrinsic,
   [`${props.align}`]: props.align,
   [`${props.justify}`]: props.justify,

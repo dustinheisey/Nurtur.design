@@ -14,10 +14,12 @@ const props = defineProps<{
   inset?: Inset;
   space?: Space;
   role?: Role;
+  region?: boolean;
 }>();
 
 const classes = computed(() => ({
   'bg-${props.bg}': props.bg,
+  '.region': props.region,
   [`pattern-${props.pattern}`]: props.pattern,
   [`${props.align}`]: props.align,
   [`${props.justify}`]: props.justify,

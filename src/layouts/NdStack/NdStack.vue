@@ -6,6 +6,7 @@ import type { Align, Justify, Gap, Inset, Space } from '../layout-types.ts';
 type Role = 'group';
 
 const props = defineProps<{
+  region?: boolean;
   align?: Align;
   justify?: Justify;
   gap?: Gap;
@@ -19,6 +20,7 @@ const props = defineProps<{
 const classes = computed(() => ({
   stack: true,
   'stack-bg': props.bg,
+  '.region': props.region,
   [`${props.align}`]: props.align,
   [`${props.justify}`]: props.justify,
   [`${props.gap}`]: props.gap,
