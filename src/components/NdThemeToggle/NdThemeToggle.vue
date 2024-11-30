@@ -1,3 +1,71 @@
+<script setup lang="ts">
+import { computed } from 'vue';
+
+const props = defineProps<{}>();
+const classes = computed(() => ({}));
+</script>
+
+<style lang="scss" scoped>
+.dark-mode-toggle {
+  --size: 1.5rem;
+  --icon-fill: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.sun-and-moon > .sun {
+  fill: var(--icon-fill);
+}
+
+.dark-mode-toggle:is(:hover, :focus-visible) > .sun-and-moon > .sun {
+  fill: var(--icon-fill);
+}
+
+.dark-mode-toggle:is(:hover, :focus-visible) > .sun-and-moon > .sun-beams {
+  stroke: var(--icon-fill);
+}
+
+[data-theme='dark'] .dark-mode-toggle > .sun-and-moon > .sun {
+  fill: var(--icon-fill);
+}
+
+[data-theme='dark'] .dark-mode-toggle > .sun-and-moon > .sun-beams {
+  stroke: var(--icon-fill);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sun-and-moon > .sun {
+    transition: transform 0.5s var(--ease-elastic-3);
+  }
+
+  .sun-and-moon > .sun-beams {
+    transition:
+      transform 0.5s var(--ease-elastic-4),
+      opacity 0.5s var(--ease-3);
+  }
+
+  .sun-and-moon > .moon > circle {
+    transform: translateX(-7px);
+    transition: transform 0.25s var(--ease-out-5);
+  }
+
+  [data-theme='dark'] .sun-and-moon > .sun {
+    transform: scale(1.75);
+    transition-timing-function: var(--ease-3);
+    transition-duration: 0.25s;
+  }
+
+  [data-theme='dark'] .sun-and-moon > .sun-beams {
+    transform: rotateZ(-25deg);
+    transition-duration: 0.15s;
+  }
+
+  [data-theme='dark'] .sun-and-moon > .moon > circle {
+    transition-delay: 0.25s;
+    transition-duration: 0.5s;
+  }
+}
+</style>
+
 <!-- import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
@@ -10,67 +78,6 @@ export class NdDarkModeToggle extends LitElement {
   private theme = {
     value: this.getColorPreference()
   };
-
-  static styles = css`
-    .dark-mode-toggle {
-      --size: 1.5rem;
-      --icon-fill: var(--color-primary);
-      color: var(--color-primary);
-    }
-
-    .sun-and-moon > .sun {
-      fill: var(--icon-fill);
-    }
-
-    .dark-mode-toggle:is(:hover, :focus-visible) > .sun-and-moon > .sun {
-      fill: var(--icon-fill);
-    }
-
-    .dark-mode-toggle:is(:hover, :focus-visible) > .sun-and-moon > .sun-beams {
-      stroke: var(--icon-fill);
-    }
-
-    [data-theme='dark'] .dark-mode-toggle > .sun-and-moon > .sun {
-      fill: var(--icon-fill);
-    }
-
-    [data-theme='dark'] .dark-mode-toggle > .sun-and-moon > .sun-beams {
-      stroke: var(--icon-fill);
-    }
-
-    @media (prefers-reduced-motion: no-preference) {
-      .sun-and-moon > .sun {
-        transition: transform 0.5s var(--ease-elastic-3);
-      }
-
-      .sun-and-moon > .sun-beams {
-        transition:
-          transform 0.5s var(--ease-elastic-4),
-          opacity 0.5s var(--ease-3);
-      }
-
-      .sun-and-moon > .moon > circle {
-        transform: translateX(-7px);
-        transition: transform 0.25s var(--ease-out-5);
-      }
-
-      [data-theme='dark'] .sun-and-moon > .sun {
-        transform: scale(1.75);
-        transition-timing-function: var(--ease-3);
-        transition-duration: 0.25s;
-      }
-
-      [data-theme='dark'] .sun-and-moon > .sun-beams {
-        transform: rotateZ(-25deg);
-        transition-duration: 0.15s;
-      }
-
-      [data-theme='dark'] .sun-and-moon > .moon > circle {
-        transition-delay: 0.25s;
-        transition-duration: 0.5s;
-      }
-    }
-  `;
 
   private getColorPreference(): string {
     if (localStorage.getItem(this.storageKey)) {

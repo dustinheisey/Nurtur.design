@@ -1,31 +1,49 @@
-<!-- <style lang="scss" scoped>
-/*! purgecss start ignore */
-tool-tip {
+<script setup lang="ts">
+import { computed } from 'vue';
+
+const props = defineProps<{
+  label: string;
+  position?: 'block-start' | 'block-end' | 'inline-start' | 'inline-end';
+}>();
+
+const classes = computed(() => ({
+  [`tip-${props.position}`]: props.position
+}));
+</script>
+
+<template>
+  <span :class="classes">
+    {{ label }}
+  </span>
+</template>
+
+<style lang="scss" scoped>
+span {
   display: none;
 }
 
 @media (--tablet-landscape-up) {
-  tool-tip {
+  span {
     display: inline-block;
 
-    --_p-inline: 1.5ch;
-    --_p-block: 0.75ch;
-    --_triangle-size: 7px;
-    --_bg: var(--color-surface);
-    --_shadow-alpha: 50%;
-    --_bottom-tip: conic-gradient(from -30deg at bottom, rgb(0 0 0 / 0%), #000 1deg 60deg, rgb(0 0 0 / 0%) 61deg)
+    --p-inline: 1.5ch;
+    --p-block: 0.75ch;
+    --triangle-size: 7px;
+    --bg: var(--color-surface);
+    --shadow-alpha: 50%;
+    --bottom-tip: conic-gradient(from -30deg at bottom, rgb(0 0 0 / 0%), #000 1deg 60deg, rgb(0 0 0 / 0%) 61deg)
       bottom / 100% 50% no-repeat;
-    --_top-tip: conic-gradient(from 150deg at top, rgb(0 0 0 / 0%), #000 1deg 60deg, rgb(0 0 0 / 0%) 61deg) top / 100%
+    --top-tip: conic-gradient(from 150deg at top, rgb(0 0 0 / 0%), #000 1deg 60deg, rgb(0 0 0 / 0%) 61deg) top / 100%
       50% no-repeat;
-    --_right-tip: conic-gradient(from -120deg at right, rgb(0 0 0 / 0%), #000 1deg 60deg, rgb(0 0 0 / 0%) 61deg) right /
+    --right-tip: conic-gradient(from -120deg at right, rgb(0 0 0 / 0%), #000 1deg 60deg, rgb(0 0 0 / 0%) 61deg) right /
       50% 100% no-repeat;
-    --_left-tip: conic-gradient(from 60deg at left, rgb(0 0 0 / 0%), #000 1deg 60deg, rgb(0 0 0 / 0%) 61deg) left / 50%
+    --left-tip: conic-gradient(from 60deg at left, rgb(0 0 0 / 0%), #000 1deg 60deg, rgb(0 0 0 / 0%) 61deg) left / 50%
       100% no-repeat;
 
     pointer-events: none;
     user-select: none;
     opacity: 0;
-    transform: translateX(var(--_x, 0)) translateY(var(--_y, 0));
+    transform: translateX(var(--x, 0)) translateY(var(--y, 0));
     transition:
       opacity 0.2s ease,
       transform 0.2s ease;
@@ -38,29 +56,29 @@ tool-tip {
     font-weight: normal;
     line-height: normal;
     line-height: initial;
-    padding: var(--_p-block) var(--_p-inline);
+    padding: var(--p-block) var(--p-inline);
     margin: 0;
     border-radius: 5px;
-    background: var(--_bg);
+    background: var(--bg);
     color: var(--color-on-background);
     will-change: filter;
-    filter: drop-shadow(0 3px 3px hsl(0deg 0% 0% / var(--_shadow-alpha)))
-      drop-shadow(0 12px 12px hsl(0deg 0% 0% / var(--_shadow-alpha)));
+    filter: drop-shadow(0 3px 3px hsl(0deg 0% 0% / var(--shadow-alpha)))
+      drop-shadow(0 12px 12px hsl(0deg 0% 0% / var(--shadow-alpha)));
   }
 
-  /* create a stacking context for elements with > tool-tips */
-  :has(> tool-tip) {
+  /* create a stacking context for elements with > span */
+  :has(> span) {
     position: relative;
   }
 
   /* when those parent elements have focus, hover, etc */
-  :has(> tool-tip):is(:hover, :focus-visible, :active) > tool-tip {
+  :has(> span):is(:hover, :focus-visible, :active) > span {
     opacity: 1;
     transition-delay: 200ms;
   }
 
   /* prepend some prose for screen readers only */
-  tool-tip::before {
+  span::before {
     content: '; Has tooltip: ';
     clip: rect(1px, 1px, 1px, 1px);
     clip-path: inset(50%);
@@ -73,144 +91,127 @@ tool-tip {
   }
 
   /* tooltip shape is a pseudo element so we can cast a shadow */
-  tool-tip::after {
+  span::after {
     content: '';
-    background: var(--_bg);
+    background: var(--bg);
     position: absolute;
     z-index: -1;
     inset: 0;
-    mask: var(--_tip);
+    mask: var(--tip);
   }
 
   /* top tooltip styles */
-  tool-tip:is(
-      [tip-position='top'],
-      [tip-position='block-start'],
-      :not([tip-position]),
-      [tip-position='bottom'],
-      [tip-position='block-end']
-    ) {
+  span:is(.tip-block-start, .tip-block-end) {
     text-align: center;
   }
 
   @media (prefers-color-scheme: light) {
-    tool-tip {
-      --_shadow-alpha: 15%;
+    span {
+      --shadow-alpha: 15%;
     }
   }
 
-  tool-tip {
+  span {
     --isRTL: -1;
   }
 
-  tool-tip:dir(rtl) {
+  span:dir(rtl) {
     --isRTL: 1;
   }
 
-  tool-tip:is([tip-position='top'], [tip-position='block-start'], :not([tip-position])) {
+  span:is(.tip-block-start) {
     inset-inline-start: 50%;
-    inset-block-end: calc(100% + var(--_p-block) + var(--_triangle-size));
+    inset-block-end: calc(100% + var(--p-block) + var(--triangle-size));
 
-    --_x: calc(50% * var(--isRTL));
+    --x: calc(50% * var(--isRTL));
   }
 
-  tool-tip:is([tip-position='top'], [tip-position='block-start'], :not([tip-position]))::after {
-    --_tip: var(--_bottom-tip);
+  span:is(.tip-block-start)::after {
+    --tip: var(--bottom-tip);
 
-    inset-block-end: calc(var(--_triangle-size) * -1);
-    border-block-end: var(--_triangle-size) solid transparent;
+    inset-block-end: calc(var(--triangle-size) * -1);
+    border-block-end: var(--triangle-size) solid transparent;
   }
 
-  tool-tip:is([tip-position='right'], [tip-position='inline-end']) {
-    inset-inline-start: calc(100% + var(--_p-inline) + var(--_triangle-size));
+  span.tip-inline-end {
+    inset-inline-start: calc(100% + var(--p-inline) + var(--triangle-size));
     inset-block-end: 50%;
 
-    --_y: 50%;
+    --y: 50%;
   }
 
-  tool-tip:is([tip-position='right'], [tip-position='inline-end'])::after {
-    --_tip: var(--_left-tip);
+  span.tip-inline-end::after {
+    --tip: var(--left-tip);
 
-    inset-inline-start: calc(var(--_triangle-size) * -1);
-    border-inline-start: var(--_triangle-size) solid transparent;
+    inset-inline-start: calc(var(--triangle-size) * -1);
+    border-inline-start: var(--triangle-size) solid transparent;
   }
 
-  tool-tip:is([tip-position='right'], [tip-position='inline-end']):dir(rtl)::after {
-    --_tip: var(--_right-tip);
+  span.tip-inline-end:dir(rtl)::after {
+    --tip: var(--right-tip);
   }
 
-  tool-tip:is([tip-position='bottom'], [tip-position='block-end']) {
+  span.tip-block-end {
     inset-inline-start: 50%;
-    inset-block-start: calc(100% + var(--_p-block) + var(--_triangle-size));
+    inset-block-start: calc(100% + var(--p-block) + var(--triangle-size));
 
-    --_x: calc(50% * var(--isRTL));
+    --x: calc(50% * var(--isRTL));
   }
 
-  tool-tip:is([tip-position='bottom'], [tip-position='block-end'])::after {
-    --_tip: var(--_top-tip);
+  span.tip-block-end::after {
+    --tip: var(--top-tip);
 
-    inset-block-start: calc(var(--_triangle-size) * -1);
-    border-block-start: var(--_triangle-size) solid transparent;
+    inset-block-start: calc(var(--triangle-size) * -1);
+    border-block-start: var(--triangle-size) solid transparent;
   }
 
-  tool-tip:is([tip-position='left'], [tip-position='inline-start']) {
-    inset-inline-end: calc(100% + var(--_p-inline) + var(--_triangle-size));
+  span.tip-inline-start {
+    inset-inline-end: calc(100% + var(--p-inline) + var(--triangle-size));
     inset-block-end: 50%;
 
-    --_y: 50%;
+    --y: 50%;
   }
 
-  tool-tip:is([tip-position='left'], [tip-position='inline-start'])::after {
-    --_tip: var(--_right-tip);
+  span.tip-inline-start::after {
+    --tip: var(--right-tip);
 
-    inset-inline-end: calc(var(--_triangle-size) * -1);
-    border-inline-end: var(--_triangle-size) solid transparent;
+    inset-inline-end: calc(var(--triangle-size) * -1);
+    border-inline-end: var(--triangle-size) solid transparent;
   }
 
-  tool-tip:is([tip-position='left'], [tip-position='inline-start']):dir(rtl)::after {
-    --_tip: var(--_left-tip);
+  span.tip-inline-start:dir(rtl)::after {
+    --tip: var(--left-tip);
   }
 
-  tool-tip {
+  span {
     opacity: 0;
-    transform: translateX(var(--_x, 0)) translateY(var(--_y, 0));
+    transform: translateX(var(--x, 0)) translateY(var(--y, 0));
     transition:
       opacity 0.2s ease,
       transform 0.2s ease;
   }
 
-  :has(> tool-tip):is(:hover, :focus-visible, :active) > tool-tip {
+  :has(> span):is(:hover, :focus-visible, :active) > span {
     opacity: 1;
     transition-delay: 200ms;
   }
 
   @media (prefers-reduced-motion: no-preference) {
-    :has(> tool-tip:is([tip-position='top'], [tip-position='block-start'], :not([tip-position]))):not(
-        :hover,
-        :focus-visible,
-        :active
-      )
-      tool-tip {
-      --_y: 3px;
+    :has(> span:is(.tip-block-start)):not(:hover, :focus-visible, :active) span {
+      --y: 3px;
     }
 
-    :has(> tool-tip:is([tip-position='right'], [tip-position='inline-end'])):not(:hover, :focus-visible, :active)
-      tool-tip {
-      --_x: -3px;
+    :has(> span.tip-inline-end):not(:hover, :focus-visible, :active) span {
+      --x: -3px;
     }
 
-    :has(> tool-tip:is([tip-position='bottom'], [tip-position='block-end'])):not(:hover, :focus-visible, :active)
-      tool-tip {
-      --_y: -3px;
+    :has(> span.tip-block-end):not(:hover, :focus-visible, :active) span {
+      --y: -3px;
     }
 
-    :has(> tool-tip:is([tip-position='left'], [tip-position='inline-start'])):not(:hover, :focus-visible, :active)
-      tool-tip {
-      --_x: 3px;
+    :has(> span.tip-inline-start):not(:hover, :focus-visible, :active) span {
+      --x: 3px;
     }
   }
 }
-
-/*! purgecss end ignore */
 </style>
-; -->

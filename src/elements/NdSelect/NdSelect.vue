@@ -1,5 +1,27 @@
-<script setup lang="ts"></script>
-<template></template>
+<script setup lang="ts">
+import { computed } from 'vue';
+
+const props = defineProps<{
+  variant?: 'underline';
+  label: string;
+}>();
+const classes = computed(() => ({
+  select: true,
+  [`select-${props.variant}`]: props.variant
+}));
+</script>
+
+<template>
+  <label>
+    <span>{{ label }}</span>
+    <div :class="classes">
+      <select>
+        <slot></slot>
+      </select>
+      <span class="focus"></span>
+    </div>
+  </label>
+</template>
 <style lang="scss" scoped>
 select {
   font-size: var(--font-size-s);
@@ -66,7 +88,7 @@ select:focus + .focus {
   border-block-end: 2px solid var(--color-on-background);
 }
 
-label + .select {
+label > .select {
   margin-block-start: var(--space-2xs);
 }
 </style>

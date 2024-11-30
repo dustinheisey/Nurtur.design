@@ -110,6 +110,14 @@
 .grow-3 {
   flex-grow: 3;
 }
+
+.rounded {
+  border-radius: var(--radius-l);
+}
+
+.full {
+  inline-size: 100%;
+}
 /* ? Space Utilities */
 .inset-0 {
   padding: 0 !important;

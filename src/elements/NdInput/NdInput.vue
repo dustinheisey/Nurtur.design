@@ -1,5 +1,20 @@
-<script setup lang="ts"></script>
-<template></template>
+<script setup lang="ts">
+import { computed } from 'vue';
+
+const props = defineProps<{
+  variant?: 'underline';
+}>();
+
+const classes = computed(() => ({
+  input: true,
+  [`input-${props.variant}`]: props.variant
+}));
+</script>
+
+<template>
+  <input :class="classes" />
+</template>
+
 <style lang="scss" scoped>
 input {
   cursor: pointer;
@@ -46,4 +61,3 @@ input {
   border-color: var(--color-on-surface);
 }
 </style>
-;

@@ -1,11 +1,25 @@
-<script setup lang="ts"></script>
-<template></template>
-<style lang="scss" scoped>
-a {
-  text-decoration: none;
-  color: inherit;
-}
+<script setup lang="ts">
+import { computed } from 'vue';
 
+const props = defineProps<{
+  label: string;
+  href: string;
+  variant?: 'navigation';
+  size?: 's';
+}>();
+
+const classes = computed(() => ({
+  link: true,
+  [`link-${props.variant}`]: props.variant,
+  [`link-${props.size}`]: props.size
+}));
+</script>
+
+<template>
+  <a :href="href" :class="classes">{{ label }}</a>
+</template>
+
+<style lang="scss" scoped>
 .link {
   transition: all 0.3s;
   vertical-align: baseline;
@@ -51,4 +65,3 @@ a {
   background-position-x: left;
 }
 </style>
-;

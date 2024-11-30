@@ -270,3 +270,9 @@ hr {
 details + hr {
   margin-block: var(--space-s);
 }
+
+// ? Link
+a {
+  text-decoration: none;
+  color: inherit;
+}

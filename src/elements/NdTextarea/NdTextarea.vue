@@ -1,5 +1,19 @@
-<script setup lang="ts"></script>
-<template></template>
+<script setup lang="ts">
+import { computed } from 'vue';
+
+const props = defineProps<{
+  variant?: 'underline';
+}>();
+
+const classes = computed(() => ({
+  [`textarea-${props.variant}`]: props.variant
+}));
+</script>
+
+<template>
+  <textarea :class="classes"></textarea>
+</template>
+
 <style lang="scss" scoped>
 textarea {
   resize: vertical;

@@ -1,8 +1,32 @@
-<script setup lang="ts"></script>
-<template></template>
+<script setup lang="ts">
+import { Icons } from '../element-types';
+import NdIcon from '../NdIcon/NdIcon.vue';
+
+defineProps<{
+  label: string;
+  variant?: 'card';
+  value: string;
+  icon: Icons;
+}>();
+</script>
+
+<template>
+  <label v-if="variant !== 'card'">
+    <input type="radio" :value />
+    {{ label }}
+  </label>
+
+  <label v-if="variant === 'card'" class="input-card">
+    <input type="radio" :value />
+    <span>
+      <NdIcon :icon></NdIcon>
+      {{ value }}
+    </span></label
+  >
+</template>
+
 <style lang="scss" scoped>
-.checkbox-label,
-.radio-label {
+label {
   display: grid;
   grid-template-columns: 1em auto;
   gap: 0.5em;

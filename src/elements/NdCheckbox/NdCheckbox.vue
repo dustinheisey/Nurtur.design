@@ -1,25 +1,39 @@
 <script setup lang="ts">
-import { computed } from 'vue';
+import { Icons } from '../element-types';
+import NdIcon from '../NdIcon/NdIcon.vue';
 
-const props = defineProps<{
+defineProps<{
   label: string;
-  card?: boolean;
+  variant?: 'card';
+  value: string;
+  icon: Icons;
 }>();
-
-const classes = computed(() => ({
-  checkbox: true,
-  'input-card': props.card
-}));
 </script>
 
 <template>
-  <label>
-    <input type="checkbox" :class="classes" />
+  <label v-if="variant !== 'card'">
+    <input type="checkbox" :value />
     {{ label }}
+  </label>
+
+  <label v-if="variant === 'card'" class="input-card">
+    <input type="checkbox" :value />
+    <span>
+      <NdIcon :icon></NdIcon>
+      {{ value }}
+    </span>
   </label>
 </template>
 
 <style lang="scss" scoped>
+label {
+  display: grid;
+  grid-template-columns: 1em auto;
+  gap: 0.5em;
+  margin-top: 1em;
+  place-items: center;
+}
+
 .checkbox {
   appearance: none;
   background-color: var(--color-bg-tertiary);

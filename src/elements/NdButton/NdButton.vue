@@ -2,6 +2,7 @@
 import { computed } from 'vue';
 
 const props = defineProps<{
+  label: string;
   variant?: 'primary' | 'secondary' | 'tertiary';
   size?: 's' | 'l';
   circular?: boolean;
@@ -16,7 +17,7 @@ const classes = computed(() => ({
 </script>
 
 <template>
-  <button :class="classes"><slot></slot></button>
+  <button :class="classes">{{ label }}</button>
 </template>
 
 <style lang="scss" scoped>
