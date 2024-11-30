@@ -1,3 +1,5 @@
+<script setup lang="ts"></script>
+<template></template>
 <style lang="scss" scoped>
 select {
   font-size: var(--font-size-s);
@@ -68,4 +70,3 @@ label + .select {
   margin-block-start: var(--space-2xs);
 }
 </style>
-;

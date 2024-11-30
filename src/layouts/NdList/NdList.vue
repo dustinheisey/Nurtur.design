@@ -1,6 +1,7 @@
+<!-- The List - Custom list markers and wrapping -->
 <script setup lang="ts">
 import { computed } from 'vue';
-import type { Align, Justify, Gap, Inset, Space, Role } from '../../types/common-types.ts';
+import type { Align, Justify, Gap, Inset, Space } from '../layout-types.ts';
 
 type Role = 'group';
 
@@ -23,36 +24,12 @@ const classes = computed(() => ({
 }));
 </script>
 <template>
-  <div class="list">
+  <div :class="classes">
     <slot></slot>
   </div>
 </template>
 
 <style lang="scss" scoped>
-/* ? The List  */
-
-/*
-  - lists with disk/decimal markers flex stack with gap
-  - list with disk/decimal markers flex stack gap 2 column layout that stacks to one when needed
-  - list with svg markers flex stack gap 2 column layout that stacks to one when needed
-  - list with svg markers flex stack gap
-  */
-
-/* Reset */
-ol,
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  font-family: var(--font-family-body);
-}
-
-li {
-  max-inline-size: 66ch;
-  font-size: var(--font-size-body);
-}
-
-/* List */
 .list {
   display: flex;
   flex-direction: column;

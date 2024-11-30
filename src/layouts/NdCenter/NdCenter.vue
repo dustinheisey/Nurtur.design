@@ -1,6 +1,7 @@
+<!-- The Center - Center something -->
 <script setup lang="ts">
 import { computed } from 'vue';
-import type { Align, Justify, Gap, Inset, Space, Role } from '../../types/common-types.ts';
+import type { Align, Justify, Gap, Inset, Space } from '../layout-types.ts';
 
 type Role = 'group';
 
@@ -14,7 +15,7 @@ const props = defineProps<{
 }>();
 
 const classes = computed(() => ({
-  cluster: true,
+  center: true,
   [`${props.align}`]: props.align,
   [`${props.justify}`]: props.justify,
   [`${props.gap}`]: props.gap,
@@ -23,13 +24,12 @@ const classes = computed(() => ({
 }));
 </script>
 <template>
-  <div class="center">
+  <div :class="classes">
     <slot></slot>
   </div>
 </template>
 
 <style lang="scss" scoped>
-/* ? The Center - Center something */
 .center {
   box-sizing: content-box;
   margin: auto;
@@ -71,4 +71,3 @@ const classes = computed(() => ({
   inline-size: fit-content;
 }
 </style>
-;

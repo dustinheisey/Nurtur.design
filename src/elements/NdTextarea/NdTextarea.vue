@@ -1,3 +1,5 @@
+<script setup lang="ts"></script>
+<template></template>
 <style lang="scss" scoped>
 textarea {
   resize: vertical;
@@ -37,4 +39,3 @@ textarea:focus {
   border-color: var(--color-on-background);
 }
 </style>
-;

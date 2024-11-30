@@ -1,6 +1,7 @@
+<!-- The Sidebar - Sidebar that wraps when needed -->
 <script setup lang="ts">
 import { computed } from 'vue';
-import type { Align, Justify, Gap, Inset, Space, Role } from '../../types/common-types.ts';
+import type { Align, Justify, Gap, Inset, Space } from '../layout-types.ts';
 
 type Role = 'group';
 
@@ -23,7 +24,7 @@ const classes = computed(() => ({
 }));
 </script>
 <template>
-  <div class="sidebar">
+  <div :class="classes">
     <slot></slot>
   </div>
 </template>
@@ -38,8 +39,6 @@ const classes = computed(() => ({
 
 .sidebar > .fixed {
   flex-grow: 1;
-
-  /* min-inline-size: fit-content; */
 }
 
 .sidebar > :not(.fixed) {
@@ -68,4 +67,3 @@ const classes = computed(() => ({
   min-inline-size: calc((100% - var(--gap, var(--space-m))) / 2);
 }
 </style>
-;

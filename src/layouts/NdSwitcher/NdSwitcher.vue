@@ -1,6 +1,7 @@
+<!-- The Switcher - More flexible form of media queries -->
 <script setup lang="ts">
 import { computed } from 'vue';
-import type { Align, Justify, Gap, Inset, Space, Role } from '../../types/common-types.ts';
+import type { Align, Justify, Gap, Inset, Space } from '../layout-types.ts';
 
 type Role = 'group';
 
@@ -23,13 +24,12 @@ const classes = computed(() => ({
 }));
 </script>
 <template>
-  <div class="switcher">
+  <div :class="classes">
     <slot></slot>
   </div>
 </template>
 
 <style lang="scss" scoped>
-/* ? The Switcher - More flexible version of media queries */
 .switcher {
   display: flex;
   flex-wrap: wrap;
@@ -54,4 +54,3 @@ const classes = computed(() => ({
   --threshold: 1024px;
 }
 </style>
-;

@@ -1,3 +1,24 @@
+<script setup lang="ts">
+import { computed } from 'vue';
+
+const props = defineProps<{
+  label: string;
+  card?: boolean;
+}>();
+
+const classes = computed(() => ({
+  checkbox: true,
+  'input-card': props.card
+}));
+</script>
+
+<template>
+  <label>
+    <input type="checkbox" :class="classes" />
+    {{ label }}
+  </label>
+</template>
+
 <style lang="scss" scoped>
 .checkbox {
   appearance: none;
@@ -34,7 +55,6 @@
   outline-offset: 2px;
 }
 
-/* Card */
 .input-card input[type='checkbox'] {
   clip: rect(0 0 0 0);
   clip-path: inset(100%);

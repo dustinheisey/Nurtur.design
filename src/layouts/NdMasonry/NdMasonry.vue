@@ -1,6 +1,7 @@
+<!-- The Masonry - Masonry style grid -->
 <script setup lang="ts">
 import { computed } from 'vue';
-import type { Align, Justify, Gap, Inset, Space, Role } from '../../types/common-types.ts';
+import type { Align, Justify, Gap, Inset, Space } from '../layout-types.ts';
 
 type Role = 'group';
 
@@ -23,15 +24,12 @@ const classes = computed(() => ({
 }));
 </script>
 <template>
-  <div class="masonry">
+  <div :class="classes">
     <slot></slot>
   </div>
 </template>
 
 <style lang="scss" scoped>
-/* ? The Masonry - Product galleries, testimonials, blog posts, portfolio items */
-
-/* Masonry style grid */
 .masonry {
   gap: var(--gap, var(--space-m));
   columns: 1;
@@ -58,4 +56,3 @@ const classes = computed(() => ({
   }
 }
 </style>
-;

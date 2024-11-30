@@ -1,6 +1,7 @@
+<!-- The Stack - Even vertical spacing -->
 <script setup lang="ts">
 import { computed } from 'vue';
-import type { Align, Justify, Gap, Inset, Space, Role } from '../../types/common-types.ts';
+import type { Align, Justify, Gap, Inset, Space } from '../layout-types.ts';
 
 type Role = 'group';
 
@@ -23,12 +24,11 @@ const classes = computed(() => ({
 }));
 </script>
 <template>
-  <div class="stack">
+  <div :class="classes">
     <slot></slot>
   </div>
 </template>
 <style lang="scss" scoped>
-/* ? The Stack - Even veritcal space, lists */
 .stack {
   display: flex;
   flex-direction: column;
@@ -60,4 +60,3 @@ const classes = computed(() => ({
   padding: var(--space-2xs);
 }
 </style>
-;

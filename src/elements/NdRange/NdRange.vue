@@ -1,3 +1,5 @@
+<script setup lang="ts"></script>
+<template></template>
 <style lang="scss" scoped>
 input[type='range']:focus {
   outline: none;
@@ -78,4 +80,3 @@ input[type='range'] {
   background-color: var(--color-outline-variant);
 }
 </style>
-;

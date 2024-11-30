@@ -1,42 +1,35 @@
-<!-- import { html, css, LitElement } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
-
-@customElement('nd-details')
-export class NdDetails extends LitElement {
-  @property({ type: String })
-  overrides?: string;
-
-  @property({ type: String })
-  theme?: string;
-
-  @property({ type: String })
-  headline: string = '';
-
-  @property({ type: String })
-  body: string = '';
-
-  static styles = [
-    css`
-      details {
-        width: 100%;
-      }
-    `
-  ];
-
-  render() {
-    return html`
-      <details class="${this.overrides} ${this.theme ? `theme-${this.theme}` : ''}">
-        <summary>
-          <h3 class="title-headline">${this.headline}</h3>
-        </summary>
-        <p>${this.body}</p>
-      </details>
-    `;
-  }
+<style lang="scss" scoped>
+details > summary {
+  list-style-type: none;
+  cursor: pointer;
+  position: relative;
+  padding-inline-end: var(--space-xl);
 }
 
-declare global {
-  interface HTMLElementTagNameMap {
-    'nd-details': NdDetails;
-  }
-} -->
+details {
+  display: block;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+details > summary::before {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  content: '+';
+  font-size: var(--font-size-l);
+}
+
+details[open] > summary::before {
+  content: '-';
+  font-size: var(--font-size-xl);
+}
+
+details[open] > summary {
+  margin-block-end: var(--space-s);
+}
+</style>
+;

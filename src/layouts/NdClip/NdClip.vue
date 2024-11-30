@@ -1,6 +1,7 @@
+<!-- The Clip - Clip container -->
 <script setup lang="ts">
 import { computed } from 'vue';
-import type { Align, Justify, Gap, Inset, Space, Role } from '../../types/common-types.ts';
+import type { Align, Justify, Gap, Inset, Space } from '../layout-types.ts';
 
 type Role = 'group';
 
@@ -14,7 +15,7 @@ const props = defineProps<{
 }>();
 
 const classes = computed(() => ({
-  cluster: true,
+  clip: true,
   [`${props.align}`]: props.align,
   [`${props.justify}`]: props.justify,
   [`${props.gap}`]: props.gap,
@@ -23,7 +24,7 @@ const classes = computed(() => ({
 }));
 </script>
 <template>
-  <div class="clip">
+  <div :class="classes">
     <slot></slot>
   </div>
 </template>
@@ -49,4 +50,3 @@ const classes = computed(() => ({
   clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
 }
 </style>
-;

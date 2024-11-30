@@ -1,3 +1,32 @@
+<script setup lang="ts">
+import { computed } from 'vue';
+import type { Align, Justify, Gap, Inset, Space } from '../layout-types.ts';
+
+const props = defineProps<{
+  align?: Align;
+  justify?: Justify;
+  gap?: Gap;
+  inset?: Inset;
+  space?: Space;
+  accent?: boolean;
+}>();
+
+const classes = computed(() => ({
+  'blockquote-accent': props.accent,
+  [`${props.align}`]: props.align,
+  [`${props.justify}`]: props.justify,
+  [`${props.gap}`]: props.gap,
+  [`${props.inset}`]: props.inset,
+  [`${props.space}`]: props.space
+}));
+</script>
+
+<template>
+  <blockquote :class="classes">
+    <slot></slot>
+  </blockquote>
+</template>
+
 <style lang="scss" scoped>
 figure {
   margin: 0;
@@ -39,4 +68,3 @@ blockquote ~ figcaption {
   color: var(--color-primary);
 }
 </style>
-;

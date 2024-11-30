@@ -1,6 +1,7 @@
+<!-- The Grid - Arrange children into grid layout -->
 <script setup lang="ts">
 import { computed } from 'vue';
-import type { Align, Justify, Gap, Inset, Space, Role } from '../../types/common-types.ts';
+import type { Align, Justify, Gap, Inset, Space } from '../layout-types.ts';
 
 type Role = 'group';
 
@@ -23,7 +24,7 @@ const classes = computed(() => ({
 }));
 </script>
 <template>
-  <div class="grid">
+  <div :class="classes">
     <slot></slot>
   </div>
 </template>
@@ -103,4 +104,3 @@ const classes = computed(() => ({
   grid-column: span 6;
 }
 </style>
-;

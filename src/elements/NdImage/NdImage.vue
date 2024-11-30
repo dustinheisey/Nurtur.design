@@ -1,3 +1,5 @@
+<script setup lang="ts"></script>
+<template></template>
 <style lang="scss" scoped>
 audio,
 img,
@@ -62,4 +64,3 @@ img.full {
   block-size: 4rem;
 }
 </style>
-;

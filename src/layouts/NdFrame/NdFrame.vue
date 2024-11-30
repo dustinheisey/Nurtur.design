@@ -1,8 +1,7 @@
+<!-- The Frame - Crop media to a desired aspect ratio -->
 <script setup lang="ts">
 import { computed } from 'vue';
-import type { Align, Justify, Gap, Inset, Space, Role } from '../../types/common-types.ts';
-
-type Role = 'group';
+import type { Align, Justify, Gap, Inset, Space } from '../layout-types.ts';
 
 const props = defineProps<{
   align?: Align;
@@ -10,11 +9,11 @@ const props = defineProps<{
   gap?: Gap;
   inset?: Inset;
   space?: Space;
-  role?: Role;
+  variant?: 'square' | 'logo' | 'vertical-s' | 'vertical' | 'photo' | 'video' | 'full';
 }>();
 
 const classes = computed(() => ({
-  cluster: true,
+  frame: true,
   [`${props.align}`]: props.align,
   [`${props.justify}`]: props.justify,
   [`${props.gap}`]: props.gap,
@@ -23,15 +22,12 @@ const classes = computed(() => ({
 }));
 </script>
 <template>
-  <div class="frame">
+  <div :class="classes">
     <slot></slot>
   </div>
 </template>
 
 <style lang="scss" scoped>
-/* frame, clip, background image */
-
-/* ? The Frame - Cropping media (videos and images) to a desired aspect ratio */
 .frame {
   overflow: hidden;
   display: flex;
@@ -94,4 +90,3 @@ const classes = computed(() => ({
   }
 }
 </style>
-;

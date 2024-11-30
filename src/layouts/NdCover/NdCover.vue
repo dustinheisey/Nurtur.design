@@ -1,6 +1,7 @@
+<!-- The Cover - Above the fold content, optional header, footer -->
 <script setup lang="ts">
 import { computed } from 'vue';
-import type { Align, Justify, Gap, Inset, Space, Role } from '../../types/common-types.ts';
+import type { Align, Justify, Gap, Inset, Space } from '../layout-types.ts';
 
 type Role = 'group';
 
@@ -14,7 +15,7 @@ const props = defineProps<{
 }>();
 
 const classes = computed(() => ({
-  cluster: true,
+  cover: true,
   [`${props.align}`]: props.align,
   [`${props.justify}`]: props.justify,
   [`${props.gap}`]: props.gap,
@@ -23,19 +24,23 @@ const classes = computed(() => ({
 }));
 </script>
 <template>
-  <div class="cover">
+  <div :class="classes">
     <slot></slot>
   </div>
 </template>
 
 <style lang="scss" scoped>
-/* ? The Cover - “Above the fold” introductory content */
 .cover {
   display: flex;
+  flex-direction: column;
   min-block-size: 100vh;
   inline-size: 100%;
   gap: var(--gap-region);
   padding: var(--inset, var(--inset-page));
+}
+
+.cover > .main {
+  margin-block: auto;
 }
 
 .cover.sidebar {
@@ -50,16 +55,7 @@ const classes = computed(() => ({
   border-radius: 0;
 }
 
-.cover-nav {
-  flex-direction: column;
-}
-
-.cover > .principle {
-  margin-block: auto;
-}
-
 .cover.cover-s {
   min-block-size: 75vh;
 }
 </style>
-;

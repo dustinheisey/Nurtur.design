@@ -1,6 +1,7 @@
+<!-- The Reel - Horizontal scrolling -->
 <script setup lang="ts">
 import { computed } from 'vue';
-import type { Align, Justify, Gap, Inset, Space, Role } from '../../types/common-types.ts';
+import type { Align, Justify, Gap, Inset, Space } from '../layout-types.ts';
 
 type Role = 'group';
 
@@ -23,7 +24,7 @@ const classes = computed(() => ({
 }));
 </script>
 <template>
-  <div class="reel">
+  <div :class="classes">
     <slot></slot>
   </div>
 </template>
@@ -99,4 +100,3 @@ const classes = computed(() => ({
   padding-block-end: var(--space-s);
 }
 </style>
-;

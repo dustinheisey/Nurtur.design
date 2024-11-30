@@ -1,16 +1,38 @@
 <script setup lang="ts">
-const props = defineProps({
-  variant: { type: String, default: 'primary' },
-  size: { type: String, default: 'md' },
-  status: { type: Boolean, default: false }
-});
+import { computed } from 'vue';
+const props = defineProps<{
+  variant?: 'primary' | 'secondary' | 'tertiary';
+  size?: 'l';
+  status?: boolean;
+}>();
+
+const classes = computed(() => ({
+  badge: true,
+  [`badge-${props.variant}`]: props.variant,
+  [`badge-${props.size}`]: props.size,
+  status: props.status
+}));
 </script>
+
 <template>
-  <span :class="['badge', `badge-${variant}`, `badge-${size}`, { status: status }]">
+  <span :class="classes">
     <slot></slot>
   </span>
 </template>
+
 <style lang="scss" scoped>
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-pill);
+  color: var(--on-bg, var(--color-on-badge-primary, var(--color-on-primary-container)));
+  background-color: var(--bg, var(--color-badge-primary, var(--color-primary-container)));
+  padding: var(--space-3xs) var(--space-2xs);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  font-family: var(--font-family-body);
+}
+
 .badge-primary {
   --bg: var(--color-badge-primary, var(--color-primary-container));
   --on-bg: var(--color-on-badge-primary, var(--color-on-primary-container));
@@ -24,20 +46,6 @@ const props = defineProps({
 .badge-tertiary {
   --bg: var(--color-badge-tertiary, var(--color-tertiary-container));
   --on-bg: var(--color-on-badge-tertiary, var(--color-on-tertiary-container));
-}
-
-.badge {
-  display: inline-flex;
-  align-items: center;
-  border-radius: var(--radius-pill);
-  color: var(--on-bg);
-
-  /* border: 1.5px solid var(--on-bg); */
-  background-color: var(--bg);
-  padding: var(--space-3xs) var(--space-2xs);
-  font-size: var(--font-size-xs);
-  font-weight: 500;
-  font-family: var(--font-family-body);
 }
 
 .badge-l {
@@ -55,4 +63,3 @@ const props = defineProps({
   background-color: var(--on-bg);
 }
 </style>
-;
