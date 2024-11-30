@@ -4,6 +4,7 @@ import eslintPluginVue from 'eslint-plugin-vue';
 import globals from 'globals';
 import typescriptEslint from 'typescript-eslint';
 import storybook from 'eslint-plugin-storybook';
+import pluginVueA11y from 'eslint-plugin-vuejs-accessibility';
 
 export default typescriptEslint.config(
   { ignores: ['*.d.ts', '!.storybook', 'node_modules', '**/dist'] },
@@ -11,7 +12,8 @@ export default typescriptEslint.config(
     extends: [
       eslint.configs.recommended,
       ...typescriptEslint.configs.recommended,
-      ...eslintPluginVue.configs['flat/recommended']
+      ...eslintPluginVue.configs['flat/recommended'],
+      ...pluginVueA11y.configs['flat/recommended']
     ],
     files: ['**/*.{ts,vue}'],
     languageOptions: {
