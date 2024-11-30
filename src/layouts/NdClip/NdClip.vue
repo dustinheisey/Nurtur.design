@@ -12,10 +12,12 @@ const props = defineProps<{
   inset?: Inset;
   space?: Space;
   role?: Role;
+  clip: 'block-start-start' | 'block-start-end' | 'block-end-start' | 'block-end-end';
 }>();
 
 const classes = computed(() => ({
   clip: true,
+  [`clip-${props.clip}`]: props.clip,
   [`${props.align}`]: props.align,
   [`${props.justify}`]: props.justify,
   [`${props.gap}`]: props.gap,
@@ -34,19 +36,19 @@ const classes = computed(() => ({
   clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
 }
 
-.clip-top-left {
+.clip-block-start-start {
   clip-path: polygon(20% 0, 100% 0%, 100% 100%, 0% 100%);
 }
 
-.clip-top-right {
+.clip-block-start-end {
   clip-path: polygon(0 0, 80% 0, 100% 100%, 0% 100%);
 }
 
-.clip-bottom-left {
+.clip-block-end-start {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%);
 }
 
-.clip-bottom-right {
+.clip-block-end-end {
   clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
 }
 </style>

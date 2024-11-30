@@ -17,7 +17,6 @@ const props = defineProps<{
 }>();
 
 const classes = computed(() => ({
-  bg: true,
   'bg-${props.bg}': props.bg,
   [`pattern-${props.pattern}`]: props.pattern,
   [`${props.align}`]: props.align,

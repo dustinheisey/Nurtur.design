@@ -1,12 +1,10 @@
 import { Meta, StoryObj } from '@storybook/vue3';
 import NdList from './NdList.vue';
-import { argTypes } from '../layout-types.ts';
 
 const meta: Meta<typeof NdList> = {
   title: 'Layout/NdList',
   component: NdList,
-  tags: ['autodocs'],
-  argTypes: argTypes
+  tags: ['autodocs']
 };
 export default meta;
 

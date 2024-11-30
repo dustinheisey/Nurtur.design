@@ -6,6 +6,7 @@ import type { Align, Justify, Gap, Inset, Space } from '../layout-types.ts';
 type Role = 'group';
 
 const props = defineProps<{
+  switch: 'phone' | 'tablet' | 'desktop';
   align?: Align;
   justify?: Justify;
   gap?: Gap;
@@ -15,7 +16,8 @@ const props = defineProps<{
 }>();
 
 const classes = computed(() => ({
-  cluster: true,
+  switcher: true,
+  [`switch-${props.switch}`]: props.switch,
   [`${props.align}`]: props.align,
   [`${props.justify}`]: props.justify,
   [`${props.gap}`]: props.gap,

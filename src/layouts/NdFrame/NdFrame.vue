@@ -14,6 +14,7 @@ const props = defineProps<{
 
 const classes = computed(() => ({
   frame: true,
+  [`${props.variant}`]: props.variant,
   [`${props.align}`]: props.align,
   [`${props.justify}`]: props.justify,
   [`${props.gap}`]: props.gap,
@@ -77,11 +78,6 @@ const classes = computed(() => ({
 .frame-cover > * {
   /* min-block-size: 100vh; */
   block-size: 100%;
-}
-
-.frame.rounded,
-.frame.rounded * {
-  border-radius: var(--radius-l);
 }
 
 @media (orientation: portrait) {

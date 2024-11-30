@@ -6,6 +6,7 @@ import type { Align, Justify, Gap, Inset, Space } from '../layout-types.ts';
 type Role = 'group';
 
 const props = defineProps<{
+  cols?: 2 | 3 | 4 | 5 | 6;
   align?: Align;
   justify?: Justify;
   gap?: Gap;
@@ -15,7 +16,8 @@ const props = defineProps<{
 }>();
 
 const classes = computed(() => ({
-  cluster: true,
+  grid: true,
+  [`grid-${props.cols}`]: props.cols,
   [`${props.align}`]: props.align,
   [`${props.justify}`]: props.justify,
   [`${props.gap}`]: props.gap,
@@ -39,10 +41,6 @@ const classes = computed(() => ({
   gap: var(--grid-gap);
   place-items: stretch;
   place-content: stretch;
-}
-
-.row-gap-xl {
-  row-gap: var(--space-xl);
 }
 
 .grid > * {
@@ -82,25 +80,5 @@ const classes = computed(() => ({
     auto-fit,
     minmax(max(var(--min-inline-size, 4rem), calc((100% - 5 * var(--grid-gap)) / 6)), 1fr)
   );
-}
-
-.span-2 {
-  grid-column: span 2;
-}
-
-.span-3 {
-  grid-column: span 3;
-}
-
-.span-4 {
-  grid-column: span 4;
-}
-
-.span-5 {
-  grid-column: span 5;
-}
-
-.span-6 {
-  grid-column: span 6;
 }
 </style>

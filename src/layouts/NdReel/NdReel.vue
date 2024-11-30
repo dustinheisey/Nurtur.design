@@ -6,6 +6,8 @@ import type { Align, Justify, Gap, Inset, Space } from '../layout-types.ts';
 type Role = 'group';
 
 const props = defineProps<{
+  bar: boolean;
+  overflowing: boolean;
   align?: Align;
   justify?: Justify;
   gap?: Gap;
@@ -15,7 +17,9 @@ const props = defineProps<{
 }>();
 
 const classes = computed(() => ({
-  cluster: true,
+  reel: true,
+  'no-bar': !props.bar,
+  'reel-overflowing': props.overflowing,
   [`${props.align}`]: props.align,
   [`${props.justify}`]: props.justify,
   [`${props.gap}`]: props.gap,
@@ -23,14 +27,16 @@ const classes = computed(() => ({
   [`${props.space}`]: props.space
 }));
 </script>
+
 <template>
   <div :class="classes">
     <slot></slot>
   </div>
 </template>
+
 <style lang="scss" scoped>
-.reel > .card {
-  width: 20rem;
+.reel .card {
+  inline-size: 20rem;
   scroll-snap-align: start;
 }
 
@@ -96,7 +102,7 @@ const classes = computed(() => ({
   margin-inline-start: var(--space-s);
 }
 
-.reel.overflowing {
+.reel-overflowing {
   padding-block-end: var(--space-s);
 }
 </style>

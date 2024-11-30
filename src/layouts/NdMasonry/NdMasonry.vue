@@ -6,6 +6,7 @@ import type { Align, Justify, Gap, Inset, Space } from '../layout-types.ts';
 type Role = 'group';
 
 const props = defineProps<{
+  col: 2 | 3;
   align?: Align;
   justify?: Justify;
   gap?: Gap;
@@ -15,7 +16,8 @@ const props = defineProps<{
 }>();
 
 const classes = computed(() => ({
-  cluster: true,
+  masonry: true,
+  [`col-${props.col}`]: props.col,
   [`${props.align}`]: props.align,
   [`${props.justify}`]: props.justify,
   [`${props.gap}`]: props.gap,
@@ -23,6 +25,7 @@ const classes = computed(() => ({
   [`${props.space}`]: props.space
 }));
 </script>
+
 <template>
   <div :class="classes">
     <slot></slot>

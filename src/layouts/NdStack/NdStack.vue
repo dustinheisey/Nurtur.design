@@ -12,10 +12,13 @@ const props = defineProps<{
   inset?: Inset;
   space?: Space;
   role?: Role;
+  bg?: boolean;
+  split?: boolean;
 }>();
 
 const classes = computed(() => ({
-  cluster: true,
+  stack: true,
+  'stack-bg': props.bg,
   [`${props.align}`]: props.align,
   [`${props.justify}`]: props.justify,
   [`${props.gap}`]: props.gap,
@@ -23,11 +26,13 @@ const classes = computed(() => ({
   [`${props.space}`]: props.space
 }));
 </script>
+
 <template>
   <div :class="classes">
     <slot></slot>
   </div>
 </template>
+
 <style lang="scss" scoped>
 .stack {
   display: flex;
