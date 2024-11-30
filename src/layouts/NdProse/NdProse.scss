@@ -1,39 +1,3 @@
-<!-- The Prose - Visual Hierarchy for text content -->
-<script setup lang="ts">
-import { computed } from 'vue';
-import type { Align, Justify, Gap, Inset, Space } from '../layout-types.ts';
-
-type Role = 'group';
-
-const props = defineProps<{
-  size?: 's' | 'l';
-  align?: Align;
-  justify?: Justify;
-  gap?: Gap;
-  inset?: Inset;
-  space?: Space;
-  role?: Role;
-  region?: boolean;
-}>();
-
-const classes = computed(() => ({
-  prose: true,
-  [`prose-${props.size}`]: props.size,
-  '.region': props.region,
-  [`${props.align}`]: props.align,
-  [`${props.justify}`]: props.justify,
-  [`${props.gap}`]: props.gap,
-  [`${props.inset}`]: props.inset,
-  [`${props.space}`]: props.space
-}));
-</script>
-<template>
-  <div :class="classes">
-    <slot></slot>
-  </div>
-</template>
-
-<style lang="scss" scoped>
 /* P */
 .prose-l p {
   max-inline-size: 66ch;
@@ -181,4 +145,3 @@ const classes = computed(() => ({
 .prose :not(.not-prose):where(:last-child) {
   margin-block-end: 0;
 }
-</style>

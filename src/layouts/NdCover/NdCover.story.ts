@@ -1,27 +1,75 @@
 import { Meta, StoryObj } from '@storybook/vue3';
-import NdCover from './NdCover.vue';
-import { argTypes } from '../layout-types.ts';
 
-const meta: Meta<typeof NdCover> = {
+const meta: Meta = {
   title: 'Layouts/NdCover',
-  component: NdCover,
   tags: ['autodocs'],
-  argTypes: argTypes
+  argTypes: {
+    variant: {
+      control: 'select',
+      options: ['cover', 'cover-s', 'cover sidebar'],
+      description: 'The layout style for the cover.',
+      table: {
+        type: { summary: 'cover | cover-s | cover sidebar' }
+      }
+    },
+    gap: {
+      control: 'text',
+      description: 'The gap between elements inside the cover layout.',
+      table: {
+        type: { summary: 'CSS length (e.g., 1rem, 8px)' }
+      }
+    },
+    inset: {
+      control: 'text',
+      description: 'Padding inset for the container.',
+      table: {
+        type: { summary: 'CSS length (e.g., var(--inset-page))' }
+      }
+    },
+    backgroundColor: {
+      control: 'color',
+      description: 'Background color for the cover layout.',
+      table: {
+        type: { summary: 'string' }
+      }
+    },
+    minBlockSize: {
+      control: 'text',
+      description: 'Minimum block size for the layout.',
+      table: {
+        type: { summary: 'CSS length (e.g., 100vh, 75vh)' }
+      }
+    }
+  },
+  args: {
+    variant: 'cover',
+    gap: 'var(--gap-region)',
+    inset: 'var(--inset-page)',
+    backgroundColor: '#f5f5f5',
+    minBlockSize: '100vh'
+  }
 };
 export default meta;
 
-export const Default: StoryObj<typeof NdCover> = {
+export const Default: StoryObj = {
   render: args => ({
-    components: { NdCover },
     setup() {
       return { args };
     },
     template: `
-      <NdCover v-bind="args">
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 1</a>
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 2</a>
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 3</a>
-      </NdCover>
+      <div
+        :class="args.variant"
+        :style="{
+          gap: args.gap,
+          padding: args.inset,
+          backgroundColor: args.backgroundColor,
+          minBlockSize: args.minBlockSize,
+        }"
+      >
+        <header style="background-color: #4CAF50; padding: 1em; text-align: center; color: white;">Header</header>
+        <div class="main" style="background-color: #FF9800; padding: 2em; text-align: center; color: white;">Main Content</div>
+        <footer style="background-color: #2196F3; padding: 1em; text-align: center; color: white;">Footer</footer>
+      </div>
     `
   })
 };

@@ -1,27 +1,47 @@
 import { Meta, StoryObj } from '@storybook/vue3';
-import NdMosaic from './NdMosaic.vue';
-import { argTypes } from '../layout-types.ts';
 
-const meta: Meta<typeof NdMosaic> = {
+const meta: Meta = {
   title: 'Layouts/NdMosaic',
-  component: NdMosaic,
   tags: ['autodocs'],
-  argTypes: argTypes
+  argTypes: {
+    mosaicTemplate: {
+      control: 'text',
+      description: 'CSS grid-template-areas for mosaic layout.',
+      table: {
+        type: { summary: 'String' }
+      }
+    },
+    content: {
+      control: 'array',
+      description: 'Content for mosaic grid items.',
+      table: { type: { summary: 'Array of strings or HTML content.' } }
+    }
+  },
+  args: {
+    mosaicTemplate: "'one one two' 'one one three' 'four five six'",
+    content: ['Block 1', 'Block 2', 'Block 3', 'Block 4', 'Block 5', 'Block 6']
+  }
 };
 export default meta;
 
-export const Default: StoryObj<typeof NdMosaic> = {
+export const Default: StoryObj = {
   render: args => ({
-    components: { NdMosaic },
     setup() {
       return { args };
     },
     template: `
-      <NdMosaic v-bind="args">
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 1</a>
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 2</a>
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 3</a>
-      </NdMosaic>
+      <div
+        class="mosaic"
+        :style="{ '--mosaic': args.mosaicTemplate }"
+      >
+        <div
+          v-for="(item, index) in args.content"
+          :key="index"
+          style="border: 2px solid var(--color-primary); padding: var(--space-m);"
+        >
+          {{ item }}
+        </div>
+      </div>
     `
   })
 };

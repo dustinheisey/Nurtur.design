@@ -1,27 +1,38 @@
 import { Meta, StoryObj } from '@storybook/vue3';
-import NdSidebar from './NdSidebar.vue';
-import { argTypes } from '../layout-types.ts';
 
-const meta: Meta<typeof NdSidebar> = {
+const meta: Meta = {
   title: 'Layouts/NdSidebar',
-  component: NdSidebar,
   tags: ['autodocs'],
-  argTypes: argTypes
+  argTypes: {
+    variant: {
+      control: 'select',
+      options: ['sidebar-split-s', 'sidebar-split', 'sidebar-equal'],
+      description: 'Sidebar layout variant.',
+      table: {
+        type: {
+          summary: 'sidebar-split-s | sidebar-split | sidebar-equal'
+        }
+      }
+    }
+  },
+  args: {
+    variant: 'sidebar'
+  }
 };
 export default meta;
 
-export const Default: StoryObj<typeof NdSidebar> = {
+export const Default: StoryObj = {
   render: args => ({
-    components: { NdSidebar },
     setup() {
       return { args };
     },
     template: `
-      <NdSidebar v-bind="args">
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 1</a>
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 2</a>
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 3</a>
-      </NdSidebar>
+      <div
+        :class="['sidebar', args.variant]"
+      >
+        <div class="fixed" style="background: var(--color-background-light); padding: 1rem;">Fixed</div>
+        <div style="background: var(--color-background); padding: 1rem;">Flexible</div>
+      </div>
     `
   })
 };

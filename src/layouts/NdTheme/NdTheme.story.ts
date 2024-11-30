@@ -1,27 +1,49 @@
 import { Meta, StoryObj } from '@storybook/vue3';
-import NdTheme from './NdTheme.vue';
-import { argTypes } from '../layout-types.ts';
 
-const meta: Meta<typeof NdTheme> = {
+const meta: Meta = {
   title: 'Layouts/NdTheme',
-  component: NdTheme,
   tags: ['autodocs'],
-  argTypes: argTypes
+  argTypes: {
+    theme: {
+      control: 'select',
+      options: [
+        'theme-background',
+        'theme-dark',
+        'theme-surface',
+        'theme-surface-inverse',
+        'theme-primary',
+        'theme-primary-container',
+        'theme-secondary',
+        'theme-secondary-container',
+        'theme-tertiary',
+        'theme-tertiary-container',
+        'theme-error',
+        'theme-error-container'
+      ],
+      description: 'Theme variant.',
+      table: {
+        type: {
+          summary:
+            'theme-background | theme-dark | theme-surface | theme-surface-inverse | theme-primary | theme-secondary | etc.'
+        }
+      }
+    }
+  },
+  args: {
+    theme: 'theme-background'
+  }
 };
 export default meta;
 
-export const Default: StoryObj<typeof NdTheme> = {
+export const Default: StoryObj = {
   render: args => ({
-    components: { NdTheme },
     setup() {
       return { args };
     },
     template: `
-      <NdTheme v-bind="args">
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 1</a>
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 2</a>
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 3</a>
-      </NdTheme>
+      <div :class="[args.theme]" style="padding: 2rem;">
+        This is a themed container.
+      </div>
     `
   })
 };

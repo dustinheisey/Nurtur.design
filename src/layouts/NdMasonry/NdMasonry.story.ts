@@ -1,27 +1,39 @@
 import { Meta, StoryObj } from '@storybook/vue3';
-import NdMasonry from './NdMasonry.vue';
-import { argTypes } from '../layout-types.ts';
 
-const meta: Meta<typeof NdMasonry> = {
+const meta: Meta = {
   title: 'Layouts/NdMasonry',
-  component: NdMasonry,
   tags: ['autodocs'],
-  argTypes: argTypes
+  argTypes: {
+    col: {
+      control: 'select',
+      options: ['col-2', 'col-3'],
+      description: 'Masonry layout columns.',
+      table: {
+        type: {
+          summary: 'col-2 | col-3'
+        }
+      }
+    }
+  },
+  args: {
+    col: 'col-2'
+  }
 };
 export default meta;
 
-export const Default: StoryObj<typeof NdMasonry> = {
+export const Default: StoryObj = {
   render: args => ({
-    components: { NdMasonry },
     setup() {
       return { args };
     },
     template: `
-      <NdMasonry v-bind="args">
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 1</a>
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 2</a>
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 3</a>
-      </NdMasonry>
+      <div :class="['masonry', args.col]">
+        <p>Cupidatat sunt deserunt pariatur cillum irure non id fugiat enim est dolore ex pariatur excepteur. Mollit aliquip voluptate nostrud qui laboris esse reprehenderit. Proident elit pariatur tempor magna esse non. Eu aliqua nulla officia officia esse proident officia</p>
+        <p>Cupidatat sunt deserunt pariatur cillum irure non id fugiat enim est dolore ex pariatur excepteur. Proident elit pariatur tempor mag. Proident elit pariatur tempor mag. Proident elit pariatur tempor mag. Mollit aliquip voluptate nostrud qui laboris esse reprehenderit. Proident elit pariatur tempor magna esse non. Eu aliqua nulla officia officia esse proident officia</p>
+        <p>Cupidatat sunt deserunt pariatur cillum irure non id fugiat enim est dolore ex pariatur excepteur. Mollit aliquip voluptate nostrud qui laboris esse reprehenderit. Proident elit pariatur tempor magna esse non. Eu aliqua nulla officia officia ess. Proident elit pariatur tempor mag. Proident elit pariatur tempor mag. Proident elit pariatur tempor mag. Proident elit pariatur tempor mage proident officia</p>
+        <p>Cupidatat sunt deserunt pariatur cillum irure non id fugiat enim est dolore ex pariatur excepteur. Proident elit pariatur tempor mag. Proident elit pariatur tempor mag. Proident elit pariatur tempor mag. Mollit aliquip voluptate nostrud qui laboris esse reprehenderit. Proident elit pariatur tempor magna esse non. Eu aliqua nulla officia officia esse proident officia</p>
+        <p>Cupidatat sunt deserunt pariatur cillum irure non id fugiat enim est dolore ex pariatur excepte. Proident elit pariatur tempor magur. Mollit aliquip voluptate nostrud qui laboris esse reprehenderit. Proident elit pariatur tempor magna esse non. Eu aliqua nulla officia officia esse proident officia</p>
+      </div>
     `
   })
 };

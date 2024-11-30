@@ -1,27 +1,68 @@
 import { Meta, StoryObj } from '@storybook/vue3';
-import NdFrame from './NdFrame.vue';
-import { argTypes } from '../layout-types.ts';
 
-const meta: Meta<typeof NdFrame> = {
+const meta: Meta = {
   title: 'Layouts/NdFrame',
-  component: NdFrame,
   tags: ['autodocs'],
-  argTypes: argTypes
+  argTypes: {
+    variant: {
+      control: 'select',
+      options: [
+        'frame',
+        'frame square',
+        'frame logo',
+        'frame vertical-s',
+        'frame vertical',
+        'frame photo',
+        'frame video',
+        'frame full',
+        'frame-cover'
+      ],
+      description: 'The style and aspect ratio of the frame.',
+      table: {
+        type: {
+          summary:
+            'frame | frame square | frame logo | frame vertical-s | frame vertical | frame photo | frame video | frame full | frame-cover'
+        }
+      }
+    },
+    backgroundColor: {
+      control: 'color',
+      description: 'Background color for the frame.',
+      table: {
+        type: { summary: 'CSS color (e.g., #fff, var(--color))' }
+      }
+    },
+    content: {
+      control: 'text',
+      description: 'Content inside the frame.',
+      table: {
+        type: { summary: 'string or HTML' }
+      }
+    }
+  },
+  args: {
+    variant: 'frame',
+    backgroundColor: 'var(--color-background-light)',
+    content: 'Frame Content'
+  }
 };
 export default meta;
 
-export const Default: StoryObj<typeof NdFrame> = {
+export const Default: StoryObj = {
   render: args => ({
-    components: { NdFrame },
     setup() {
       return { args };
     },
     template: `
-      <NdFrame v-bind="args">
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 1</a>
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 2</a>
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 3</a>
-      </NdFrame>
+      <div
+        :class="args.variant"
+        :style="{ backgroundColor: args.backgroundColor }"
+      >
+        <div
+          style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;"
+          v-html="args.content"
+        ></div>
+      </div>
     `
   })
 };

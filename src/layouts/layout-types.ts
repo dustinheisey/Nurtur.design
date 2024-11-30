@@ -1,10 +1,4 @@
-export type Align = 'start' | 'center' | 'end' | 'baseline' | 'stretch';
-export type Justify = 'start' | 'center' | 'end' | 'between' | 'around' | 'evenly';
-export type Gap = '0' | '2xs' | 'xs' | 's' | 'm' | 'l' | 'xl' | '2xl';
-export type Inset = '0' | '2xs' | 'xs' | 's' | 'm' | 'l' | 'xl' | '2xl';
-export type Space = '0' | '2xs' | 'xs' | 's' | 'm' | 'l' | 'xl' | '2xl';
-
-export const argTypes: object = {
+export const layoutArgs: object = {
   align: {
     control: 'select',
     options: ['align-start', 'align-center', 'align-end', 'align-baseline', 'align-stretch'],
@@ -29,10 +23,5 @@ export const argTypes: object = {
     control: 'select',
     options: ['space-0', 'space-2xs', 'space-xs', 'space-s', 'space-m', 'space-l', 'space-xl', 'space-2xl'],
     description: 'Override parent container gap.'
-  },
-  role: {
-    control: 'select',
-    options: ['group'],
-    description: 'ARIA Role of the container.'
   }
 };

@@ -26,7 +26,7 @@ export class NdInputGroup extends LitElement {
   border-radius: 0 0 var(--radius-s) var(--radius-s);
 } */
 
-      @media (--tablet-portrait-up) {
+      @media (min-width: 37.5em) { // tablet-portrait-up
         .input-group {
           flex-wrap: nowrap;
         }

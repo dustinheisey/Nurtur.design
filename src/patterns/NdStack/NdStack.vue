@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import NdStack from '../../layouts/NdStack/NdStack.vue';
-import NdProse from '../../layouts/NdProse/NdProse.vue';
-
 defineProps<{
   justify?: 'start' | 'center' | 'end';
   align?: 'start' | 'center' | 'end';
@@ -14,15 +11,15 @@ defineProps<{
 </script>
 
 <template>
-  <NdStack inset="xl" region>
-    <NdProse :justify :align :text>
+  <section class="region stack inset-xl">
+    <section class="[prose, {justify: justify, align: align, text: text}]">
       <p v-if="overline" class="overline">{{ overline }}</p>
       <h2 v-if="headline" class="region-headline">{{ headline }}</h2>
       <p v-if="body">{{ body }}</p>
-    </NdProse>
+    </section>
 
-    <NdStack gap="">
+    <section class="stack">
       <slot></slot>
-    </NdStack>
-  </NdStack>
+    </section>
+  </section>
 </template>

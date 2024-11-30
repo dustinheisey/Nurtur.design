@@ -1,27 +1,37 @@
 import { Meta, StoryObj } from '@storybook/vue3';
-import NdSparkline from './NdSparkline.vue';
-import { argTypes } from '../layout-types.ts';
 
-const meta: Meta<typeof NdSparkline> = {
+const meta: Meta = {
   title: 'Layouts/NdSparkline',
-  component: NdSparkline,
   tags: ['autodocs'],
-  argTypes: argTypes
+  argTypes: {
+    variant: {
+      control: 'select',
+      options: ['sparkline-inline', 'sparkline-inline-staggered', 'sparkline-block-staggered'],
+      description: 'Sparkline layout variant.',
+      table: {
+        type: {
+          summary: 'sparkline-inline | sparkline-inline-staggered | sparkline-block-staggered'
+        }
+      }
+    }
+  }
 };
 export default meta;
 
-export const Default: StoryObj<typeof NdSparkline> = {
+export const Default: StoryObj = {
   render: args => ({
-    components: { NdSparkline },
     setup() {
       return { args };
     },
     template: `
-      <NdSparkline v-bind="args">
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 1</a>
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 2</a>
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 3</a>
-      </NdSparkline>
+      <div :class="['sparkline', args.variant]">
+        <span class="line"></span>
+        <p>Cupidatat sunt deserunt pariatur cillum irure non id fugiat enim est dolore ex pariatur excepteur. Mollit aliquip voluptate nostrud qui laboris esse reprehenderit. Proident elit pariatur tempor magna esse non. Eu aliqua nulla officia officia esse proident officia</p>
+        <span class="line"></span>
+        <p>Cupidatat sunt deserunt pariatur cillum irure non id fugiat enim est dolore ex pariatur excepteur. Mollit aliquip voluptate nostrud qui laboris esse reprehenderit. Proident elit pariatur tempor magna esse non. Eu aliqua nulla officia officia esse proident officia</p>
+        <span class="line"></span>
+        <p>Cupidatat sunt deserunt pariatur cillum irure non id fugiat enim est dolore ex pariatur excepteur. Mollit aliquip voluptate nostrud qui laboris esse reprehenderit. Proident elit pariatur tempor magna esse non. Eu aliqua nulla officia officia esse proident officia</p>
+      </div>
     `
   })
 };

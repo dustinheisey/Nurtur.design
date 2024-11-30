@@ -1,27 +1,56 @@
 import { Meta, StoryObj } from '@storybook/vue3';
-import NdClip from './NdClip.vue';
-import { argTypes } from '../layout-types.ts';
 
-const meta: Meta<typeof NdClip> = {
+const meta: Meta = {
   title: 'Layouts/NdClip',
-  component: NdClip,
   tags: ['autodocs'],
-  argTypes: argTypes
+  argTypes: {
+    variant: {
+      control: 'select',
+      options: ['clip', 'clip-block-start-start', 'clip-block-start-end', 'clip-block-end-start', 'clip-block-end-end'],
+      description: 'The clipping variant applied to the element.',
+      table: {
+        type: {
+          summary: 'clip | clip-block-start-start | clip-block-start-end | clip-block-end-start | clip-block-end-end'
+        }
+      }
+    },
+    color: {
+      control: 'color',
+      description: 'The background color of the clipped shape.',
+      table: {
+        type: { summary: 'string' }
+      }
+    },
+    size: {
+      control: 'text',
+      description: 'The size of the clipped shape (width and height).',
+      table: {
+        type: { summary: 'string' }
+      }
+    }
+  },
+  args: {
+    variant: 'clip',
+    color: '#4CAF50',
+    size: '200px'
+  }
 };
 export default meta;
 
-export const Default: StoryObj<typeof NdClip> = {
+export const Default: StoryObj = {
   render: args => ({
-    components: { NdClip },
     setup() {
       return { args };
     },
     template: `
-      <NdClip v-bind="args">
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 1</a>
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 2</a>
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 3</a>
-      </NdClip>
+      <div
+        :class="args.variant"
+        :style="{
+          backgroundColor: args.color,
+          width: args.size,
+          height: args.size,
+        }"
+      ></div>
     `
   })
 };

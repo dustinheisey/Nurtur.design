@@ -1,27 +1,48 @@
 import { Meta, StoryObj } from '@storybook/vue3';
-import NdReel from './NdReel.vue';
-import { argTypes } from '../layout-types.ts';
 
-const meta: Meta<typeof NdReel> = {
+const meta: Meta = {
   title: 'Layouts/NdReel',
-  component: NdReel,
   tags: ['autodocs'],
-  argTypes: argTypes
+  argTypes: {
+    variant: {
+      control: 'select',
+      options: ['reel', 'reel no-bar', 'reel justify-center'],
+      description: 'Reel layout variant.',
+      table: {
+        type: {
+          summary: 'reel | reel no-bar | reel justify-center'
+        }
+      }
+    },
+    content: {
+      control: 'array',
+      description: 'Content to populate the reel layout.',
+      table: { type: { summary: 'Array of strings or HTML content.' } }
+    }
+  },
+  args: {
+    variant: 'reel',
+    content: ['Card 1', 'Card 2', 'Card 3', 'Card 4']
+  }
 };
 export default meta;
 
-export const Default: StoryObj<typeof NdReel> = {
+export const Default: StoryObj = {
   render: args => ({
-    components: { NdReel },
     setup() {
       return { args };
     },
     template: `
-      <NdReel v-bind="args">
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 1</a>
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 2</a>
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 3</a>
-      </NdReel>
+      <div :class="[args.variant]" style="padding: 1rem;">
+        <div
+          v-for="(item, index) in args.content"
+          :key="index"
+          class="card"
+          style="background: var(--color-background-light); padding: 1rem; border: 1px solid var(--color-border);"
+        >
+          {{ item }}
+        </div>
+      </div>
     `
   })
 };

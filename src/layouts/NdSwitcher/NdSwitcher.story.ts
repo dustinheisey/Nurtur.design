@@ -1,27 +1,42 @@
 import { Meta, StoryObj } from '@storybook/vue3';
-import NdSwitcher from './NdSwitcher.vue';
-import { argTypes } from '../layout-types.ts';
 
-const meta: Meta<typeof NdSwitcher> = {
+const meta: Meta = {
   title: 'Layouts/NdSwitcher',
-  component: NdSwitcher,
   tags: ['autodocs'],
-  argTypes: argTypes
+  argTypes: {
+    threshold: {
+      control: 'text',
+      description: 'Switch threshold for layout breakpoints.',
+      table: {
+        type: { summary: 'CSS value (e.g., 480px, 768px)' }
+      }
+    },
+    gap: {
+      control: 'text',
+      description: 'Gap between items.',
+      table: {
+        type: { summary: 'CSS gap value (e.g., var(--space-m), 1rem)' }
+      }
+    }
+  },
+  args: {
+    threshold: '480px',
+    gap: 'var(--space-m)'
+  }
 };
 export default meta;
 
-export const Default: StoryObj<typeof NdSwitcher> = {
+export const Default: StoryObj = {
   render: args => ({
-    components: { NdSwitcher },
     setup() {
       return { args };
     },
     template: `
-      <NdSwitcher v-bind="args">
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 1</a>
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 2</a>
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 3</a>
-      </NdSwitcher>
+      <div class="switcher" :style="{ '--threshold': args.threshold, '--gap': args.gap }">
+        <div style="background: var(--color-background-light); padding: 1rem;">Item 1</div>
+        <div style="background: var(--color-background); padding: 1rem;">Item 2</div>
+        <div style="background: var(--color-background-dark); padding: 1rem;">Item 3</div>
+      </div>
     `
   })
 };

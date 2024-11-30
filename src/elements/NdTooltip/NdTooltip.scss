@@ -1,7 +1,8 @@
 tool-tip {
   display: none;
 }
-@media (--tablet-landscape-up) {
+@media (min-width: 56.25em) {
+  // tablet-landscape-up
   tool-tip {
     display: inline-block;
     --p-inline: 1.5ch;

@@ -1,27 +1,52 @@
 import { Meta, StoryObj } from '@storybook/vue3';
-import NdJustify from './NdJustify.vue';
-import { argTypes } from '../layout-types.ts';
 
-const meta: Meta<typeof NdJustify> = {
+const meta: Meta = {
   title: 'Layouts/NdJustify',
-  component: NdJustify,
   tags: ['autodocs'],
-  argTypes: argTypes
+  argTypes: {
+    variant: {
+      control: 'select',
+      options: [
+        'justify-start',
+        'justify-center',
+        'justify-end',
+        'justify-start-intrinsic',
+        'justify-center-intrinsic',
+        'justify-end-intrinsic'
+      ],
+      description: 'Justify alignment variant.',
+      table: {
+        type: {
+          summary:
+            'justify-start | justify-center | justify-end | justify-start-intrinsic | justify-center-intrinsic | justify-end-intrinsic'
+        }
+      }
+    },
+    content: {
+      control: 'text',
+      description: 'Content to justify within the layout.',
+      table: { type: { summary: 'string or HTML content' } }
+    }
+  },
+  args: {
+    variant: 'justify-center',
+    content: 'Justified Content'
+  }
 };
 export default meta;
 
-export const Default: StoryObj<typeof NdJustify> = {
+export const Default: StoryObj = {
   render: args => ({
-    components: { NdJustify },
     setup() {
       return { args };
     },
     template: `
-      <NdJustify v-bind="args">
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 1</a>
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 2</a>
-        <a href="#" style="text-decoration: none; background: #d1e7dd; padding: 0.5rem 1rem; border-radius: 0.25rem;">Link 3</a>
-      </NdJustify>
+      <div
+        :class="[args.variant]"
+        style="background: var(--color-background-light); padding: 1rem; border: 1px solid var(--color-border);"
+      >
+        {{ args.content }}
+      </div>
     `
   })
 };

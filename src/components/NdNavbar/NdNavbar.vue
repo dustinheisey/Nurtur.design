@@ -108,7 +108,7 @@ export class NavbarRegion extends LitElement {
       padding-block-end: env(safe-area-inset-bottom);
     }
 
-    @media (--tablet-portrait-up) {
+    @media (min-width: 37.5em) { // tablet-portrait-up
       .bottombar {
         display: none;
       }
