@@ -1,0 +1,36 @@
+.start {
+  box-sizing: content-box;
+  margin-inline-end: auto;
+}
+
+.center {
+  box-sizing: content-box;
+  margin: auto;
+}
+
+.end {
+  box-sizing: content-box;
+  margin-inline-start: auto;
+  inline-size: fit-content;
+}
+
+.start-intrinsic {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+
+.center-intrinsic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.end-intrinsic {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
+}

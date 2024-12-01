@@ -2,6 +2,7 @@ import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import '../src/index.scss';
 
 export const parameters = {
+  layout: 'centered',
   darkMode: {
     darkClass: 'mode-dark',
     lightClass: 'mode-light',
@@ -20,7 +21,14 @@ export const parameters = {
   },
   options: {
     storySort: {
-      order: ['Foundations', 'Tokens', 'Elements', 'Layouts', 'Components', 'Patterns', 'Workflows']
+      order: [
+        'Foundations',
+        ['Introduction', 'Accessibility', 'Neuro-Inclusivity', 'Sustainability', 'CSS-Developments'],
+        'Tokens',
+        'Elements',
+        'Layouts',
+        'Workflows'
+      ]
     }
   }
 };
