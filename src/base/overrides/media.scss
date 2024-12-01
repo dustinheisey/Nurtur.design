@@ -1,0 +1,50 @@
+// ? Figure
+figcaption {
+  font-size: var(--font-size-s);
+  line-height: var(--line-height-body);
+  margin: 0;
+  text-align: center;
+  font-family: var(--font-family-body);
+}
+
+figure {
+  display: grid;
+  place-items: center;
+  gap: var(--space-3xs);
+}
+
+// ? Image
+audio,
+img,
+video,
+picture {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+picture {
+  border-radius: var(--radius-m);
+}
+
+img {
+  border-radius: var(--radius-m);
+  max-inline-size: 100%;
+  block-size: auto;
+  box-shadow: var(--elevation-3);
+
+  /* position: relative; */
+}
+
+// ? SVG
+svg {
+  display: block;
+  block-size: 100%;
+  inline-size: auto;
+}
+
+// ? Video
+video {
+  inline-size: 100%;
+  block-size: auto;
+}

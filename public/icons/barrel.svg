@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewBox="0 0 32 32">
-    <title>oil</title>
-    <g fill="currentColor" class="nc-icon-wrapper">
-        <path d="M31.584,11.188a.993.993,0,0,0-.9-.137l-11.3,3.766-4.57-6.4A1,1,0,0,0,14,8H1A1,1,0,0,0,0,9V24a1,1,0,0,0,1,1H18a1,1,0,0,0,.61-.207l13-10A1,1,0,0,0,32,14V12A1,1,0,0,0,31.584,11.188Z" fill="currentColor"></path>
-        <path d="M1,3H6V6H8V3h5a1,1,0,0,0,0-2H1A1,1,0,0,0,1,3Z" fill="currentColor" data-color="color-2"></path>
-        <path d="M28,20.333,27.2,21.4c-.535.712-3.2,4.379-3.2,6.6a4,4,0,0,0,8,0c0-2.221-2.666-5.888-3.2-6.6Z" fill="currentColor" data-color="color-2"></path>
-    </g>
-</svg>

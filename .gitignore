@@ -1,7 +1,20 @@
+## editors
+
+## system files
 .DS_Store
-node_modules
+
+## npm
+/node_modules/
+/npm-debug.log
+
+# build
+/dist/
+/out-tsc
+
+# temp
+/src/components/
+/src/patterns/
+
 package-lock.json
-_site
-.vscode/settings.json
-scripts/index.min.js
-styles/index.min.css
+
+*storybook.log

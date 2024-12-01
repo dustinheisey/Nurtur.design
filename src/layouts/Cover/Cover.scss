@@ -1,0 +1,28 @@
+.cover {
+  display: flex;
+  flex-direction: column;
+  min-block-size: 100vh;
+  inline-size: 100%;
+  gap: var(--gap-region);
+  padding: var(--inset, var(--inset-page));
+}
+
+.cover > .main {
+  margin-block: auto;
+}
+
+.cover.sidebar {
+  padding: 0;
+}
+
+.cover.sidebar > :is(.stack, .prose) {
+  padding: var(--inset, var(--inset-page));
+}
+
+.cover.sidebar :is(.frame, img) {
+  border-radius: 0;
+}
+
+.cover.cover-s {
+  min-block-size: 75vh;
+}

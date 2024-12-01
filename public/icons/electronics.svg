@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewBox="0 0 32 32">
-    <title>cpu</title>
-    <g fill="currentColor" class="nc-icon-wrapper">
-        <path d="M32,12V10H28V7a3,3,0,0,0-3-3H22V0H20V4H17V0H15V4H12V0H10V4H7A3,3,0,0,0,4,7v3H0v2H4v3H0v2H4v3H0v2H4v3a3,3,0,0,0,3,3h3v4h2V28h3v4h2V28h3v4h2V28h3a3,3,0,0,0,3-3V22h4V20H28V17h4V15H28V12ZM21,23a2,2,0,1,1,2-2A2,2,0,0,1,21,23Z" fill="currentColor"></path>
-    </g>
-</svg>

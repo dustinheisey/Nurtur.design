@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewBox="0 0 32 32">
-    <title>plant vase</title>
-    <g fill="currentColor" class="nc-icon-wrapper">
-        <path d="M28,22H4c-.552,0-1,.448-1,1s.448,1,1,1h2v4c0,2.209,1.791,4,4,4h12c2.209,0,4-1.791,4-4v-4h2c.552,0,1-.448,1-1s-.448-1-1-1Z" fill="currentColor"></path>
-        <path d="M22,7h-1c-1.538,0-2.937,.586-4,1.54V1c0-.552-.448-1-1-1s-1,.448-1,1V3.54c-1.063-.954-2.462-1.54-4-1.54h-1c-.552,0-1,.448-1,1v2c0,3.309,2.691,6,6,6v9h2v-4c3.309,0,6-2.691,6-6v-2c0-.552-.448-1-1-1Z" fill="currentColor" data-color="color-2"></path>
-    </g>
-</svg>

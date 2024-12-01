@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewBox="0 0 32 32">
-    <title>energy supplement</title>
-    <g fill="currentColor" class="nc-icon-wrapper">
-        <rect data-color="color-2" x="5" width="22" height="5" rx="1" ry="1" fill="currentColor"></rect>
-        <path d="M25,9.083V7H7V9.083A6.01,6.01,0,0,0,2,15V27a5,5,0,0,0,5,5H25a5,5,0,0,0,5-5V15A6.01,6.01,0,0,0,25,9.083ZM15,29l1-7H11l6-10-1,7h5Z" fill="currentColor"></path>
-    </g>
-</svg>
