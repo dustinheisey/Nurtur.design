@@ -1,23 +1,23 @@
 import { Meta, StoryObj } from '@storybook/vue3';
 
 const meta: Meta = {
-  title: 'Elements/NdButton',
+  title: 'Elements/NdBtn',
   tags: ['autodocs'],
   argTypes: {
     variant: {
       control: 'select',
-      options: ['default', 'button-secondary', 'button-tertiary'],
+      options: ['default', 'btn-secondary', 'btn-tertiary'],
       description: 'The style variant of the button.',
       table: {
-        type: { summary: 'default | button-secondary | button-tertiary' }
+        type: { summary: 'default | btn-secondary | btn-tertiary' }
       }
     },
     size: {
       control: 'select',
-      options: ['button-s', 'button-l', 'button-circular'],
+      options: ['btn-s', 'btn-l', 'btn-circular'],
       description: 'The size of the button.',
       table: {
-        type: { summary: 'button-s | button-l | button-circular' }
+        type: { summary: 'btn-s | btn-l | btn-circular' }
       }
     },
     label: {
@@ -37,7 +37,7 @@ const meta: Meta = {
   },
   args: {
     variant: 'default',
-    size: 'button-s',
+    size: 'btn-s',
     label: 'Click Me'
   }
 };
@@ -50,7 +50,7 @@ export const Default: StoryObj = {
     },
     template: `
       <button
-        :class="['button', args.variant, args.size]"
+        :class="['btn', args.variant, args.size]"
         @click="args.onClick"
       >
         {{ args.label }}

@@ -1,4 +1,4 @@
-.button {
+.btn {
   color-scheme: light;
   font-family: var(--font-family-body);
   font-weight: 400;
@@ -22,22 +22,22 @@
   transform: translate3d(0, 0, 0);
   will-change: transform;
 }
-.button:hover {
+.btn:hover {
   box-shadow: var(--shadow-m);
   transform: translate3d(0, -2px, 0);
 }
-.button-secondary {
+.btn-secondary {
   background-color: transparent;
   color: var(--color-btn, var(--color-primary));
   border-color: var(--color-btn, var(--color-primary));
   box-shadow: none;
 }
-.button-secondary:hover {
+.btn-secondary:hover {
   color: var(--color-on-btn, var(--color-primary));
   border-color: var(--color-btn, var(--color-primary));
   box-shadow: none;
 }
-.button-tertiary {
+.btn-tertiary {
   background-color: transparent;
   color: var(--color-btn, var(--color-primary));
   border-color: transparent;
@@ -45,31 +45,31 @@
   font-size: var(--font-size-s);
   padding-inline-start: 0;
 }
-.button-tertiary.button-l {
+.btn-tertiary.btn-l {
   font-size: var(--font-size-l);
 }
-.button-tertiary:hover {
+.btn-tertiary:hover {
   border-color: transparent;
   background-color: transparent;
   box-shadow: none;
 }
-.button-s {
+.btn-s {
   padding: var(--space-3xs) var(--space-xs);
 }
-.button-l {
+.btn-l {
   padding: var(--space-2xs) var(--space-l);
 }
-.button-circular {
+.btn-circular {
   inline-size: 50px;
   block-size: 50px;
   padding: 0;
 }
-.button-circular.button-s {
+.btn-circular.btn-s {
   inline-size: 44px;
   block-size: 44px;
   padding: 0;
 }
-.button-circular.button-l {
+.btn-circular.btn-l {
   inline-size: 56px;
   block-size: 56px;
   padding: 0;

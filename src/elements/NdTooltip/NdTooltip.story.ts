@@ -42,7 +42,7 @@ export const Default: StoryObj = {
     },
     template: `
       <div style="position: relative; display: inline-block;">
-        <button class="button" aria-describedby="tooltip">{{ args.triggerText }}</button>
+        <a href="#" class="btn" aria-describedby="tooltip">{{ args.triggerText }}</a>
         <tool-tip :class="args.position" id="tooltip">{{ args.content }}</tool-tip>
       </div>
     `
