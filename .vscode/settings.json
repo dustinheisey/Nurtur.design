@@ -1,0 +1,18 @@
+{
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "tsconfig.json": "tsconfig.*.json, env.d.ts",
+    "vite.config.*": "vitest.config.*, cypress.config.*",
+    "package.json": "package-lock.json, .eslint*, eslint*, .prettier*, prettier*, .editorconfig, lint-staged.config.js, chromatic.config.json"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "material-icon-theme.folders.associations": {
+    "patterns": "views",
+    "tokens": "svg",
+    "workflows": "context"
+  }
+}

@@ -20,7 +20,7 @@ export const parameters = {
   },
   options: {
     storySort: {
-      order: ['Tokens', 'Elements', 'Layouts', 'Components', 'Patterns']
+      order: ['Foundations', 'Tokens', 'Elements', 'Layouts', 'Components', 'Patterns', 'Workflows']
     }
   }
 };

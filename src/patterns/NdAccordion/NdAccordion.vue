@@ -1,8 +1,5 @@
 <!-- The Accordion - details with optional header, overline, intro body -->
 <script setup lang="ts">
-import NdDetails from '../../components/NdDetails/NdDetails.vue';
-import NdProse from '../../layouts/NdProse/NdProse.vue';
-
 interface Details {
   headline: string;
   body: string;
@@ -18,13 +15,11 @@ defineProps<{
 
 <template>
   <div class="region">
-    <NdProse v-if="headline">
+    <section v-if="headline" class="prose">
       <p v-if="overline" class="overline">{{ overline }}</p>
       <h2 class="region-headline">{{ headline }}</h2>
       <p v-if="body">{{ body }}</p>
-    </NdProse>
-    <div class="space-xl">
-      <NdDetails v-for="(item, index) in items" :key="index" :headline="item.headline" :body="item.body" />
-    </div>
+    </section>
+    <div class="space-xl"></div>
   </div>
 </template>
