@@ -11,6 +11,10 @@
 /dist/
 /out-tsc
 
+# temp
+/src/components/
+/src/patterns/
+
 package-lock.json
 
 *storybook.log
