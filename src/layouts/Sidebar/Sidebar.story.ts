@@ -26,12 +26,12 @@ export const Sidebar: StoryObj = {
       return { args };
     },
     template: `
-      <div
+      <section
         :class="['sidebar', args.variant]"
       >
-        <div class="fixed" style="background: var(--color-background-light); padding: 1rem;">Fixed</div>
-        <div style="background: var(--color-background); padding: 1rem;">Flexible</div>
-      </div>
+        <div class="fixed">Fixed</div>
+        <div>Flexible</div>
+      </section>
     `
   })
 };

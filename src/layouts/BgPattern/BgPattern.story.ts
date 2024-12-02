@@ -8,6 +8,9 @@ const meta: Meta = {
       options: ['pattern-waves', 'pattern-rain', 'pattern-bubbles', 'pattern-topography'], // Pattern options based on your SCSS file
       description: 'Choose a background pattern for the component.'
     }
+  },
+  args: {
+    pattern: 'pattern-waves'
   }
 };
 
@@ -19,7 +22,7 @@ export const BgPattern: StoryObj = {
       return { args };
     },
     template: `
-    <section :class="['theme-primary','bg-pattern', 'justify-center-intrinsic', 'text-center', args.pattern]" style="inline-size: 100%; block-size: 300px;">
+    <section :class="['theme-primary','bg-pattern', 'center-intrinsic', 'text-center', 'inset-l', args.pattern]">
       <p>Cupidatat sunt deserunt pariatur cillum irure non id fugiat enim est dolore ex pariatur excepteur. Mollit aliquip voluptate nostrud qui laboris esse reprehenderit. Proident elit pariatur tempor magna esse non. Eu aliqua nulla officia officia esse proident officia</p>
     </section>
   `

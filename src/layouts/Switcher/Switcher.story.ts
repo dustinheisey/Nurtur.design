@@ -4,23 +4,13 @@ const meta: Meta = {
   title: 'Layouts/Switcher',
   argTypes: {
     threshold: {
-      control: 'text',
-      description: 'Switch threshold for layout breakpoints.',
-      table: {
-        type: { summary: 'CSS value (e.g., 480px, 768px)' }
-      }
-    },
-    gap: {
-      control: 'text',
-      description: 'Gap between items.',
-      table: {
-        type: { summary: 'CSS gap value (e.g., var(--space-m), 1rem)' }
-      }
+      control: 'select',
+      options: ['phone', 'tablet', 'desktop'],
+      description: 'Switch threshold for layout breakpoints.'
     }
   },
   args: {
-    threshold: '480px',
-    gap: 'var(--space-m)'
+    threshold: 'phone'
   }
 };
 export default meta;
@@ -31,10 +21,10 @@ export const Switcher: StoryObj = {
       return { args };
     },
     template: `
-      <div class="switcher" :style="{ '--threshold': args.threshold, '--gap': args.gap }">
-        <div style="background: var(--color-background-light); padding: 1rem;">Item 1</div>
-        <div style="background: var(--color-background); padding: 1rem;">Item 2</div>
-        <div style="background: var(--color-background-dark); padding: 1rem;">Item 3</div>
+      <div :class="['switcher', 'switch-' + args.threshold, 'gap-m']">
+        <div>Item 1</div>
+        <div>Item 2</div>
+        <div>Item 3</div>
       </div>
     `
   })

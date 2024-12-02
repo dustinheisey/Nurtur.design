@@ -37,9 +37,9 @@ export const BgGradient: StoryObj = {
       return { args };
     },
     template: `
-      <div class="bg-gradient center text-center">
+      <section :class="['theme-primary','bg-gradient', 'center-intrinsic', 'text-center', 'inset-l']">
         <p>Cupidatat sunt deserunt pariatur cillum irure non id fugiat enim est dolore ex pariatur excepteur. Mollit aliquip voluptate nostrud qui laboris esse reprehenderit. Proident elit pariatur tempor magna esse non. Eu aliqua nulla officia officia esse proident officia</p>
-      </div>
+      </section>
     `
   })
 };
