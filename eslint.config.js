@@ -1,30 +1,34 @@
-import eslint from '@eslint/js';
+import pluginVue from 'eslint-plugin-vue';
+import vueTsEslintConfig from '@vue/eslint-config-typescript';
+import pluginVitest from '@vitest/eslint-plugin';
+import pluginCypress from 'eslint-plugin-cypress/flat';
 import eslintConfigPrettier from 'eslint-config-prettier';
-import eslintPluginVue from 'eslint-plugin-vue';
-import globals from 'globals';
-import typescriptEslint from 'typescript-eslint';
 import storybook from 'eslint-plugin-storybook';
 import pluginVueA11y from 'eslint-plugin-vuejs-accessibility';
 
-export default typescriptEslint.config(
-  { ignores: ['*.d.ts', '!.storybook', 'node_modules', '**/dist'] },
+export default [
   {
-    extends: [
-      eslint.configs.recommended,
-      ...typescriptEslint.configs.recommended,
-      ...eslintPluginVue.configs['flat/recommended'],
-      ...pluginVueA11y.configs['flat/recommended']
-    ],
-    files: ['**/*.{ts,vue}'],
-    languageOptions: {
-      ecmaVersion: 'latest',
-      sourceType: 'module',
-      globals: globals.browser,
-      parserOptions: {
-        parser: typescriptEslint.parser
-      }
-    },
-    rules: {}
+    name: 'app/files-to-lint',
+    files: ['**/*.{ts,mts,tsx,vue}']
+  },
+
+  {
+    name: 'app/files-to-ignore',
+    ignores: ['!.storybook', '**/dist/**', '**/dist-ssr/**', '**/coverage/**']
+  },
+
+  ...pluginVue.configs['flat/essential'],
+  ...vueTsEslintConfig(),
+  ...pluginVueA11y.configs['flat/recommended'],
+
+  {
+    ...pluginVitest.configs.recommended,
+    files: ['src/**/*.test.ts']
+  },
+
+  {
+    ...pluginCypress.configs.recommended,
+    files: ['cypress/e2e/**/*.{cy,spec}.{js,ts,jsx,tsx}', 'cypress/support/**/*.{js,ts,jsx,tsx}']
   },
   {
     extends: [...storybook.configs['flat/recommended']],
@@ -32,4 +36,4 @@ export default typescriptEslint.config(
     rules: {}
   },
   eslintConfigPrettier
-);
+];
