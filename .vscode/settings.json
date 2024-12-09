@@ -9,10 +9,5 @@
     "source.fixAll": "explicit"
   },
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "material-icon-theme.folders.associations": {
-    "patterns": "views",
-    "tokens": "svg",
-    "workflows": "context"
-  }
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
