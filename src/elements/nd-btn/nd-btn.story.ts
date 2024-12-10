@@ -1,8 +1,9 @@
-import { Meta, StoryObj } from '@storybook/vue3';
+import type { Meta, StoryObj } from '@storybook/vue3';
+import NdBtn from './nd-btn.vue';
 
-const meta: Meta = {
+const meta: Meta<typeof NdBtn> = {
   title: 'Elements/Btn',
-
+  component: NdBtn,
   argTypes: {
     variant: {
       control: 'select',
@@ -36,25 +37,20 @@ const meta: Meta = {
     }
   },
   args: {
-    variant: 'default',
-    size: 'btn-s',
+    variant: 'primary',
+    size: 's',
     label: 'Click Me'
   }
 };
 export default meta;
 
-export const Btn: StoryObj = {
+export const Btn: StoryObj<typeof NdBtn> = {
   render: args => ({
     setup() {
       return { args };
     },
     template: `
-      <button
-        :class="['btn', args.variant, args.size]"
-        @click="args.onClick"
-      >
-        {{ args.label }}
-      </button>
+      <nd-btn :variant="args.variant" :size="args.size" :label="args.label" @click="args.onClick" />
     `
   })
 };

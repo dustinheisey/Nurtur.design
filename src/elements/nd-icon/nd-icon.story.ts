@@ -1,0 +1,17 @@
+import type { Meta, StoryObj } from '@storybook/vue3';
+
+const meta: Meta = {
+  title: 'Elements/Icon'
+};
+export default meta;
+
+export const Icon: StoryObj = {
+  render: args => ({
+    setup() {
+      return { args };
+    },
+    template: `
+      <nd-icon v-bind="args" />
+    `
+  })
+};
