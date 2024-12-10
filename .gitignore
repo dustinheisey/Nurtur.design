@@ -12,7 +12,7 @@
 /out-tsc
 
 # temp
-/src/components/
+/src/components/TODO
 /src/patterns/
 
 package-lock.json
