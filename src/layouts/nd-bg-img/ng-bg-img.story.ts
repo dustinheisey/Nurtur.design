@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/vue3';
 
 const meta: Meta = {
   title: 'Layouts/BgImg',
+  tags: ['fixme'],
   argTypes: {
     imageUrl: {
       control: 'text',

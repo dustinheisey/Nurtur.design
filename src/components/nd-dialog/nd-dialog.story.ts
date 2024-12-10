@@ -3,8 +3,8 @@ import NdDialog from './nd-dialog.vue';
 
 const meta: Meta<typeof NdDialog> = {
   title: 'Components/NdDialog',
-  component: NdDialog,
-  tags: ['autodocs']
+  tags: ['fixme'],
+  component: NdDialog
 };
 export default meta;
 

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/vue3';
 
 const meta: Meta = {
   title: 'Elements/Logo',
-
+  tags: ['fixme'],
   argTypes: {
     size: {
       control: 'select',

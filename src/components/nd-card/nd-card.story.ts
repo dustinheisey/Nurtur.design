@@ -3,8 +3,8 @@ import NdCard from './nd-card.vue';
 
 const meta: Meta<typeof NdCard> = {
   title: 'Components/NdCard',
-  component: NdCard,
-  tags: ['autodocs']
+  tags: ['fixme'],
+  component: NdCard
 };
 export default meta;
 

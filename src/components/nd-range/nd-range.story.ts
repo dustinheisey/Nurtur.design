@@ -3,8 +3,8 @@ import NdRange from './nd-range.vue';
 
 const meta: Meta<typeof NdRange> = {
   title: 'Components/NdRange',
-  component: NdRange,
-  tags: ['autodocs']
+  tags: ['fixme'],
+  component: NdRange
 };
 export default meta;
 

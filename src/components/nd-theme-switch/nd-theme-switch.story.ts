@@ -3,8 +3,8 @@ import NdThemeSwitch from './nd-theme-switch.vue';
 
 const meta: Meta<typeof NdThemeSwitch> = {
   title: 'Components/NdThemeSwitch',
-  component: NdThemeSwitch,
-  tags: ['autodocs']
+  tags: ['fixme'],
+  component: NdThemeSwitch
 };
 export default meta;
 

@@ -3,6 +3,7 @@ import { layoutArgs } from '../layout-types.ts';
 
 const meta: Meta = {
   title: 'Layouts/BgGradient',
+  tags: ['fixme'],
   argTypes: {
     height: {
       control: 'text',

@@ -13,7 +13,8 @@ const config: StorybookConfig = {
     '@chromatic-com/storybook',
     '@whitespace/storybook-addon-html',
     '@storybook/addon-a11y',
-    'storybook-dark-mode'
+    'storybook-dark-mode',
+    'storybook-addon-tag-badges'
   ],
   framework: {
     name: '@storybook/vue3-vite',

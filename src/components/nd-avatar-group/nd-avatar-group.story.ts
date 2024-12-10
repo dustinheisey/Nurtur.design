@@ -3,8 +3,8 @@ import NdAvatarGroup from './nd-avatar-group.vue';
 
 const meta: Meta<typeof NdAvatarGroup> = {
   title: 'Components/NdAvatarGroup',
-  component: NdAvatarGroup,
-  tags: ['autodocs']
+  tags: ['fixme'],
+  component: NdAvatarGroup
 };
 export default meta;
 

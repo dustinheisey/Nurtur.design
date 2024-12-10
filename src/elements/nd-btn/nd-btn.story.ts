@@ -4,6 +4,7 @@ import NdBtn from './nd-btn.vue';
 const meta: Meta<typeof NdBtn> = {
   title: 'Elements/Btn',
   component: NdBtn,
+  tags: ['fixme'],
   argTypes: {
     variant: {
       control: 'select',
