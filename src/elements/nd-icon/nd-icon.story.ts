@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/vue3';
 
 const meta: Meta = {
   title: 'Elements/Icon',
-  tags: ['fixme']
+  tags: ['fixme', 'autodocs']
 };
 export default meta;
 

@@ -2,8 +2,7 @@ import type { Meta, StoryObj } from '@storybook/vue3';
 
 const meta: Meta = {
   title: 'Elements/Link',
-  tags: ['fixme'],
-
+  tags: ['autodocs'],
   argTypes: {
     href: {
       control: 'text',
@@ -19,31 +18,105 @@ const meta: Meta = {
         type: { summary: 'string' }
       }
     },
-    variant: {
+    navigation: {
+      control: 'boolean'
+    },
+    size: {
       control: 'select',
-      options: ['link', 'link-navigation', 'link-navigation link-s'],
-      description: 'The style variant of the link.',
+      options: ['s', 'm'],
+      description: 'The size of the link.',
       table: {
-        type: { summary: 'link | link-navigation | link-navigation link-s' }
+        type: { summary: 's | m' }
       }
     }
   },
   args: {
     href: '#',
     label: 'Click here',
-    variant: 'link'
+    navigation: false
   }
 };
 export default meta;
 
-export const Link: StoryObj = {
+export const DefaultLink: StoryObj = {
   render: args => ({
     setup() {
       return { args };
     },
     template: `
       <a
-        :class="[args.variant]"
+        :class="['link', args.navigation && 'link-navigation', args.size && 'link-' + args.size]"
+        :href="args.href"
+      >
+        {{ args.label }}
+      </a>
+    `
+  })
+};
+
+export const NavigationLink: StoryObj = {
+  args: {
+    href: '#',
+    label: 'Click here',
+    navigation: true
+  },
+
+  render: args => ({
+    setup() {
+      return { args };
+    },
+
+    template: `
+      <a
+        :class="['link', args.navigation && 'link-navigation', args.size && 'link-' + args.size]"
+        :href="args.href"
+      >
+        {{ args.label }}
+      </a>
+    `
+  })
+};
+
+export const SmallLink: StoryObj = {
+  args: {
+    href: '#',
+    label: 'Click here',
+    navigation: false,
+    size: 's'
+  },
+
+  render: args => ({
+    setup() {
+      return { args };
+    },
+
+    template: `
+      <a
+        :class="['link', args.navigation && 'link-navigation', args.size && 'link-' + args.size]"
+        :href="args.href"
+      >
+        {{ args.label }}
+      </a>
+    `
+  })
+};
+
+export const MediumLink: StoryObj = {
+  args: {
+    href: '#',
+    label: 'Click here',
+    navigation: false,
+    size: 'm'
+  },
+
+  render: args => ({
+    setup() {
+      return { args };
+    },
+
+    template: `
+      <a
+        :class="['link', args.navigation && 'link-navigation', args.size && 'link-' + args.size]"
         :href="args.href"
       >
         {{ args.label }}

@@ -2,19 +2,12 @@ import type { Meta, StoryObj } from '@storybook/vue3';
 
 const meta: Meta = {
   title: 'Elements/Radio',
-  tags: ['fixme'],
+  tags: ['autodocs'],
 
   argTypes: {
     label: {
       control: 'text',
       description: 'The label for the radio button.',
-      table: {
-        type: { summary: 'string' }
-      }
-    },
-    name: {
-      control: 'text',
-      description: 'The name attribute for the radio button group.',
       table: {
         type: { summary: 'string' }
       }
@@ -33,59 +26,91 @@ const meta: Meta = {
         type: { summary: 'boolean' }
       }
     },
-    variant: {
-      control: 'select',
-      options: ['default', 'input-card'],
-      description: 'The style variant of the radio button.',
+    disabled: {
+      control: 'boolean',
+      description: 'Determines whether the checkbox is disabled.',
       table: {
-        type: { summary: 'default | input-card' }
-      }
-    },
-    onChange: {
-      action: 'change',
-      description: 'Event triggered when the radio button is selected.',
-      table: {
-        type: { summary: 'function' }
+        type: { summary: 'boolean' }
       }
     }
   },
   args: {
     label: 'Option 1',
-    name: 'group',
     value: 'option1',
     checked: false,
-    variant: 'default'
+    disabled: false
   }
 };
 export default meta;
 
-export const Radio: StoryObj = {
+export const DefaultRadio: StoryObj = {
   render: args => ({
     setup() {
       return { args };
     },
     template: `
-      <label v-if="args.variant === 'default'">
+      <label class="radio">
         <input
           type="radio"
-          :name="args.name"
           :value="args.value"
           :checked="args.checked"
-          @change="args.onChange"
+          :disabled="args.disabled"
         />
         {{ args.label }}
       </label>
-      <label v-else class="input-card">
+    `
+  })
+};
+
+export const DisabledRadio: StoryObj = {
+  args: {
+    label: 'Option 1',
+    value: 'option1',
+    checked: false,
+    disabled: true
+  },
+
+  render: args => ({
+    setup() {
+      return { args };
+    },
+
+    template: `
+      <label class="radio">
         <input
           type="radio"
-          :name="args.name"
           :value="args.value"
           :checked="args.checked"
-          @change="args.onChange"
+          :disabled="args.disabled"
         />
-        <span>
-          {{ args.label }}
-        </span>
+        {{ args.label }}
+      </label>
+    `
+  })
+};
+
+export const CheckedRadio: StoryObj = {
+  args: {
+    label: 'Option 1',
+    value: 'option1',
+    checked: true,
+    disabled: false
+  },
+
+  render: args => ({
+    setup() {
+      return { args };
+    },
+
+    template: `
+      <label class="radio">
+        <input
+          type="radio"
+          :value="args.value"
+          :checked="args.checked"
+          :disabled="args.disabled"
+        />
+        {{ args.label }}
       </label>
     `
   })

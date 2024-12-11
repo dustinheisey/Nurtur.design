@@ -2,14 +2,14 @@ import type { Meta, StoryObj } from '@storybook/vue3';
 
 const meta: Meta = {
   title: 'Elements/Avatar',
-  tags: ['fixme'],
+  tags: ['autodocs'],
   argTypes: {
     size: {
       control: 'select',
-      options: ['avatar-s', 'avatar-l'],
+      options: ['s', 'm', 'l'],
       description: 'The size of the avatar.',
       table: {
-        type: { summary: 'avatar-s | avatar-l' }
+        type: { summary: 's | m | l' }
       }
     },
     src: {
@@ -29,18 +29,73 @@ const meta: Meta = {
   },
   args: {
     src: 'https://i.pravatar.cc/300',
-    alt: 'Avatar'
+    alt: 'Avatar',
+    size: 'm'
   }
 };
 export default meta;
 
-export const Avatar: StoryObj = {
+export const DefaultAvatar: StoryObj = {
   render: args => ({
     setup() {
       return { args };
     },
     template: `
-        <img :class="['avatar', args.size]" :src="args.src" :alt="args.alt" />
+        <img :class="['avatar']" :src="args.src" :alt="args.alt" />
+    `
+  })
+};
+
+export const SmallAvatar: StoryObj = {
+  args: {
+    src: 'https://i.pravatar.cc/300',
+    alt: 'Avatar',
+    size: 's'
+  },
+
+  render: args => ({
+    setup() {
+      return { args };
+    },
+
+    template: `
+        <img :class="['avatar', 'avatar-' +args.size ]" :src="args.src" :alt="args.alt" />
+    `
+  })
+};
+
+export const MediumAvatar: StoryObj = {
+  args: {
+    src: 'https://i.pravatar.cc/300',
+    alt: 'Avatar',
+    size: 'm'
+  },
+
+  render: args => ({
+    setup() {
+      return { args };
+    },
+
+    template: `
+        <img :class="['avatar', 'avatar-' +args.size ]" :src="args.src" :alt="args.alt" />
+    `
+  })
+};
+
+export const LargeAvatar: StoryObj = {
+  args: {
+    src: 'https://i.pravatar.cc/300',
+    alt: 'Avatar',
+    size: 'l'
+  },
+
+  render: args => ({
+    setup() {
+      return { args };
+    },
+
+    template: `
+        <img :class="['avatar', 'avatar-' +args.size ]" :src="args.src" :alt="args.alt" />
     `
   })
 };

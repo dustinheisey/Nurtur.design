@@ -4,22 +4,22 @@ import NdBtn from './nd-btn.vue';
 const meta: Meta<typeof NdBtn> = {
   title: 'Elements/Btn',
   component: NdBtn,
-  tags: ['fixme'],
+  tags: ['fixme', 'autodocs'],
   argTypes: {
     variant: {
       control: 'select',
-      options: ['default', 'btn-secondary', 'btn-tertiary'],
+      options: ['primary', 'secondary', 'tertiary', 'icon', 'icon-subtle', 'circular'],
       description: 'The style variant of the button.',
       table: {
-        type: { summary: 'default | btn-secondary | btn-tertiary' }
+        type: { summary: 'primary | secondary | tertiary | icon | icon-subtle' }
       }
     },
     size: {
       control: 'select',
-      options: ['btn-s', 'btn-l', 'btn-circular'],
+      options: ['s', 'm', 'l'],
       description: 'The size of the button.',
       table: {
-        type: { summary: 'btn-s | btn-l | btn-circular' }
+        type: { summary: 's | | m | l' }
       }
     },
     label: {
@@ -29,18 +29,19 @@ const meta: Meta<typeof NdBtn> = {
         type: { summary: 'string' }
       }
     },
-    onClick: {
-      action: 'clicked',
-      description: 'The click event handler.',
+    href: {
+      control: 'text',
+      description: 'The button link text.',
       table: {
-        type: { summary: 'function' }
+        type: { summary: 'string' }
       }
     }
   },
   args: {
     variant: 'primary',
     size: 's',
-    label: 'Click Me'
+    label: 'Click Me',
+    href: '#'
   }
 };
 export default meta;
@@ -50,8 +51,7 @@ export const Btn: StoryObj<typeof NdBtn> = {
     setup() {
       return { args };
     },
-    template: `
-      <nd-btn :variant="args.variant" :size="args.size" :label="args.label" @click="args.onClick" />
-    `
+    components: { NdBtn },
+    template: `<nd-btn v-bind="args">{{ args.label }}</nd-btn>`
   })
 };

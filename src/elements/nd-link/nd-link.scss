@@ -10,11 +10,11 @@
   cursor: pointer;
   max-inline-size: 100%;
 }
-.link-navigation.link-s {
-  font-size: var(
-    --font-size-s
-  ); /* background: var(--color-background); padding: var(--space-3xs) var(--space-2xs);
-border-radius: var(--radius-pill); */
+.link-m {
+  font-size: var(--font-size-m);
+}
+.link-s {
+  font-size: var(--font-size-s);
 }
 .link:hover,
 .link:active {

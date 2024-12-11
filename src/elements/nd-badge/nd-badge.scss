@@ -21,6 +21,10 @@
   --bg: var(--color-badge-tertiary, var(--color-tertiary-container));
   --on-bg: var(--color-on-badge-tertiary, var(--color-on-tertiary-container));
 }
+.badge-m {
+  font-size: var(--font-size-xs);
+  padding: var(--space-3xs) var(--space-2xs);
+}
 .badge-l {
   font-size: var(--font-size-s);
   padding: var(--space-2xs) var(--space-xs);

@@ -2,14 +2,14 @@ import type { Meta, StoryObj } from '@storybook/vue3';
 
 const meta: Meta = {
   title: 'Elements/Logo',
-  tags: ['fixme'],
+  tags: ['autodocs'],
   argTypes: {
     size: {
       control: 'select',
-      options: ['logo', 'logo-l'],
+      options: ['m', 'l'],
       description: 'The size of the logo.',
       table: {
-        type: { summary: 'logo | logo-l' }
+        type: { summary: 'm | l' }
       }
     },
     src: {
@@ -28,21 +28,50 @@ const meta: Meta = {
     }
   },
   args: {
-    size: 'logo',
+    size: 'm',
     src: 'https://via.placeholder.com/150',
     alt: 'Company Logo'
   }
 };
 export default meta;
 
-export const Logo: StoryObj = {
+export const DefaultLogo: StoryObj = {
+  args: {
+    size: 'm',
+    src: 'https://via.placeholder.com/150',
+    alt: 'Company Logo'
+  },
+
   render: args => ({
     setup() {
       return { args };
     },
+
     template: `
       <img
-        :class="[args.size]"
+        :class="['logo', args.size && 'logo-' + args.size]"
+        :src="args.src"
+        :alt="args.alt"
+      />
+    `
+  })
+};
+
+export const LargeLogo: StoryObj = {
+  args: {
+    size: 'l',
+    src: 'https://via.placeholder.com/150',
+    alt: 'Company Logo'
+  },
+
+  render: args => ({
+    setup() {
+      return { args };
+    },
+
+    template: `
+      <img
+        :class="['logo-' + args.size]"
         :src="args.src"
         :alt="args.alt"
       />

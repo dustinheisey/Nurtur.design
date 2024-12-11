@@ -2,58 +2,58 @@ import type { Meta, StoryObj } from '@storybook/vue3';
 
 const meta: Meta = {
   title: 'Elements/Textarea',
-  tags: ['fixme'],
-
+  tags: ['autodocs'],
   argTypes: {
     placeholder: {
-      control: 'text',
-      description: 'Placeholder text for the textarea.',
-      table: {
-        type: { summary: 'string' }
-      }
+      control: 'text'
     },
     value: {
-      control: 'text',
-      description: 'The current value of the textarea.',
-      table: {
-        type: { summary: 'string' }
-      }
+      control: 'text'
     },
-    variant: {
-      control: 'select',
-      options: ['default', 'textarea-underline'],
-      description: 'The style variant of the textarea.',
-      table: {
-        type: { summary: 'default | textarea-underline' }
-      }
-    },
-    onInput: {
-      action: 'input',
-      description: 'Event triggered when the value changes.',
-      table: {
-        type: { summary: 'function' }
-      }
+    underline: {
+      control: 'boolean'
     }
   },
   args: {
     placeholder: 'Enter your text...',
     value: '',
-    variant: 'default'
+    underline: false
   }
 };
 export default meta;
 
-export const Textarea: StoryObj = {
+export const DefaultTextarea: StoryObj = {
   render: args => ({
     setup() {
       return { args };
     },
     template: `
       <textarea
-        :class="[args.variant === 'textarea-underline' ? 'textarea-underline' : '']"
+        :class="[args.underline && 'textarea-underline']"
         :placeholder="args.placeholder"
         :value="args.value"
-        @input="args.onInput($event.target.value)"
+      ></textarea>
+    `
+  })
+};
+
+export const UnderlineTextarea: StoryObj = {
+  args: {
+    placeholder: 'Enter your text...',
+    value: '',
+    underline: true
+  },
+
+  render: args => ({
+    setup() {
+      return { args };
+    },
+
+    template: `
+      <textarea
+        :class="[args.underline ? 'textarea-underline' : '']"
+        :placeholder="args.placeholder"
+        :value="args.value"
       ></textarea>
     `
   })

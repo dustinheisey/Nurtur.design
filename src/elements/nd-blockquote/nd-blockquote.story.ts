@@ -2,47 +2,53 @@ import type { Meta, StoryObj } from '@storybook/vue3';
 
 const meta: Meta = {
   title: 'Elements/Blockquote',
-  tags: ['fixme'],
+  tags: ['autodocs'],
   argTypes: {
-    variant: {
-      control: 'select',
-      options: ['default', 'blockquote-accent'],
-      description: 'The style variant of the blockquote.',
-      table: {
-        type: { summary: 'default | blockquote-accent' }
-      }
+    accent: {
+      control: 'boolean'
     },
     content: {
-      control: 'text',
-      description: 'The text content of the blockquote.',
-      table: {
-        type: { summary: 'string' }
-      }
+      control: 'text'
     },
     citation: {
-      control: 'text',
-      description: 'The citation text for the blockquote.',
-      table: {
-        type: { summary: 'string' }
-      }
+      control: 'text'
     }
   },
   args: {
-    variant: 'default',
+    accent: false,
     content: 'This is a sample blockquote. It’s styled with an elegant font and accents.',
     citation: '— Someone Famous'
   }
 };
 export default meta;
 
-export const Blockquote: StoryObj = {
+export const DefaultBlockquote: StoryObj = {
   render: args => ({
     setup() {
       return { args };
     },
     template: `
       <figure>
-        <blockquote :class="[args.variant]">{{ args.content }}</blockquote>
+        <blockquote :class="[args.accent && 'blockquote-accent']">{{ args.content }}</blockquote>
+        <figcaption>{{ args.citation }}</figcaption>
+      </figure>
+    `
+  })
+};
+
+export const AccentBlockquote: StoryObj = {
+  args: {
+    accent: true,
+    content: 'This is a sample blockquote. It’s styled with an elegant font and accents.',
+    citation: '— Someone Famous'
+  },
+  render: args => ({
+    setup() {
+      return { args };
+    },
+    template: `
+      <figure>
+        <blockquote :class="[args.accent && 'blockquote-accent']">{{ args.content }}</blockquote>
         <figcaption>{{ args.citation }}</figcaption>
       </figure>
     `
