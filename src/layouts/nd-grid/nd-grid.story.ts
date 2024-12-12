@@ -1,42 +1,65 @@
-import type { Meta, StoryObj } from '@storybook/vue3';
+import type { Meta, StoryFn } from '@storybook/vue3';
 
 const meta: Meta = {
   title: 'Layouts/Grid',
-  tags: ['fixme'],
+  tags: ['autodocs'],
   argTypes: {
-    variant: {
+    columns: {
       control: 'select',
       options: ['grid-2', 'grid-3', 'grid-4', 'grid-5', 'grid-6'],
-      description: 'Grid layout variant.',
+      description: 'How many columns to display.',
       table: {
         type: {
           summary: 'grid-2 | grid-3 | grid-4 | grid-5 | grid-6'
         }
       }
     }
+  },
+  args: {
+    columns: 'grid-2'
   }
 };
 export default meta;
 
-export const Grid: StoryObj = {
-  render: args => ({
-    setup() {
-      return { args };
-    },
-    template: `
+const Template: StoryFn = args => ({
+  setup() {
+    return { args };
+  },
+  template: `
       <div
-        :class="['grid', args.variant]"
+        :class="['grid', args.columns]"
       >
-        <p>Cupidatat sunt deserunt pariatur cillum irure non id fugiat enim est dolore ex pariatur excepteur. Mollit aliquip voluptate nostrud qui laboris esse reprehenderit. Proident elit pariatur tempor magna esse non. Eu aliqua nulla officia officia esse proident officia</p>
-        <p>Cupidatat sunt deserunt pariatur cillum irure non id fugiat enim est dolore ex pariatur excepteur. Mollit aliquip voluptate nostrud qui laboris esse reprehenderit. Proident elit pariatur tempor magna esse non. Eu aliqua nulla officia officia esse proident officia</p>
-        <p>Cupidatat sunt deserunt pariatur cillum irure non id fugiat enim est dolore ex pariatur excepteur. Mollit aliquip voluptate nostrud qui laboris esse reprehenderit. Proident elit pariatur tempor magna esse non. Eu aliqua nulla officia officia esse proident officia</p>
-        <p>Cupidatat sunt deserunt pariatur cillum irure non id fugiat enim est dolore ex pariatur excepteur. Mollit aliquip voluptate nostrud qui laboris esse reprehenderit. Proident elit pariatur tempor magna esse non. Eu aliqua nulla officia officia esse proident officia</p>
-        <p>Cupidatat sunt deserunt pariatur cillum irure non id fugiat enim est dolore ex pariatur excepteur. Mollit aliquip voluptate nostrud qui laboris esse reprehenderit. Proident elit pariatur tempor magna esse non. Eu aliqua nulla officia officia esse proident officia</p>
-        <p>Cupidatat sunt deserunt pariatur cillum irure non id fugiat enim est dolore ex pariatur excepteur. Mollit aliquip voluptate nostrud qui laboris esse reprehenderit. Proident elit pariatur tempor magna esse non. Eu aliqua nulla officia officia esse proident officia</p>
-        <p>Cupidatat sunt deserunt pariatur cillum irure non id fugiat enim est dolore ex pariatur excepteur. Mollit aliquip voluptate nostrud qui laboris esse reprehenderit. Proident elit pariatur tempor magna esse non. Eu aliqua nulla officia officia esse proident officia</p>
-        <p>Cupidatat sunt deserunt pariatur cillum irure non id fugiat enim est dolore ex pariatur excepteur. Mollit aliquip voluptate nostrud qui laboris esse reprehenderit. Proident elit pariatur tempor magna esse non. Eu aliqua nulla officia officia esse proident officia</p>
-        <p>Cupidatat sunt deserunt pariatur cillum irure non id fugiat enim est dolore ex pariatur excepteur. Mollit aliquip voluptate nostrud qui laboris esse reprehenderit. Proident elit pariatur tempor magna esse non. Eu aliqua nulla officia officia esse proident officia</p>
+        <p class="theme-primary inset-s text-center">Cupidatat sunt deserunt pariatur cillum irure non id fugiat enim est dolore ex pariatur excepteur.</p>
+        <p class="theme-primary-container inset-s text-center">Cupidatat sunt deserunt pariatur cillum irure non id fugiat enim est dolore ex pariatur excepteur.</p>
+        <p class="theme-secondary inset-s text-center">Cupidatat sunt deserunt pariatur cillum irure non id fugiat enim est dolore ex pariatur excepteur.</p>
+        <p class="theme-secondary-container inset-s text-center">Cupidatat sunt deserunt pariatur cillum irure non id fugiat enim est dolore ex pariatur excepteur.</p>
+        <p class="theme-tertiary inset-s text-center">Cupidatat sunt deserunt pariatur cillum irure non id fugiat enim est dolore ex pariatur excepteur.</p>
+        <p class="theme-tertiary-container inset-s text-center">Cupidatat sunt deserunt pariatur cillum irure non id fugiat enim est dolore ex pariatur excepteur.</p>
       </div>
     `
-  })
+});
+
+export const TwoColumnGrid = Template.bind({});
+TwoColumnGrid.args = {
+  columns: 'grid-2'
+};
+
+export const ThreeColumnGrid = Template.bind({});
+ThreeColumnGrid.args = {
+  columns: 'grid-3'
+};
+
+export const FourColumnGrid = Template.bind({});
+FourColumnGrid.args = {
+  columns: 'grid-4'
+};
+
+export const FiveColumnGrid = Template.bind({});
+FiveColumnGrid.args = {
+  columns: 'grid-5'
+};
+
+export const SixColumnGrid = Template.bind({});
+SixColumnGrid.args = {
+  columns: 'grid-6'
 };
