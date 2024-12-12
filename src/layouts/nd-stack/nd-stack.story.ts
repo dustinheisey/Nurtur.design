@@ -1,23 +1,34 @@
-import type { Meta, StoryObj } from '@storybook/vue3';
-
+import type { Meta, StoryFn } from '@storybook/vue3';
+import { gap, inset, justify, align } from '../layout-types.ts';
 const meta: Meta = {
   title: 'Layouts/Stack',
-  tags: ['fixme'],
-  argTypes: {}
+  tags: ['autodocs'],
+  argTypes: {
+    gap,
+    inset,
+    justify,
+    align
+  },
+  args: {
+    gap: 'gap-m',
+    inset: 'inset-m',
+    justify: 'justify-center',
+    align: 'align-center'
+  }
 };
 export default meta;
 
-export const Stack: StoryObj = {
-  render: args => ({
-    setup() {
-      return { args };
-    },
-    template: `
-      <div class="stack" :style="{ '--gap': args.gap }">
-        <p>Cupidatat sunt deserunt pariatur cillum irure non id fugiat enim est dolore ex pariatur excepteur. Mollit aliquip voluptate nostrud qui laboris esse reprehenderit. Proident elit pariatur tempor magna esse non. Eu aliqua nulla officia officia esse proident officia</p>
-        <p>Cupidatat sunt deserunt pariatur cillum irure non id fugiat enim est dolore ex pariatur excepteur. Mollit aliquip voluptate nostrud qui laboris esse reprehenderit. Proident elit pariatur tempor magna esse non. Eu aliqua nulla officia officia esse proident officia</p>
-        <p>Cupidatat sunt deserunt pariatur cillum irure non id fugiat enim est dolore ex pariatur excepteur. Mollit aliquip voluptate nostrud qui laboris esse reprehenderit. Proident elit pariatur tempor magna esse non. Eu aliqua nulla officia officia esse proident officia</p>
-      </div>
-    `
-  })
-};
+const Template: StoryFn = args => ({
+  setup() {
+    return { args };
+  },
+  template: `
+    <ul :class="['stack', args.gap, args.inset, args.justify, args.align]">
+      <li><a href="#" class="link link-navigation">Item 1</a></li>
+      <li><a href="#" class="link link-navigation">Item 2</a></li>
+      <li><a href="#" class="link link-navigation">Item 3</a></li>
+    </ul>
+  `
+});
+
+export const Stack = Template.bind({});
